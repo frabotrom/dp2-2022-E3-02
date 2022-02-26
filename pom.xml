@@ -18,12 +18,12 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	
-	<name>dp2-2022-E3-02</name>
-	<description>Group proyect for DP2 </description>
+	<name>Hello-World</name>
+	<description>This is a Hello-World project for the students of Design &amp; Testing.</description>
 
-	<groupId>E3-02</groupId>	
-	<artifactId>SuperAwesomeApp</artifactId>
-	<version>1.0</version>
+	<groupId>Acme</groupId>	
+	<artifactId>Hello-World-22.1</artifactId>
+	<version>22.1</version>
 	<packaging>war</packaging>
 
 	<parent>
