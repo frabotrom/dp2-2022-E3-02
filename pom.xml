@@ -18,11 +18,11 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	
-	<name>Hello-World</name>
-	<description>This is a Hello-World project for the students of Design &amp; Testing.</description>
+	<name>E3-02's Group Project</name>
+	<description>This is a Hello-World project for the students of Design &amp; Testing E3-02.</description>
 
-	<groupId>Acme</groupId>	
-	<artifactId>Hello-World-22.1</artifactId>
+	<groupId>E3-02</groupId>	
+	<artifactId>E3-02-22.1</artifactId>
 	<version>22.1</version>
 	<packaging>war</packaging>
 
