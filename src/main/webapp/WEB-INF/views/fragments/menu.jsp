@@ -21,6 +21,8 @@
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-fauvazrod" action="https://elgoog.im/breakout/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-frabotrom" action="https://www.reddit.com/r/moviescirclejerk"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-serrivroa" action="https://letmegooglethat.com/?q=waste+of+time"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
