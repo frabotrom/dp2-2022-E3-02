@@ -9,4 +9,6 @@
 # they accept any liabilities with respect to them.
 
 master.banner.background = #FFFBB2
-master.banner.alt = Hello World, S.A.
+master.banner.alt = Acme Toolkits, S.A.
+master.menu.anonymous.favourite-link-antsuagar = 20102473J: Suárez García, Antonio José
+
