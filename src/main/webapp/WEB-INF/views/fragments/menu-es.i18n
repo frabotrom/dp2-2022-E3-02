@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-﻿# master.menu #################################################################
+# master.menu #################################################################
 
 master.menu.home = Inicio
 master.menu.sign-up = Registrarse
@@ -22,6 +22,7 @@ master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.favourite-link-frabotrom = 29618084H: Botello Romero, Francisco
 master.menu.anonymous.favourite-link-fauvazrod = 77867876L: Vázquez Rodríguez, Fausto
 master.menu.anonymous.favourite-link-serrivroa = 25353120J: Rivas Roa, Sergio
+master.menu.anonymous.favourite-link-pabquide = 54222559J: Quindos de la Riva, Pablo
 master.menu.anonymous.favourite-link-jualeoval = 77928276K: León Valderrama, Juan José
 
 
