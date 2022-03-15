@@ -1,5 +1,5 @@
 
-package acme.entities.systemconfiguration;
+package acme.entities;
 
 import java.util.Arrays;
 import java.util.List;
