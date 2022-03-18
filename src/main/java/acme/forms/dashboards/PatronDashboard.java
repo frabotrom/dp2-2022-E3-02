@@ -10,6 +10,10 @@ import lombok.Setter;
 
 public class PatronDashboard {
 	
+	// Serialisation identifier -----------------------------------------------
+
+	protected static final long	serialVersionUID	= 1L;
+	
 	// Attributes -------------------------------------------------------------
 	
 	// Totals -------------------------------------------------------------
@@ -52,5 +56,8 @@ public class PatronDashboard {
 	protected Map<String, Double>		minimunBudgetDenied;
 
 	protected Map<String, Double>		maximunBudgetDenied;
+	
+	// Se podría hacer también con un Map en el que la clave es un Par<String, String> siendo el primer String el status: 
+	// Proposed, Accepted y Denied; y el segundo String la clave que ya existe en el Map, es decir, el tipo de moneda
 
 }
