@@ -1,2 +1,4 @@
-key,key:user-account,company,statement,info
+key,key:user-account,company,statement,link
 patron-01,user-account-administrator-01,"Dunder Mifflin, Inc.","We provide our products and services with a dedication to the highest degree of integrity and quality of customer satisfaction","https://en.wikipedia.org/wiki/Dunder_Mifflin"
+patron-02,user-account-02,"Los Pollos Hermanos", "Walter cosina más meta o mato a tu familia ekisde", "www.gus.sus"
+patron-03,user-account-03,"Mall Cop", "Nunca jamás le hagas a alguien lo que otra persona no le haria si no quisiese que nunca bajo ninguna circunstancia te hicieran lo que prefieres que posiblemente eviten hacerte o hacerles","agar.io"
