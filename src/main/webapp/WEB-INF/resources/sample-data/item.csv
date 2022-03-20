@@ -1,0 +1,3 @@
+key,name,code,technology,description,retailPrice,link,type,key:amount
+item-001, "El cuadrado amarillo", "Invento de Doraemon", "EUR 1000000", "TOOL",null
+item-002, "Tijeras de Adelaide", "Invento de Doraemon", "USD 1", "COMPONENT",amount-001
