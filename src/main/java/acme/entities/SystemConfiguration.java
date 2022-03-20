@@ -1,9 +1,6 @@
 
 package acme.entities;
 
-import java.util.Arrays;
-import java.util.List;
-
 import javax.persistence.Entity;
 
 import acme.framework.entities.AbstractEntity;
@@ -16,21 +13,31 @@ import lombok.Setter;
 public class SystemConfiguration extends AbstractEntity {
 
 	// Serialisation identifier
-	private static final long serialVersionUID = 1L;
+	private static final long		serialVersionUID	= 1L;
 
-	public static String systemCurrency = "EUR";
-	
-	public static final List<String> acceptedCurrencies = Arrays.asList("EUR", "USD", "GBP");
-	
-	public static List<String> strongSpamTerms_en = Arrays.asList("sex", "hard core", "viagra", "cialis");
-	
-	public static List<String> strongSpamTerms_es = Arrays.asList("sexo", "hard core", "viagra", "cialis");
-	
-	public static final Double strongSpamThreshold = 0.1d;
-	
-	public static List<String> weakSpamTerms_en = Arrays.asList("sexy", "nigeria", "you've won", "one million");
-	
-	public static List<String> weakSpamTerms_es = Arrays.asList("sexy", "nigeria", "has ganado", "un millón");
-	
-	public static final Double weakSpamThreshold = 0.25d;
+	public static String			systemCurrency		= "EUR";
+
+	public static final String[]	acceptedCurrencies	= new String[] {
+		"EUR", "USD", "GBP"
+	};
+
+	public static String[]			strongSpamTerms_en	= new String[] {
+		"sex", "hard core", "viagra", "cialis"
+	};
+
+	public static String[]			strongSpamTerms_es	= new String[] {
+		"sexo", "hard core", "viagra", "cialis"
+	};
+
+	public static final Double		strongSpamThreshold	= 0.1d;
+
+	public static String[]			weakSpamTerms_en	= new String[] {
+		"sexy", "nigeria", "you've won", "one million"
+	};
+
+	public static String[]			weakSpamTerms_es	= new String[] {
+		"sexy", "nigeria", "has ganado", "un millón"
+	};
+
+	public static final Double		weakSpamThreshold	= 0.25d;
 }
