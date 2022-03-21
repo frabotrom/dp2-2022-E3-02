@@ -15,7 +15,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class ToolKit extends AbstractEntity{
+public class Toolkit extends AbstractEntity{
 	
 	private static final long serialVersionUID= 1L;
 	
@@ -38,16 +38,4 @@ public class ToolKit extends AbstractEntity{
 	
 	@URL
 	protected String info;
-	
-	//QUITAR EL COMENTARIO CUANDO SE MERGEE CON LAS CLASES COMPONENT Y TOOL
-	
-	/*@NotBlank
-	@Valid
-	@OneToMany
-	protected Component component;
-	
-	@NotBlank
-	@Valid
-	@OneToOne
-	protected Tool tool;*/
 }

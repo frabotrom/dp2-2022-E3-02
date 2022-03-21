@@ -1,2 +1,2 @@
-key,key:inventor,key:patron,status,code,legalStuff,budget,creationDate,startDate,endDate,link
-patronage-001,inventor-01,patron-01 "PROPOSED", "patronage-001-ElDiabloLoco", "Buleria buleria", "EUR 456700", "2022/01/25 12:00", "2022/02/26 12:00", "2022/03/27 12:00", "www.enlase.com"
+key,key:inventor,key:patron,status,code,legalStuff,budget,initialDate,finalDate,optionalLink
+patronage-001,inventor-01,patron-01,PROPOSED,"PAT-001-B",Buleria buleria,EUR 456700.00,2022/02/26 12:00,2022/03/27 12:00,"https://www.twitch.tv/alexelcapo"
