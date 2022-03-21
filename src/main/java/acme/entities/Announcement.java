@@ -31,7 +31,7 @@ public class Announcement extends AbstractEntity{
 	@NotNull
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date			creationDate;
+	protected Date				creationDate;
 
 	@NotBlank
 	@Length(max = 100)
