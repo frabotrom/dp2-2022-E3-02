@@ -73,7 +73,9 @@ public class Patronage extends AbstractEntity {
 	@NotNull
 	@Transient
 	public Integer periodOfTime() {
-		return (int) (this.finalDate.getTime() - this.initialDate.getTime()); 
+		final long result = this.finalDate.getTime() - this.initialDate.getTime(); 
+		final long resultDays = result/(1000*60*60*24);
+		return (int) resultDays;
 	}
 	
 	// Relationships
