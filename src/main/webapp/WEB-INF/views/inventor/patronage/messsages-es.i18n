@@ -10,21 +10,22 @@
 
 
 inventor.patronage.form.label.status = Estado
-inventor.patronage.form.label.code = Codigo
+inventor.patronage.form.label.code = Código
 inventor.patronage.form.label.legalStuff = Asuntos Legales
 inventor.patronage.form.label.budget = Presupuesto
-inventor.patronage.form.label.creationDate = Fecha de Creacion
+inventor.patronage.form.label.creationDate = Fecha de Creación
 inventor.patronage.form.label.initialDate = Fecha Inicial
 inventor.patronage.form.label.finalDate = Fecha Final
 inventor.patronage.form.label.optionalLink = Link Opcional
-inventor.patronage.form.label.period = Periodo de Tiempo (Dias)
-inventor.patronage.form.label.patronName = Nombre Completo del Patron
-inventor.patronage.form.label.patronEmail = Email del Patron
+inventor.patronage.form.label.period = Periodo de Tiempo (Días)
+inventor.patronage.form.label.patronName = Nombre del Patrocinador
+inventor.patronage.form.label.patronEmail = Email del Patrocinador
+inventor.patronage.form.label.patronCompany = Compañia del Patrocinador
 
 
 inventor.patronage.list.label.status = Estado
-inventor.patronage.list.label.code = Codigo
+inventor.patronage.list.label.code = Código
 inventor.patronage.list.label.budget = Presupuesto
 inventor.patronage.list.label.initialDate = Fecha Inicial
 inventor.patronage.list.label.finalDate = Fecha Final
-inventor.patronage.list.label.patron = Nombre Completo del Patron
+inventor.patronage.list.label.patron = Nombre del Patrocinador
