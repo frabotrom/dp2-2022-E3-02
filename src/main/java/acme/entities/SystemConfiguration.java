@@ -1,4 +1,3 @@
-
 package acme.entities;
 
 import javax.persistence.Entity;
@@ -20,9 +19,7 @@ public class SystemConfiguration extends AbstractEntity {
 	// ------------------------------------------------------------------
 	private static final long serialVersionUID = 1L;
 	// ------------------------------------------------------------------
-	
-	private static final String SPAM_REGEX = "((\\p{L}[\\p{L}'\\s]*)(,\\s*(\\p{L}[\\p{L}'\\s]*))*)?";
-	
+		
 	@NotNull
 	protected String strongSpamTerms;
 	
