@@ -19,7 +19,6 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-fauvazrod" action="https://elgoog.im/breakout/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-frabotrom" action="https://www.reddit.com/r/moviescirclejerk"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-serrivroa" action="https://letmegooglethat.com/?q=waste+of+time"/>
@@ -55,6 +54,9 @@
 		<acme:menu-option code="master.menu.sign-in" action="/master/sign-in" access="isAnonymous()"/>
 		
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')" action="/authenticated/user-account/update">
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')" action="/authenticated/user-account/update">
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">

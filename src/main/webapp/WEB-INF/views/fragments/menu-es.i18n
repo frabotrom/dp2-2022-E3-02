@@ -45,10 +45,13 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
-# master.menu.consumer ##########################################################
+# master.menu.inventor ##########################################################
 master.menu.inventor = Eres Inventor
 master.menu.inventor.patronage = Patrocinios
 master.menu.inventor.patronage.list = Lista
+
+# master.menu.patron ##########################################################
+master.menu.patron = You're Patrocinador
 
 # master.menu.user-account ####################################################
 
