@@ -2,6 +2,11 @@
 package acme.entities;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Range;
 
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
@@ -12,32 +17,29 @@ import lombok.Setter;
 @Setter
 public class SystemConfiguration extends AbstractEntity {
 
-	// Serialisation identifier
-	private static final long		serialVersionUID	= 1L;
-
-	public static String			systemCurrency		= "EUR";
-
-	public static final String[]	acceptedCurrencies	= new String[] {
-		"EUR", "USD", "GBP"
-	};
-
-	public static String[]			strongSpamTerms_en	= new String[] {
-		"sex", "hard core", "viagra", "cialis"
-	};
-
-	public static String[]			strongSpamTerms_es	= new String[] {
-		"sexo", "hard core", "viagra", "cialis"
-	};
-
-	public static final Double		strongSpamThreshold	= 0.1d;
-
-	public static String[]			weakSpamTerms_en	= new String[] {
-		"sexy", "nigeria", "you've won", "one million"
-	};
-
-	public static String[]			weakSpamTerms_es	= new String[] {
-		"sexy", "nigeria", "has ganado", "un millón"
-	};
-
-	public static final Double		weakSpamThreshold	= 0.25d;
+	// ------------------------------------------------------------------
+	private static final long serialVersionUID = 1L;
+	// ------------------------------------------------------------------
+	
+	private static final String SPAM_REGEX = "((\\p{L}[\\p{L}'\\s]*)(,\\s*(\\p{L}[\\p{L}'\\s]*))*)?";
+	
+	@NotNull
+	protected String strongSpamTerms;
+	
+	@NotNull
+	protected String weakSpamTerms;
+	
+	@NotBlank
+	protected String acceptedCurrencies;
+	
+	@NotBlank
+	@Pattern(regexp = "^[A-Z]{3}$")
+	protected String systemCurrency;
+	
+	@Range(min=0,max=1)
+	protected double weakThreshold;
+	
+	@Range(min=0,max=1)
+	protected double strongThreshold;
+	
 }

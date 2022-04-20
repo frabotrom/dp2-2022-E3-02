@@ -28,6 +28,7 @@ master.menu.anonymous.favourite-link-jualeoval = 77928276K: León Valderrama, Ju
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
+master.menu.administrator.system-configuration = System Configuration
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
