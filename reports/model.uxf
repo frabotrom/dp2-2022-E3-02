@@ -661,4 +661,18 @@ containedIn</panel_attributes>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>368</y>
+      <w>560</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=1..*
+createdBy</panel_attributes>
+    <additional_attributes>670.0;10.0;670.0;390.0;10.0;390.0;10.0;430.0</additional_attributes>
+  </element>
 </diagram>

@@ -5,6 +5,5 @@
 <acme:list>
 	<acme:list-column code="any.item.list.label.name" path="name" width="10%"/>
 	<acme:list-column code="any.item.list.label.code" path="code" width="10%"/>
-	<acme:list-column code="any.item.list.label.inventor" path="inventor" width="10%"/>
 	<acme:list-column code="any.item.list.label.retailPrice" path="retailPrice" width="10%"/>
 </acme:list>

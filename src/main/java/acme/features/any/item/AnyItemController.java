@@ -13,7 +13,7 @@ import acme.framework.roles.Any;
 public class AnyItemController extends AbstractController<Any,Item> {
 
 	@Autowired
-	protected AnyComponentListService listAllService;
+	protected AnyComponentListService listAllComponentsService;
 	
 	@Autowired
 	protected AnyComponentShowService showService;
@@ -21,7 +21,7 @@ public class AnyItemController extends AbstractController<Any,Item> {
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("show", this.showService);
-		super.addCommand("list", this.listAllService);
+		super.addCommand("list-components","list", this.listAllComponentsService);
 
 	}
 }

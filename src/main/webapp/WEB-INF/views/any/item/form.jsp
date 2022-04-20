@@ -7,7 +7,6 @@
 	<acme:input-textbox code="any.item.list.label.name" path="name"/>
 	<acme:input-textbox code="any.item.list.label.code" path="code"/>
 	<acme:input-textbox code="any.item.list.label.technology" path="technology"/>
-	<acme:input-textbox code="any.item.list.label.inventor" path="inventor"/>
 	<acme:input-textbox code="any.item.list.label.description" path="description"/>
 	<acme:input-textbox code="any.item.list.label.link" path="link"/>
 	<acme:input-textbox code="any.item.list.label.retailPrice" path="retailPrice"/>
