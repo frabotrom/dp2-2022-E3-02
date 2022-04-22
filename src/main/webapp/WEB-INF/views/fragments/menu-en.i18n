@@ -44,13 +44,17 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+
 # master.menu.inventor ##########################################################
 master.menu.inventor = You're Inventor
 master.menu.inventor.patronage = Patronages
 master.menu.inventor.patronage.list = List
+master.menu.inventor.items = Items
+master.menu.inventor.list-components = My Components
 
 # master.menu.patron ##########################################################
 master.menu.patron = You're Patron
+
 
 # master.menu.user-account ####################################################
 
