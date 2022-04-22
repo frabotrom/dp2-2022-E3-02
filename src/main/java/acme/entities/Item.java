@@ -65,5 +65,6 @@ public class Item extends AbstractEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Inventor			inventor;
+	protected  Inventor 		inventor;
+
 }

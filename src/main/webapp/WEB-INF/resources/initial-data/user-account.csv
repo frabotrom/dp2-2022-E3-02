@@ -7,3 +7,4 @@ user-account-03,true,"UserIdentity{name: 'User3', surname: 'Userino3', email: 'u
 user-account-04,true,"UserIdentity{name: 'User4', surname: 'Userino4', email: 'user4@suckme.com'}",HIDDEN-PASSWORD,user4
 user-account-05,true,"UserIdentity{name: 'User5', surname: 'Userino5', email: 'user5@suckme.com'}",HIDDEN-PASSWORD,user5
 user-account-06,true,"UserIdentity{name: 'User6', surname: 'Userino6', email: 'user6@suckme.com'}",HIDDEN-PASSWORD,user6
+user-account-07,true,"UserIdentity{name: 'User7', surname: 'Userino7', email: 'user7@suckme.com'}",HIDDEN-PASSWORD,user7
