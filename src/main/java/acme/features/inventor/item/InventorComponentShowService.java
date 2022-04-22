@@ -21,7 +21,16 @@ public class InventorComponentShowService implements AbstractShowService<Invento
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
-		return true;
+		
+		boolean result;
+		int id;
+		Item item;
+
+		id = request.getModel().getInteger("id");
+		item = this.repository.findComponentById(id);
+		result = item != null && item.getInventor().getId() == request.getPrincipal().getActiveRoleId();
+
+		return result;
 	}
 
 	@Override

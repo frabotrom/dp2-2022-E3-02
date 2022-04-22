@@ -8,6 +8,6 @@
 	<acme:input-textbox code="inventor.item.list.label.code" path="code"/>
 	<acme:input-textbox code="inventor.item.list.label.technology" path="technology"/>
 	<acme:input-textbox code="inventor.item.list.label.description" path="description"/>
-	<acme:input-textbox code="inventor.item.list.label.link" path="link"/>
-	<acme:input-textbox code="inventor.item.list.label.retailPrice" path="retailPrice"/>
+	<acme:input-url code="inventor.item.list.label.link" path="link" placeholder="-----"/>
+	<acme:input-money code="inventor.item.list.label.retailPrice" path="retailPrice"/>
 </acme:form>
