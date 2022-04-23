@@ -55,6 +55,8 @@ master.menu.inventor.list-components = Mis Componentes
 
 # master.menu.patron ##########################################################
 master.menu.patron = Eres Patrocinador
+master.manu.patron.patronageReport= Patronage Report
+master.manu.patron.patronageReport.list= Lista Patronage Report
 
 
 

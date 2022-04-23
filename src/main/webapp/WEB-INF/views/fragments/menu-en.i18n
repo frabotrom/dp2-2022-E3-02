@@ -54,6 +54,8 @@ master.menu.inventor.list-components = My Components
 
 # master.menu.patron ##########################################################
 master.menu.patron = You're Patron
+master.manu.patron.patronageReport= Patronage Report
+master.manu.patron.patronageReport.list= List Patronage Report
 
 
 # master.menu.user-account ####################################################
