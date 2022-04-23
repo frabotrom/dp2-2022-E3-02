@@ -49,6 +49,8 @@ master.menu.consumer.favourite-link = Favourite link
 master.menu.inventor = You're Inventor
 master.menu.inventor.patronage = Patronages
 master.menu.inventor.patronage.list = List
+master.menu.inventor.toolkits = Toolkits
+master.menu.inventor.toolkits.list = ToolkitsList
 master.menu.inventor.items = Items
 master.menu.inventor.list-components = My Components
 

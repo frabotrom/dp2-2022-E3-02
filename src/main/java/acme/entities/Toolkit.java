@@ -4,7 +4,9 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -14,6 +16,7 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
+import acme.roles.Inventor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -116,6 +119,10 @@ public class Toolkit extends AbstractEntity{
 		return totalPriceMoney;
 	}
 	
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Inventor 				inventor;
 	// Implemantar el totalPrice en el Servicio. Hay que tener en cuenta de que hay que pasarle una lista de items que pertenezcan al toolkit 
 		
 }
