@@ -19,6 +19,7 @@ master.menu.sign-out = Sign out
 
 master.menu.anonymous = Anonymous
 master.menu.any.item.list-components = Components List
+master.menu.any.chirp.list = Chirps Recent List
 
 # master.menu.administrator ###################################################
 
@@ -37,11 +38,17 @@ master.menu.inventor.patronage = My Patronages
 master.menu.inventor.components = My Components
 master.menu.inventor.list-components = All (Visible) Components
 
+#master.menu.authenticated ####################################################
+
+master.menu.authenticated = Authenticated
+master.menu.autheticated.announcement.list = Recent Announcements
+
+# master.menu.consumer ########################################################
+
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patron
-master.menu.patron.list-components = All (Visible) Components
-master.menu.patron.list-patronage = List Patronages
+master.menu.patron.list-patronage = My Patronages
 
 # master.menu.user-account ####################################################
 

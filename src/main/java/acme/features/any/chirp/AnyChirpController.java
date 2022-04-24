@@ -1,24 +1,21 @@
-package acme.features.inventor.patronage;
+package acme.features.any.chirp;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.Patronage;
+import acme.entities.Chirp;
 import acme.framework.controllers.AbstractController;
-import acme.roles.Inventor;
+import acme.framework.roles.Any;
 
 @Controller
-public class InventorPatronageController extends AbstractController<Inventor, Patronage> {
+public class AnyChirpController extends AbstractController<Any, Chirp> {
 	
 	// Internal state ---------------------------------------------------------
 
 		@Autowired
-		protected InventorPatronageListService	listService;
-
-		@Autowired
-		protected InventorPatronageShowService	showService;
+		protected AnyChirpListService	listService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -26,7 +23,6 @@ public class InventorPatronageController extends AbstractController<Inventor, Pa
 		@PostConstruct
 		protected void initialise() {
 			super.addCommand("list", this.listService);
-			super.addCommand("show", this.showService);
 		}
-		
+
 }

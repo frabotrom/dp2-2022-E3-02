@@ -18,7 +18,8 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.any.item.list-components = Lista de componentes
+master.menu.any.item.list-components = Lista de Componentes
+master.menu.any.chirp.list = Lista de Chirps Recientes
 
 # master.menu.administrator ###################################################
 
@@ -37,11 +38,17 @@ master.menu.inventor.patronage = Mis Patrocinios
 master.menu.inventor.components = Mis Componentes
 master.menu.inventor.list-components = Todos los Componentes (Visibles)
 
+#master.menu.authenticated ####################################################
+
+master.menu.authenticated = Autentificado
+master.menu.autheticated.announcement.list = Anuncios Recientes
+
+# master.menu.consumer ##########################################################
+
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patrocinador
-master.menu.patron.list-components = Todos los Componentes (Visibles)
-master.menu.patron.list-patronage = Mis patrocinios
+master.menu.patron.list-patronage = Mis Patrocinios
 
 # master.menu.user-account ####################################################
 
