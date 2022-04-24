@@ -18,6 +18,10 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
+		<acme:menu-option code="master.menu.any">
+			<acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list/"/>
+		</acme:menu-option>
+	
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-fauvazrod" action="https://elgoog.im/breakout/"/>
