@@ -18,12 +18,7 @@ master.menu.sign-out = Sign out
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anonymous
-master.menu.any.item.list-components = List all components
-master.menu.anonymous.favourite-link-frabotrom = 29618084H: Botello Romero, Francisco
-master.menu.anonymous.favourite-link-fauvazrod = 77867876L: Vázquez Rodríguez, Fausto
-master.menu.anonymous.favourite-link-serrivroa = 25353120J: Rivas Roa, Sergio
-master.menu.anonymous.favourite-link-pabquide = 54222559J: Quindos de la Riva, Pablo
-master.menu.anonymous.favourite-link-jualeoval = 77928276K: León Valderrama, Juan José
+master.menu.any.item.list-components = Components List
 
 # master.menu.administrator ###################################################
 
@@ -34,25 +29,17 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 
-# master.menu.inventor ########################################################
+# master.menu.inventor ##########################################################
 
 master.menu.inventor = Inventor
+master.menu.inventor.patronage = My Patronages
+master.menu.inventor.components = My Components
+master.menu.inventor.list-components = All (Visible) Components
 
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patron
-
-
-# master.menu.inventor ##########################################################
-master.menu.inventor = You're Inventor
-master.menu.inventor.patronage = Patronages
-master.menu.inventor.patronage.list = List
-master.menu.inventor.items = Items
-master.menu.inventor.list-components = My Components
-
-# master.menu.patron ##########################################################
-master.menu.patron = You're Patron
-
+master.menu.patron.list-components = All (Visible) Components
 
 # master.menu.user-account ####################################################
 

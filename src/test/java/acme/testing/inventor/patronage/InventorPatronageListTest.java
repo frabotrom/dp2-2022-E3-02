@@ -17,7 +17,7 @@ public class InventorPatronageListTest extends TestHarness {
 		
 		super.signIn("User1", "HIDDEN-PASSWORD");
 		
-		super.clickOnMenu("Patronages", "List");
+		super.clickOnMenu("Inventor", "My Patronages");
 		super.checkListingExists();
 		super.sortListing(1, "asc");
 		
