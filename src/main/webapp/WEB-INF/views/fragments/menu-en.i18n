@@ -48,6 +48,7 @@ master.menu.autheticated.announcement.list = Recent Announcements
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patron
+master.menu.patron.list-patronage = My Patronages
 
 # master.menu.user-account ####################################################
 
