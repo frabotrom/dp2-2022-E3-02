@@ -18,6 +18,11 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
+	
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.autheticated.announcement.list" action="/authenticated/announcement/list/"/>
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.any.item.list-components" action="/any/item/list-components"/>
 		</acme:menu-option>
@@ -41,6 +46,7 @@
 		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.list-components" action="/any/item/list-components"/>	
+			<acme:menu-suboption code="master.menu.patron.list-patronage" action="/patron/patronage/list"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

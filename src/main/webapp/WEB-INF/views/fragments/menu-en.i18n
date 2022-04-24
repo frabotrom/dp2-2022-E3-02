@@ -41,6 +41,7 @@ master.menu.inventor.list-components = All (Visible) Components
 
 master.menu.patron = Patron
 master.menu.patron.list-components = All (Visible) Components
+master.menu.patron.list-patronage = List Patronages
 
 # master.menu.user-account ####################################################
 
