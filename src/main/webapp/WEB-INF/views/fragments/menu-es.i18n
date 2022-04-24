@@ -37,6 +37,13 @@ master.menu.inventor.patronage = Mis Patrocinios
 master.menu.inventor.components = Mis Componentes
 master.menu.inventor.list-components = Todos los Componentes (Visibles)
 
+#master.menu.authenticated ####################################################
+
+master.menu.authenticated = Autenticado
+master.menu.autheticated.announcement.list = Ultimos anuncios
+
+# master.menu.consumer ##########################################################
+
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patrocinador
