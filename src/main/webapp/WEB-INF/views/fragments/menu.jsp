@@ -19,6 +19,7 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.anonymous.list-toolkits" action="/any/toolkit/list-toolkits"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-fauvazrod" action="https://elgoog.im/breakout/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-frabotrom" action="https://www.reddit.com/r/moviescirclejerk"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-serrivroa" action="https://letmegooglethat.com/?q=waste+of+time"/>
