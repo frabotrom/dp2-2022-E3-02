@@ -48,7 +48,14 @@ public class InventorComponentListService implements AbstractListService<Invento
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
+		request.unbind(entity, model, "name", "code", "retailPrice");
+		
+		if(entity.isVisible()) {
+			model.setAttribute("visible", "Visible");
+		}
+		else {
+			model.setAttribute("visible", "Not Visible");
+		}
 	}
 
 }

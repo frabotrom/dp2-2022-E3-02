@@ -1,10 +1,8 @@
 package acme.features.any.item;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
@@ -31,19 +29,7 @@ public class AnyComponentListService implements AbstractListService<Any,Item> {
 		assert request != null;
 		
 		final Collection<Item> result;
-		final Collection<String> authorities = new ArrayList<String>();
-		for(final GrantedAuthority authority: request.getPrincipal().getAuthorities()) {
-			authorities.add(authority.toString());
-		}
-		
-		if(authorities.contains("AUTH_Inventor")||authorities.contains("AUTH_Patron")) {
-			result = this.repository.findAllComponents();
-		}
-		
-		else {
-			// Para un usuario anónimo
-			result = this.repository.findAllVisibleComponents();
-		}
+		result = this.repository.findAllVisibleComponents();
 		
 		return result;
 	}
@@ -53,14 +39,6 @@ public class AnyComponentListService implements AbstractListService<Any,Item> {
 		assert entity != null;
 		assert request != null;
 		assert model != null;
-		request.unbind(entity,model,"name","code","retailPrice");
-		
-		if(entity.isVisible()) {
-			model.setAttribute("visible", "Visible");
-		}
-		else {
-			model.setAttribute("visible", "Not Visible");
-		}
-		
+		request.unbind(entity,model,"name","code","retailPrice");		
 	}
 }
