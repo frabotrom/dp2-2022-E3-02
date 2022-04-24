@@ -17,4 +17,7 @@ public interface AnyItemRepository extends AbstractRepository {
 	
 	@Query("select c from Item c where c.type = 1")
 	Collection<Item> findAllComponents();
+	
+	@Query("select c from Item c where c.type = 1 and c.visible = 1")
+	Collection<Item> findAllVisibleComponents();
 }

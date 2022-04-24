@@ -18,7 +18,6 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.any.item.list-components = Lista todos los componentes
 master.menu.anonymous.favourite-link-frabotrom = 29618084H: Botello Romero, Francisco
 master.menu.anonymous.favourite-link-fauvazrod = 77867876L: Vázquez Rodríguez, Fausto
@@ -36,15 +35,13 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 
-# master.menu.provider ########################################################
+# master.menu.inventor ########################################################
 
-master.menu.provider = Proveedor
-master.menu.provider.favourite-link = Enlace favorito
+master.menu.inventor = Inventor
 
-# master.menu.consumer ##########################################################
+# master.menu.patron ##########################################################
 
-master.menu.consumer = Consumidor
-master.menu.consumer.favourite-link = Enlace favorito
+master.menu.patron = Patrocinador
 
 # master.menu.user-account ####################################################
 
