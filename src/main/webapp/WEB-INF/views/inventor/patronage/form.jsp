@@ -27,11 +27,11 @@
 	<acme:input-moment code="inventor.patronage.form.label.creationDate" path="creationDate"/>
 	<acme:input-moment code="inventor.patronage.form.label.initialDate" path="initialDate"/>
 	<acme:input-moment code="inventor.patronage.form.label.finalDate" path="finalDate"/>	
-	<acme:input-url code="inventor.patronage.form.label.optionalLink" path="optionalLink" placeholder="-----"/>	
+	<acme:input-url code="inventor.patronage.form.label.optionalLink" path="optionalLink"/>	
 	<acme:input-integer code="inventor.patronage.form.label.period" path="period"/>
 	
-	
 	<%-- Patron Profile--%>
+	<br><br>
 	<acme:input-textbox code="inventor.patronage.form.label.patronName" path="patronName"/>
 	<acme:input-textbox code="inventor.patronage.form.label.patronEmail" path="patronEmail"/>
 	<acme:input-textbox code="inventor.patronage.form.label.patronCompany" path="patronCompany"/>

@@ -54,19 +54,19 @@ public class Toolkit extends AbstractEntity{
 	
 	@NotNull
 	@Transient
-	public Money totalPrice(final Collection<Item> lItem) {
+	public Money totalPrice(final Collection<Amount> lAmount, final SystemConfiguration systemConfiguration) {
 		
-		Double finalMoneyAmount = 0.;														// Precio del toolkit
-		final String finalMoneyCurrency = SystemConfiguration.systemCurrency;				// Moneda por defecto del sistema
+		Double finalMoneyAmount = 0.;																		// Precio del toolkit
+		final String finalMoneyCurrency = systemConfiguration.getSystemCurrency();							// Moneda por defecto del sistema
 		
-		for(final Item item: lItem) {
+		for(final Amount amount: lAmount) {
 			
-			if(item.getAmount().getToolkit().getId()==this.id) {
+			if(amount.getToolkit().getId()==this.id) {
 				
-				final Integer actualAmount = item.getAmount().getTotal();						// Cantidad de Items
-				final String actualMoneyCurrency = item.getRetailPrice().getCurrency();			// Moneda del precio del item		
-				final Double actualMoneyAmount = item.getRetailPrice().getAmount();				// Precio del item	
-				Double actualMoneyAmountConverted = null;										// Precio del item convertido (a la de por defecto)
+				final Integer actualAmount = amount.getTotal();												// Cantidad de Items
+				final String actualMoneyCurrency = amount.getItem().getRetailPrice().getCurrency();			// Moneda del precio del item		
+				final Double actualMoneyAmount = amount.getItem().getRetailPrice().getAmount();				// Precio del item	
+				Double actualMoneyAmountConverted = null;													// Precio del item convertido (a la de por defecto)
 								
 				if(finalMoneyCurrency.equals(actualMoneyCurrency)) {
 					actualMoneyAmountConverted = actualMoneyAmount;
@@ -116,6 +116,7 @@ public class Toolkit extends AbstractEntity{
 		return totalPriceMoney;
 	}
 	
-	// Implemantar el totalPrice en el Servicio. Hay que tener en cuenta de que hay que pasarle una lista de items que pertenezcan al toolkit 
+	// Implemantar el totalPrice en el Servicio. Hay que tener en cuenta de que hay que pasarle una lista de items que pertenezcan al toolkit
+	// Añadir la api que se encuentra en los starter projects
 		
 }
