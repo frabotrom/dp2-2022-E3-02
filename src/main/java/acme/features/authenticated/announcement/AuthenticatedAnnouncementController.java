@@ -12,21 +12,21 @@ import acme.framework.roles.Authenticated;
 @Controller
 public class AuthenticatedAnnouncementController extends AbstractController<Authenticated, Announcement>{
 	
-	//Internal state
+	//Internal state ---------------------------------------------------------
 	
-	@Autowired
-	protected AuthenticatedAnnouncementShowService showService;
+		@Autowired
+		protected AuthenticatedAnnouncementShowService showService;
 	
-	@Autowired
-	protected AuthenticatedAnnouncementListRecentService listRecentService;
+		@Autowired
+		protected AuthenticatedAnnouncementListRecentService listRecentService;
 	
-	//Constructors
+	//Constructors ---------------------------------------------------------
 	
-	@PostConstruct
-	protected void initialise() {
-		super.addCommand("show", this.showService);
-		super.addCommand("list", this.listRecentService);
-		
-	}
+		@PostConstruct
+		protected void initialise() {
+			super.addCommand("show", this.showService);
+			super.addCommand("list", this.listRecentService);
+			
+		}
 
 }

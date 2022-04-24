@@ -41,14 +41,13 @@ master.menu.inventor.list-components = All (Visible) Components
 #master.menu.authenticated ####################################################
 
 master.menu.authenticated = Authenticated
-master.menu.autheticated.announcement.list = Latest Announcements
+master.menu.autheticated.announcement.list = Recent Announcements
 
 # master.menu.consumer ########################################################
 
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patron
-master.menu.patron.list-components = All (Visible) Components
 
 # master.menu.user-account ####################################################
 
