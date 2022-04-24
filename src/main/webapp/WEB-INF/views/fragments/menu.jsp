@@ -19,6 +19,7 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.any.item.list-components" action="/any/item/list-components"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -29,6 +30,16 @@
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.patronage" action="/inventor/patronage/list"/>
+			<acme:menu-suboption code="master.menu.inventor.components" action="/inventor/item/list"/>
+			<acme:menu-suboption code="master.menu.inventor.list-components" action="/any/item/list-components"/>	
+		</acme:menu-option>	
+		
+		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.list-components" action="/any/item/list-components"/>	
 		</acme:menu-option>
 	</acme:menu-left>
 
