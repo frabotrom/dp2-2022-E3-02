@@ -17,7 +17,7 @@ public class AnyChirpListTest extends TestHarness{
 		
 		super.clickOnMenu("Anonymous","Chirps Recent List");
 		super.checkListingExists();
-		super.sortListing(1, "asc");
+		super.sortListing(0, "asc");
 		
 		super.checkColumnHasValue(recordIndex, 0, title);
 		super.checkColumnHasValue(recordIndex, 1, author);

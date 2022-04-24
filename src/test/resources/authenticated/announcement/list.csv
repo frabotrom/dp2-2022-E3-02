@@ -1,7 +1,7 @@
-recordIndex,creationDate,title,body,critical,moreInfo
-0, "2022/04/10 12:00", "titulo ejemplo", "body ejemplo", "false", "https://ev.us.es/"
-1, "2022/04/11 12:00", "titulo ejemplo1", "body ejemplo1", "false", "https://ev.us.es/"
-2, "2022/04/12 12:00", "titulo ejemplo2", "body ejemplo2", "false", "https://ev.us.es/"
-3, "2022/04/13 12:00", "titulo ejemplo3", "body ejemplo3", "false", "https://ev.us.es/"
-4, "2022/04/14 12:00", "titulo ejemplo4", "body ejemplo4", "false", "https://ev.us.es/"
-5, "2022/04/15 12:00", "titulo ejemplo5", "body ejemplo5", "false", "https://ev.us.es/"
+recordIndex,title,body,creationDate,critical,moreInfo
+0, "titulo ejemplo", "body ejemplo", "2022/04/10 12:00", "false", "https://ev.us.es/"
+1, "titulo ejemplo1", "body ejemplo1", "2022/04/11 12:00", "false", "https://ev.us.es/"
+2, "titulo ejemplo2", "body ejemplo2", "2022/04/12 12:00", "false", "https://ev.us.es/"
+3, "titulo ejemplo3", "body ejemplo3", "2022/04/13 12:00", "false", "https://ev.us.es/"
+4, "titulo ejemplo4", "body ejemplo4", "2022/04/14 12:00", "false", "https://ev.us.es/"
+5, "titulo ejemplo5", "body ejemplo5", "2022/04/15 12:00", "false", "https://ev.us.es/"
