@@ -34,15 +34,6 @@ public class InventorComponentShowService implements AbstractShowService<Invento
 	}
 
 	@Override
-	public void unbind(final Request<Item> request, final Item entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
-
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type");
-	}
-
-	@Override
 	public Item findOne(final Request<Item> request) {
 		assert request != null;
 
@@ -53,6 +44,16 @@ public class InventorComponentShowService implements AbstractShowService<Invento
 		result = this.repository.findComponentById(id);
 
 		return result;
+	}
+
+
+	@Override
+	public void unbind(final Request<Item> request, final Item entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type", "visible");
 	}
 
 }
