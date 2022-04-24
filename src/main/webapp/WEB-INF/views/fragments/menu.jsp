@@ -38,11 +38,27 @@
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.any.item.list-components" action="/any/item/list-components"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.inventor.patronage" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.patronage.list" action="/inventor/patronage/list"/>
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.inventor.items" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.list-components" action="/inventor/item/list"/>		
+    	</acme:menu-option>
+		
+
 	</acme:menu-left>
 
 	<acme:menu-right>
 		<acme:menu-option code="master.menu.sign-up" action="/anonymous/user-account/create" access="isAnonymous()"/>
 		<acme:menu-option code="master.menu.sign-in" action="/master/sign-in" access="isAnonymous()"/>
+		
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')" action="/authenticated/user-account/update">
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')" action="/authenticated/user-account/update">
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>

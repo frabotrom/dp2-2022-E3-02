@@ -43,6 +43,20 @@ master.menu.inventor = Inventor
 
 master.menu.patron = Patrocinador
 
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Eres Inventor
+master.menu.inventor.patronage = Patrocinios
+master.menu.inventor.patronage.list = Lista
+master.menu.inventor.items = Objetos
+master.menu.inventor.list-components = Mis Componentes
+
+# master.menu.patron ##########################################################
+master.menu.patron = Eres Patrocinador
+
+
+
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta

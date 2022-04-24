@@ -42,6 +42,18 @@ master.menu.inventor = Inventor
 
 master.menu.patron = Patron
 
+
+# master.menu.inventor ##########################################################
+master.menu.inventor = You're Inventor
+master.menu.inventor.patronage = Patronages
+master.menu.inventor.patronage.list = List
+master.menu.inventor.items = Items
+master.menu.inventor.list-components = My Components
+
+# master.menu.patron ##########################################################
+master.menu.patron = You're Patron
+
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
