@@ -20,6 +20,8 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.any.item.list-components" action="/any/item/list-components"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -36,11 +38,15 @@
 			<acme:menu-suboption code="master.menu.inventor.patronage" action="/inventor/patronage/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.inventor.components" action="/inventor/item/list"/>
-			<acme:menu-suboption code="master.menu.inventor.list-components" action="/any/item/list-components"/>	
+			<acme:menu-suboption code="master.menu.inventor.list-components" action="/any/item/list-components"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>	
 		</acme:menu-option>	
 		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
-			<acme:menu-suboption code="master.menu.patron.list-components" action="/any/item/list-components"/>	
+			<acme:menu-suboption code="master.menu.patron.list-components" action="/any/item/list-components"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>	
 		</acme:menu-option>
 	</acme:menu-left>
 

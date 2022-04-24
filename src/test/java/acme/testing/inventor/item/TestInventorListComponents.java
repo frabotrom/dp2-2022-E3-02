@@ -35,6 +35,8 @@ public class TestInventorListComponents extends TestHarness{
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("link", link);
 		super.checkInputBoxHasValue("visible", visible);
+		
+		super.signOut();
 
 	}
 }
