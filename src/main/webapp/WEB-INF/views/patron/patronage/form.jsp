@@ -17,7 +17,9 @@
 	<acme:input-moment code="patron.patronage.form.label.finalDate" path="finalDate"/>
 	<acme:input-url code="patron.patronage.form.label.optionalLink" path="optionalLink"/>
 	
+	<%-- Inventor Profile--%>
 	<hr>
+    <br>
     <h3><acme:message code="patron.patronage.form.label.title"/></h3>
     <acme:input-textbox code="patron.patronage.form.label.name" path="inventorName"/>
     <acme:input-textbox code="patron.patronage.form.label.surname" path="inventorSurname"/>

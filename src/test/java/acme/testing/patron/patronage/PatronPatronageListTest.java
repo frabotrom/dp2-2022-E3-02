@@ -17,7 +17,7 @@ public class PatronPatronageListTest extends TestHarness {
 		
 		super.signIn("user2", "HIDDEN-PASSWORD");
 		
-		super.clickOnMenu("Patron","List Patronages");
+		super.clickOnMenu("Patron","My Patronages");
 		super.checkListingExists();
 		super.sortListing(1, "asc"); 
 		

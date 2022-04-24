@@ -31,7 +31,9 @@
 	<acme:input-integer code="inventor.patronage.form.label.period" path="period"/>
 	
 	<%-- Patron Profile--%>
-	<br><br>
+	<hr>
+    <br>
+    <h3><acme:message code="inventor.patronage.form.label.title"/></h3>
 	<acme:input-textbox code="inventor.patronage.form.label.patronName" path="patronName"/>
 	<acme:input-textbox code="inventor.patronage.form.label.patronEmail" path="patronEmail"/>
 	<acme:input-textbox code="inventor.patronage.form.label.patronCompany" path="patronCompany"/>

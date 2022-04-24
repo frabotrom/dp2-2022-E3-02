@@ -18,18 +18,8 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
-	
-		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.autheticated.announcement.list" action="/authenticated/announcement/list/"/>
-		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.any.item.list-components" action="/any/item/list-components"/>
-			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
-		</acme:menu-option>
-	
-		<acme:menu-option code="master.menu.anonymous" access="hasRole('Any')">
+		<acme:menu-option code="master.menu.anonymous">
 			<acme:menu-suboption code="master.menu.any.item.list-components" action="/any/item/list-components"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
