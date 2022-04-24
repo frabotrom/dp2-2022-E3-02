@@ -40,6 +40,11 @@ master.menu.administrator.shut-down = Parar el sistema
 master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
 
+#master.menu.authenticated ####################################################
+
+master.menu.authenticated = Autenticado
+master.menu.autheticated.announcement.list = Ultimos anuncios
+
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumidor
