@@ -17,7 +17,7 @@ public class AnyUserAccountListTest extends TestHarness{
 		
 		super.clickOnMenu("Any","User accounts list");
 		super.checkListingExists();
-		super.sortListing(1, "asc");
+		super.sortListing(0, "asc");
 		
 		super.checkColumnHasValue(recordIndex, 0, username);
 		super.checkColumnHasValue(recordIndex, 1, roles);
