@@ -1,2 +1,3 @@
 key,key:inventor,key:patron,status,code,legalStuff,budget,creationDate,initialDate,finalDate,optionalLink
-patronage-001,inventor-001,patron-001,PROPOSED,"PAT-001-B",Buleria buleria,EUR 456700.00,2022/01/20 12:00,2022/01/20 12:00,2022/03/01 12:00,"https://www.twitch.tv/alexelcapo"
+patronage-001,inventor-002,patron-001,PROPOSED,"PAT-001-A",Buleria buleria,EUR 456700.00,2022/01/20 12:00,2022/01/20 12:00,2022/03/01 12:00,"https://www.twitch.tv/alexelcapo"
+patronage-002,inventor-003,patron-002,PROPOSED,"PAT-001-B",Complicated,EUR 12345.00,2022/03/14 12:00,2022/03/15 12:00,2022/04/15 18:00,null

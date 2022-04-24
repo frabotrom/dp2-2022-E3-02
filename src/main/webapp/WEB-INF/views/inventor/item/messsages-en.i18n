@@ -1,0 +1,8 @@
+inventor.item.list.label.name = Name
+inventor.item.list.label.code = Code
+inventor.item.list.label.technology = Technology
+inventor.item.list.label.inventor = Inventor
+inventor.item.list.label.description = Description
+inventor.item.list.label.link = Link
+inventor.item.list.label.retailPrice = Price
+inventor.item.list.label.visible = Visibility
