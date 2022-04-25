@@ -6,3 +6,4 @@ patronage-004,inventor-001,patron-003,PROPOSED,"PAT-001-D",Complicated,EUR 123.0
 patronage-005,inventor-001,patron-002,PROPOSED,"PAT-001-E",Complicated,EUR 123.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,null
 patronage-006,inventor-001,patron-002,PROPOSED,"PAT-001-F",Complicated,EUR 123.00,2022/03/16 12:00,2022/03/17  12:00,2022/04/17 18:00,null
 patronage-007,inventor-002,patron-002,PROPOSED,"PAT-001-G",Complicated,EUR 123.00,2022/03/17 12:00,2022/03/18  12:00,2022/04/18 18:00,null
+patronage-008,inventor-001,patron-002,DENIED,"PAT-001-H",Complicated,EUR 123.00,2022/03/16 12:00,2022/03/17  12:00,2022/04/17 18:00,"https://www.twitch.tv/alexelcapo"
