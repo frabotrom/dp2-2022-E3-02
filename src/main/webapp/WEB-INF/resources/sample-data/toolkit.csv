@@ -1,2 +1,10 @@
 key,code,title,description,asemblyNotes,info,draftMode
-toolkit-001,"TOK-001-M","Mickey-herramientas deluxe","El Mickey ha traido sus herramientas","Cuidado que como le jodas una herramienta te parte las piernas","https://www.youtube.com/watch?v=lC2zy41B1GM",true
+toolkit-001,"TOK-001-M","Toolkit de ejemplo 1","Descripcion de ejemplo","Fichero con instrucciones","https://www.ejemplo.com/",false
+toolkit-002,"TOK-002-M","Toolkit de ejemplo 2","Descripcion de ejemplo","Fichero con instrucciones","https://www.ejemplo.com/",false
+toolkit-003,"TOK-003-M","Toolkit de ejemplo 3","Descripcion de ejemplo","Fichero con instrucciones","https://www.ejemplo.com/",false
+toolkit-004,"TOK-004-M","Toolkit de ejemplo 4","Descripcion de ejemplo","Fichero con instrucciones","https://www.ejemplo.com/",false
+toolkit-005,"TOK-005-M","Toolkit de ejemplo 5","Descripcion de ejemplo","Fichero con instrucciones","https://www.ejemplo.com/",false
+toolkit-006,"TOK-006-M","Toolkit de ejemplo 6","Descripcion de ejemplo","Fichero con instrucciones","https://www.ejemplo.com/",false
+toolkit-007,"TOK-007-M","Toolkit de ejemplo 7","Descripcion de ejemplo","Fichero con instrucciones","https://www.ejemplo.com/",false
+toolkit-008,"TOK-008-M","Toolkit de ejemplo 8","Descripcion de ejemplo","Fichero con instrucciones","https://www.ejemplo.com/",false
+toolkit-009,"TOK-009-M","Toolkit de ejemplo 9","Este toolkit no deberia aparecer","Fichero con instrucciones","https://www.youtube.com/",true

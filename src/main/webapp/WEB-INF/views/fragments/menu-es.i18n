@@ -18,7 +18,9 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.any.item.list-components = Lista de Componentes
+master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.anonymous.list-toolkits = Toolkits
+master.menu.any.item.list-components = Lista de componentes
 master.menu.any.chirp.list = Lista de Chirps Recientes
 
 # master.menu.administrator ###################################################
