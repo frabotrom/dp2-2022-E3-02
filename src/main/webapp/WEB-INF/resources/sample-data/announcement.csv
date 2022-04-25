@@ -1,9 +1,8 @@
 key,creationDate,title,body,critical,moreInfo
-announcement-001,"2022/03/01 12:00","Querida Conchi capitulo 4 IS OUT","Gente,verse el video","true","https://www.youtube.com/c/Rafillo"
-announcement-002,"2022/03/01 12:01","Nah que el anuncio de antes era coña jaja","guac","false","https://ev.us.es/"
-announcement-003, "2022/04/10 12:00", "titulo ejemplo", "body ejemplo", "false", "https://ev.us.es/"
-announcement-004, "2022/04/11 12:00", "titulo ejemplo1", "body ejemplo1", "false", "https://ev.us.es/"
-announcement-005, "2022/04/12 12:00", "titulo ejemplo2", "body ejemplo2", "false", "https://ev.us.es/"
-announcement-006, "2022/04/13 12:00", "titulo ejemplo3", "body ejemplo3", "false", "https://ev.us.es/"
-announcement-007, "2022/04/14 12:00", "titulo ejemplo4", "body ejemplo4", "false", "https://ev.us.es/"
-announcement-008, "2022/04/15 12:00", "titulo ejemplo5", "body ejemplo5", "false", "https://ev.us.es/"
+announcement-001,"2022/04/01 12:00","Title1","Body1","true","https://ev.us.es/"
+announcement-002,"2022/04/01 12:01","Title2","Body2","false",null
+announcement-003,"2022/04/24 18:00","Title3","Body3","false","https://ev.us.es/"
+announcement-004,"2022/04/07 12:00","Title4","Body4","true","https://ev.us.es/"
+announcement-005,"2022/04/08 17:00","Title5","Body5","true",null
+announcement-006,"2022/04/15 12:00","Title6","Body6","false",null
+announcement-007,"2022/02/21 12:00","Title7","Body7","false","https://ev.us.es/"

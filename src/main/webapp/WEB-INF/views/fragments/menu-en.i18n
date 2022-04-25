@@ -44,8 +44,6 @@ master.menu.authenticated = Authenticated
 master.menu.autheticated.announcement.list = Recent Announcements
 master.menu.autheticated.system-configuration = System Configuration
 
-# master.menu.consumer ########################################################
-
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patron
@@ -64,5 +62,5 @@ master.menu.user-account.become-consumer = Become a consumer
 
 #master.menu.any ##############################################################
 
-master.menu.any.user-account.list = User accounts list
+master.menu.any.user-account.list = User Accounts List
 master.menu.any = Any
