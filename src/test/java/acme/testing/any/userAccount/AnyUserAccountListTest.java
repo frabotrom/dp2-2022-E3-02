@@ -15,7 +15,7 @@ public class AnyUserAccountListTest extends TestHarness{
 		final String surname,final String email ,final String password, final String username, 
 		final String roles, final String rolesShow) {
 		
-		super.clickOnMenu("Any","User accounts list");
+		super.clickOnMenu("Anonymous","User accounts list");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		
@@ -26,9 +26,9 @@ public class AnyUserAccountListTest extends TestHarness{
 		
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.checkInputBoxHasValue("identity.name", name);
-		super.checkInputBoxHasValue("identity.surname", surname);
-		super.checkInputBoxHasValue("identity.email", email);
+		super.checkInputBoxHasValue("name", name);
+		super.checkInputBoxHasValue("surname", surname);
+		super.checkInputBoxHasValue("email", email);
 		super.checkInputBoxHasValue("role", rolesShow);
 		
 

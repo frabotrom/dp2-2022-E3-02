@@ -1,7 +1,6 @@
-recordIndex,identity,username,roles,rolesShow
-0,"UserIdentity{name: 'User1', surname: 'Userino1', email: 'user1@suckme.com'}",user1,"Authenticated, Inventor","Authenticated, Inventor"
-1,"UserIdentity{name: 'User2', surname: 'Userino2', email: 'user2@suckme.com'}",user2,"Authenticated, Patron","Authenticated, Patron"
-2,"UserIdentity{name: 'User3', surname: 'Userino3', email: 'user3@suckme.com'}",user3,"Authenticated, Patron","Authenticated, Patron"
-3,"UserIdentity{name: 'User4', surname: 'Userino4', email: 'user4@suckme.com'}",user4,"Authenticated, Consumer","Authenticated, Consumer"
-4,"UserIdentity{name: 'User5', surname: 'Userino5', email: 'user5@suckme.com'}",user5,"Authenticated","Authenticated"
-5,"UserIdentity{name: 'User6', surname: 'Userino6', email: 'user6@suckme.com'}",user6,"Authenticated","Authenticated"
+recordIndex,enabled,name,surname,email,password,username,roles,rolesShow
+0,true,User1,Userino1,user1@suckme.com,HIDDEN-PASSWORD,user1,"Authenticated, Inventor","Inventor, Authenticated"
+1,true,User2,Userino2,user2@suckme.com,HIDDEN-PASSWORD,user2,"Authenticated, Patron","Patron, Authenticated"
+2,true,User3,Userino3,user3@suckme.com,HIDDEN-PASSWORD,user3,"Authenticated, Patron","Patron, Authenticated"
+3,true,User4,Userino4,user4@suckme.com,HIDDEN-PASSWORD,user4,"Authenticated, Consumer","Consumer, Authenticated"
+4,true,User5,Userino5,user5@suckme.com,HIDDEN-PASSWORD,user5,"Authenticated","Authenticated"

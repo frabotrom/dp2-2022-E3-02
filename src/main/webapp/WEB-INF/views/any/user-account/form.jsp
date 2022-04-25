@@ -4,8 +4,8 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="any.user-account.form.label.name" path="identity.name"/>
-	<acme:input-textbox code="any.user-account.form.label.surname" path="identity.surname"/>
-	<acme:input-textbox code="any.user-account.form.label.email" path="identity.email"/>
+	<acme:input-textbox code="any.user-account.form.label.name" path="name"/>
+	<acme:input-textbox code="any.user-account.form.label.surname" path="surname"/>
+	<acme:input-textbox code="any.user-account.form.label.email" path="email"/>
 	<acme:input-textbox code="any.user-account.form.label.role" path="role"/>
 </acme:form>
