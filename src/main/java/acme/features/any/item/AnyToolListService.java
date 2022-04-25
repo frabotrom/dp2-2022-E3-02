@@ -1,4 +1,3 @@
-
 package acme.features.any.item;
 
 import java.util.ArrayList;
@@ -30,7 +29,6 @@ public class AnyToolListService implements AbstractListService<Any, Item> {
 	@Override
 	public Collection<Item> findMany(final Request<Item> request) {
 		assert request != null;
-		
 		final Collection<Item> result;
 		final Collection<String> authorities = new ArrayList<String>();
 		for(final GrantedAuthority authority: request.getPrincipal().getAuthorities()) {
@@ -47,7 +45,7 @@ public class AnyToolListService implements AbstractListService<Any, Item> {
 		
 		return result;
 	}
-	
+  
 	@Override
 	public void unbind(final Request<Item> request, final Item entity, final Model model) {
 		assert entity != null;

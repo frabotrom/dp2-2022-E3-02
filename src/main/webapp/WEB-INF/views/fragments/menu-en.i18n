@@ -20,30 +20,39 @@ master.menu.sign-out = Sign out
 master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
 master.menu.any.item.Tool.list=List all tools
-master.menu.anonymous.favourite-link-frabotrom = 29618084H: Botello Romero, Francisco
-master.menu.anonymous.favourite-link-fauvazrod = 77867876L: Vázquez Rodríguez, Fausto
-master.menu.anonymous.favourite-link-serrivroa = 25353120J: Rivas Roa, Sergio
-master.menu.anonymous.favourite-link-pabquide = 54222559J: Quindos de la Riva, Pablo
-master.menu.anonymous.favourite-link-jualeoval = 77928276K: León Valderrama, Juan José
+master.menu.anonymous.list-toolkits = Toolkits
+master.menu.any.item.list-components = Components List
+master.menu.any.chirp.list = Chirps Recent List
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
+master.menu.administrator.system-configuration = System Configuration
 master.menu.administrator.dashboard = Dashboard
-master.menu.administrator.user-accounts = User accounts
-master.menu.administrator.populate-initial = Populate DB (initial)
-master.menu.administrator.populate-sample = Populate DB (samples)
-master.menu.administrator.shut-down = Shut down
+master.menu.administrator.user-accounts = User Accounts
+master.menu.administrator.populate-initial = Populate DB (Initial)
+master.menu.administrator.populate-sample = Populate DB (Samples)
+master.menu.administrator.shut-down = Shut Down
 
-# master.menu.provider ########################################################
+# master.menu.inventor ##########################################################
 
-master.menu.provider = Provider
-master.menu.provider.favourite-link = Favourite link
+master.menu.inventor = Inventor
+master.menu.inventor.patronage = My Patronages
+master.menu.inventor.components = My Components
 
-# master.menu.consumer ##########################################################
+#master.menu.authenticated ####################################################
 
-master.menu.consumer = Consumer
-master.menu.consumer.favourite-link = Favourite link
+master.menu.authenticated = Authenticated
+master.menu.autheticated.announcement.list = Recent Announcements
+master.menu.autheticated.system-configuration = System Configuration
+
+# master.menu.consumer ########################################################
+
+# master.menu.patron ##########################################################
+
+master.menu.patron = Patron
+master.menu.patron.list-patronage = My Patronages
+master.menu.patron.dashboard = My Dashboard
 
 # master.menu.inventor ##########################################################
 master.menu.inventor = You're Inventor
@@ -53,8 +62,14 @@ master.menu.inventor.list-tools = My Tools
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
+
 master.menu.user-account.general-data = General data
 master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+#master.menu.any ##############################################################
+
+master.menu.any.user-account.list = User accounts list
+master.menu.any = Any

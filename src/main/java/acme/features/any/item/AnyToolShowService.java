@@ -1,4 +1,3 @@
-
 package acme.features.any.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,4 +39,5 @@ public class AnyToolShowService implements AbstractShowService<Any, Item>{
 		assert model != null;
 		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice","visible");
 	}
+  
 }

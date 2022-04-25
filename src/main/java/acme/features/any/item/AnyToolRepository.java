@@ -20,4 +20,8 @@ public interface AnyToolRepository extends AbstractRepository{
 
 	@Query("select t from Item t where t.type = 0 and t.visible = 1")
 	Collection<Item> findAllVisibleTools();
+	
+	@Query("select i from Item i WHERE i.amount.toolkit.id = :toolkitId")
+	Collection<Item> findAllComponentsByToolkitId(@Param("toolkitId") int toolkitId);
+	
 }
