@@ -1,0 +1,2 @@
+recordIndex,status,code,legalStuff,budget,creationDate,initialDate,finalDate,optionalLink,patronName,patronEmail,patronCompany
+0,PROPOSED,"PAT-001-A",Buleria buleria,"EUR 456,700.00",2022/01/20 12:00,2022/01/20 12:00,2022/03/01 12:00,"https://www.twitch.tv/alexelcapo","Acme, Administrator","administrator@acme.com","Dunder Mifflin, Inc."

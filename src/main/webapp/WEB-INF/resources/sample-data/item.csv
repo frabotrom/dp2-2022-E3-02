@@ -1,3 +1,4 @@
-key,name,code,technology,description,retailPrice,link,type,key:amount
-item-001,"El cuadrado amarillo","ITM-001-C","Invento de Doraemon","es amarillo","EUR 100.00","https://es.wikipedia.org/wiki/Doraemon","TOOL",amount-001
-item-002,"Tijeras de Adelaide","ITM-002-D","Invento de Doraemon","sirve para cortar","USD 1.00",null,"COMPONENT",amount-001
+key,name,code,technology,description,retailPrice,link,type,key:inventor,visible
+item-001,"El cuadrado amarillo","ITM-001-C","Invento de Doraemon","es amarillo","EUR 100.00","https://es.wikipedia.org/wiki/Doraemon","TOOL",inventor-002,true
+item-002,"Tijeras de Adelaide","ITM-002-D","Invento de Doraemon","sirve para cortar","USD 1.00",null,"COMPONENT",inventor-002,true
+item-003,"Cucharas de Adelaide","ITM-002-E","Invento de Doraemon","no sirve para cortar","USD 7.00",null,"COMPONENT",inventor-002,false

@@ -1,0 +1,3 @@
+authenticated.configuration.form.label.system-currency = Divisa por Defecto
+authenticated.configuration.form.label.accepted-currencies = Divisas Aceptadas:
+authenticated.configuration.form.service = Servicio Utilizado para Realizar los Cambios de Moneda:
