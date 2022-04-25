@@ -9,6 +9,7 @@
 # they accept any liabilities with respect to them.
 
 
+inventor.patronage.form.label.title = Patron's Profile
 inventor.patronage.form.label.status = Status
 inventor.patronage.form.label.code = Code
 inventor.patronage.form.label.legalStuff = Legal Stuff

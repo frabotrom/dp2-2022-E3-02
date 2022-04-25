@@ -1,0 +1,7 @@
+administrator.configuration.form.label.strong-spam-terms = Términos de Spam Fuertes:
+administrator.configuration.form.label.weak-spam-terms = Términos de Spam Débiles:
+administrator.configuration.form.label.system-currency = Divisa del Sistema
+administrator.configuration.form.label.accepted-currencies = Divisas Aceptadas:
+administrator.configuration.form.label.default-currency = Divisa por Defecto:
+administrator.configuration.form.label.weak-threshold = Umbral Débil:
+administrator.configuration.form.label.strong-threshold= Umbral Fuerte:

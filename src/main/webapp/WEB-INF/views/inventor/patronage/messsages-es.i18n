@@ -9,6 +9,7 @@
 # they accept any liabilities with respect to them.
 
 
+inventor.patronage.form.label.title = Perfil del Patrocinador
 inventor.patronage.form.label.status = Estado
 inventor.patronage.form.label.code = Código
 inventor.patronage.form.label.legalStuff = Asuntos Legales

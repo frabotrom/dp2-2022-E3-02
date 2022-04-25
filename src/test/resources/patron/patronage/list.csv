@@ -1,0 +1,4 @@
+recordIndex,status,code,legalStuff,budget,creationDate,initialDate,finalDate,link,inventorName,inventorSurname,inventorEmail
+0,PROPOSED,"PAT-001-B",Complicated,EUR 123.00,2022/03/14 12:00,2022/03/15 12:00,2022/04/16 18:00,,User7,Userino7,user7@suckme.com
+1,PROPOSED,"PAT-001-E",Complicated,EUR 123.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,,Administrator,Acme,administrator@acme.com
+2,PROPOSED,"PAT-001-F",Complicated,EUR 123.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,,Administrator,Acme,administrator@acme.com

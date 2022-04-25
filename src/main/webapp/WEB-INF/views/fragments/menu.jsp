@@ -18,12 +18,19 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
-		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.list-toolkits" action="/any/toolkit/list-toolkits"/>
+		<acme:menu-option code="master.menu.anonymous">
+      <acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list"/>
+      <acme:menu-separator/>
+      <acme:menu-suboption code="master.menu.anonymous.list-toolkits" action="/any/toolkit/list-toolkits"/>
 			<acme:menu-suboption code="master.menu.any.item.list-components" action="/any/item/list-components"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
+
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/administrator-dashboard/show"/>
+			<acme:menu-suboption code="master.menu.administrator.system-configuration" action="/administrator/system-configuration/show"/>
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
@@ -34,14 +41,21 @@
 
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.patronage" action="/inventor/patronage/list"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.inventor.components" action="/inventor/item/list"/>
-			<acme:menu-suboption code="master.menu.inventor.list-components" action="/any/item/list-components"/>	
 		</acme:menu-option>	
 		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
-			<acme:menu-suboption code="master.menu.patron.list-components" action="/any/item/list-components"/>	
-		</acme:menu-option>	
-
+			<acme:menu-suboption code="master.menu.patron.list-patronage" action="/patron/patronage/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/patron-dashboard/show"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.autheticated.announcement.list" action="/authenticated/announcement/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.autheticated.system-configuration" action="/authenticated/system-configuration/show"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
@@ -57,6 +71,7 @@
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>
+			
 	</acme:menu-right>
 </acme:menu-bar>
 

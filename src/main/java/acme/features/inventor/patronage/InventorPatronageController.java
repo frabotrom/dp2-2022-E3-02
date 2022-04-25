@@ -20,7 +20,7 @@ public class InventorPatronageController extends AbstractController<Inventor, Pa
 		@Autowired
 		protected InventorPatronageShowService	showService;
 
-		// Constructors -----------------------------------------------------------
+	// Constructors -----------------------------------------------------------
 
 
 		@PostConstruct

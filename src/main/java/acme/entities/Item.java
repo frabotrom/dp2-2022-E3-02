@@ -58,11 +58,6 @@ public class Item extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Amount			amount;
 	
 	@NotNull
 	@Valid
