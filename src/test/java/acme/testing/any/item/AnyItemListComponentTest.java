@@ -17,16 +17,17 @@ public class AnyItemListComponentTest extends TestHarness{
 		
 		super.clickOnMenu("Anonymous","Components List");
 		super.checkListingExists();
-		super.sortListing(1, "asc");
+		super.sortListing(0, "asc");
 		
-		super.checkColumnHasValue(recordIndex, 0, name);
-		super.checkColumnHasValue(recordIndex, 1, code);
+
+		super.checkColumnHasValue(recordIndex, 0, code);
+		super.checkColumnHasValue(recordIndex, 1, name);
 		super.checkColumnHasValue(recordIndex, 2, retailPrice);
 		
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.checkInputBoxHasValue("name", name);
 		super.checkInputBoxHasValue("code", code);
+		super.checkInputBoxHasValue("name", name);
 		super.checkInputBoxHasValue("technology", technology);
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);

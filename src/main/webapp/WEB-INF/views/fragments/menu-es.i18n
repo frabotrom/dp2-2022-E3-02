@@ -44,8 +44,6 @@ master.menu.authenticated = Autentificado
 master.menu.autheticated.announcement.list = Anuncios Recientes
 master.menu.autheticated.system-configuration = Configuración del Sistema
 
-# master.menu.consumer ##########################################################
-
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patrocinador
@@ -64,5 +62,5 @@ master.menu.user-account.become-consumer = Hazte consumidor
 
 #master.menu.any ##############################################################
 
-master.menu.any.user-account.list = Lista de usuarios
+master.menu.any.user-account.list = Lista de Usuarios
 master.menu.any = Todos

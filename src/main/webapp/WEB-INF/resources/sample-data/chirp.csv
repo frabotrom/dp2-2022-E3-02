@@ -1,3 +1,9 @@
 key,creationDate,title,author,body,email
-chirp-001,"2022/03/01 12:00","Peep this one, like bruh peep this one","John Cena","No more fortnite and no more 19$ cards","guac@guacala.wac"
-chirp-002,"2022/04/23 12:00","The chirp of the god in your phone","El barto","Congratulations, its a description","misterpatata@gamail.com"
+chirp-001,"2022/03/01 12:00","Title1","Author1","Body1","email1@acme.com"
+chirp-002,"2022/04/23 12:00","Title2","Author2","Body2","email2@acme.com"
+chirp-003,"2022/04/01 12:00","Title3","Author3","Body3","email3@acme.com"
+chirp-004,"2021/06/14 12:00","Title4","Author4","Body4",null
+chirp-005,"2022/01/30 12:00","Title5","Author5","Body5",null
+chirp-006,"2021/09/09 12:00","Title6","Author6","Body6","email6@acme.com"
+chirp-007,"2022/03/24 12:00","Title7","Author7","Body7",null
+chirp-008,"2021/11/04 12:00","Title8","Author8","Body8","email8@acme.com"

@@ -3,7 +3,7 @@ any.user-account.form.label.surname = Apellidos
 any.user-account.form.label.email = Email
 any.user-account.form.label.role = Roles
 
-any.user-account.list.label.username = Nombre de usuario
+any.user-account.list.label.username = Nombre de Usuario
 any.user-account.list.label.role = Roles
 
 any.user-account.list.label.name = Nombre
