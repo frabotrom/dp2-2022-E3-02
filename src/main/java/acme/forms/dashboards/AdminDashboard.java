@@ -2,6 +2,14 @@ package acme.forms.dashboards;
 
 import java.util.Map;
 
+import org.springframework.data.util.Pair;
+
+import acme.entities.PatronageStatus;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class AdminDashboard {
 	// Serialisation identifier -----------------------------------------------
 
@@ -10,26 +18,21 @@ public class AdminDashboard {
 		// Attributes -------------------------------------------------------------
 		
 		// Totals -------------------------------------------------------------
-		protected Integer					totalComponents;
+		protected Long					totalComponents; 
 		
-		protected Integer					totalTools;
+		protected Long					totalTools;
 		
-		protected Integer					totalProposedPatronages;
-		
-		protected Integer					totalAcceptedPatronages;
-		
-		protected Integer					totalDeniedPatronages;
-		
+		protected Map<PatronageStatus, Long>  totalPatronages;		
 		
 		// Components Price ---------------------------------------------------------
 		
-		protected Map<String, Double>		averagePriceComponents;
+		protected Map<Pair<String,String>, Double>		averagePriceComponents;
 		
-		protected Map<String, Double>		deviationPriceComponents;
+		protected Map<Pair<String,String>, Double>		deviationPriceComponents;
 		
-		protected Map<String, Double>		minimunPriceComponents;
+		protected Map<Pair<String,String>, Double>		minimunPriceComponents;
 		
-		protected Map<String, Double>		maximunPriceComponents;
+		protected Map<Pair<String,String>, Double>		maximunPriceComponents;
 		
 		// Tools Price ---------------------------------------------------------
 		
@@ -40,36 +43,14 @@ public class AdminDashboard {
 		protected Map<String, Double>		minimunPriceTools;
 				
 		protected Map<String, Double>		maximunPriceTools;
-				
-		// Proposed Patronages ----------------------------------------------------
 		
-		protected Map<String, Double>		averageBudgetProposed;
+		//Patronages
 		
-		protected Map<String, Double>		deviationBudgetProposed;
-		
-		protected Map<String, Double>		minimunBudgetProposed;
-		
-		protected Map<String, Double>		maximunBudgetProposed;
-		
-		
-		// Accepted Patronages ------------------------------------------------------
-		
-		protected Map<String, Double>		averageBudgetAccepted;
-			
-		protected Map<String, Double>		deviationBudgetAccepted;
-		
-		protected Map<String, Double>		minimunBudgetAccepted;
-		
-		protected Map<String, Double>		maximunBudgetAccepted;
-			
-		
-		// Denied Patronages ---------------------------------------------------------
-			
-		protected Map<String, Double>		averageBudgetDenied;
-		
-		protected Map<String, Double>		deviationBudgetDenied;
-
-		protected Map<String, Double>		minimunBudgetDenied;
-
-		protected Map<String, Double>		maximunBudgetDenied;
+		protected Map<PatronageStatus, Double>         averagePatronagesBudget;
+	    
+		protected Map<PatronageStatus, Double>         deviationPatronagesBudget;
+	    
+		protected Map<PatronageStatus, Double>         minimumPatronagesBudget;
+	    
+		protected Map<PatronageStatus, Double>         maximumPatronagesBudget;
 }
