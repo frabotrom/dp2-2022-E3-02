@@ -17,7 +17,7 @@ public class AnyToolController extends AbstractController<Any, Item>{
 
 	@Autowired
 	protected AnyToolShowService	showService;
-  
+	
 	@Autowired
 	protected AnyToolListByToolkit	listAllByToolkitService;
 
@@ -29,5 +29,4 @@ public class AnyToolController extends AbstractController<Any, Item>{
 		super.addCommand("list-items-toolkit",  "list", this.listAllByToolkitService);
 
 	}
-  
 }
