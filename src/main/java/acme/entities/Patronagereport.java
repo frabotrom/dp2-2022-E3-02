@@ -26,9 +26,12 @@ public class Patronagereport extends AbstractEntity {
     // Serialisation identifier -----------------------------------------------
 
         protected static final long serialVersionUID = 1L;
-        protected static long serialNumber = 1L;
+        //protected static long serialNumber = 1L;
         
     // Attributes -------------------------------------------------------------
+        
+        @NotNull
+        protected Long 					serialNumber;
         
         @NotNull
         @Temporal(TemporalType.TIMESTAMP)
@@ -49,17 +52,17 @@ public class Patronagereport extends AbstractEntity {
             String result = "";
             final String patronCode = this.getPatronage().getCode();
             
-            if (Patronagereport.serialNumber < 10L) {
-                result = patronCode + ":000" + Patronagereport.serialNumber;
-            } else if (Patronagereport.serialNumber >= 10L && Patronagereport.serialNumber < 100L) {
-                result = patronCode + ":00" + Patronagereport.serialNumber;
-            } else if (Patronagereport.serialNumber >= 100L && Patronagereport.serialNumber < 1000L) {
-                result = patronCode + ":0" + Patronagereport.serialNumber;
+            if (this.getSerialNumber() < 10L) {
+                result = patronCode + ":000" + this.getSerialNumber();
+            } else if (this.getSerialNumber() >= 10L && this.getSerialNumber() < 100L) {
+                result = patronCode + ":00" + this.getSerialNumber();
+            } else if (this.getSerialNumber() >= 100L && this.getSerialNumber() < 1000L) {
+                result = patronCode + ":0" + this.getSerialNumber();
             } else {
-                result = patronCode + ":" + Patronagereport.serialNumber;
+                result = patronCode + ":" + this.getSerialNumber();
             }
             
-            Patronagereport.serialNumber++;
+            //Patronagereport.serialNumber++;
             
             return result;
         }

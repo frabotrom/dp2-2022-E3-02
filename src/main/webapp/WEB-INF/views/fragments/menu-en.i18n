@@ -35,6 +35,7 @@ master.menu.administrator.shut-down = Shut Down
 
 master.menu.inventor = Inventor
 master.menu.inventor.patronage = My Patronages
+master.menu.inventor.patronagereport = My Patronage Reports
 master.menu.inventor.components = My Components
 
 #master.menu.authenticated ####################################################
