@@ -47,6 +47,8 @@
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.autheticated.announcement.list" action="/authenticated/announcement/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.autheticated.system-configuration" action="/authenticated/system-configuration/show"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

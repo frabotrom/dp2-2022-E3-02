@@ -1,0 +1,3 @@
+authenticated.configuration.form.label.system-currency = System Currency
+authenticated.configuration.form.label.accepted-currencies = Accepted Currencies:
+authenticated.configuration.form.service = Service Used to Perform Money Exchanges:
