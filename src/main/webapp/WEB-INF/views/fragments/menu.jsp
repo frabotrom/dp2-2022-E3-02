@@ -44,11 +44,18 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.inventor.items" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.list-tools" action="/inventor/item/list"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
 		<acme:menu-option code="master.menu.sign-up" action="/anonymous/user-account/create" access="isAnonymous()"/>
 		<acme:menu-option code="master.menu.sign-in" action="/master/sign-in" access="isAnonymous()"/>
+		
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')" action="/authenticated/user-account/update">
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>

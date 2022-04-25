@@ -1,3 +1,4 @@
 key,name,code,technology,description,retailPrice,link,type,key:amount
 item-001,"El cuadrado amarillo","ITM-001-C","Invento de Doraemon","es amarillo","EUR 100.00","https://es.wikipedia.org/wiki/Doraemon","TOOL",amount-001
 item-002,"Tijeras de Adelaide","ITM-002-D","Invento de Doraemon","sirve para cortar","USD 1.00",null,"COMPONENT",amount-001
+item-003,"Teclado","ITM-003-D","Periferico","sirve para escribir","USD 50.00",null,"TOOL",amount-001
