@@ -9,8 +9,8 @@
 	<acme:input-textbox code="any.item.Tool.list.label.technology" path="technology"/>
 	<acme:input-textbox code="any.item.Tool.list.label.inventor" path="inventor"/>
 	<acme:input-textbox code="any.item.Tool.list.label.description" path="description"/>
-	<acme:input-textbox code="any.item.Tool.list.label.link" path="link"/>
-	<acme:input-textbox code="any.item.Tool.list.label.retailPrice" path="retailPrice"/>
+	<acme:input-url code="any.item.Tool.list.label.link" path="link"/>
+	<acme:input-money code="any.item.Tool.list.label.retailPrice" path="retailPrice"/>
 
 
 </acme:form>
