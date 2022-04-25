@@ -52,6 +52,8 @@ public class Item extends AbstractEntity {
 
 	@NotNull
 	protected ItemType			type;
+	
+	protected boolean			visible;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -66,5 +68,4 @@ public class Item extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	protected  Inventor 		inventor;
-
 }
