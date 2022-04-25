@@ -19,6 +19,7 @@ master.menu.sign-out = Salir
 
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.any.item.Tool.list= Lista todos los tools
 master.menu.anonymous.list-toolkits = Toolkits
 master.menu.any.item.list-components = Lista de componentes
 master.menu.any.chirp.list = Lista de Chirps Recientes
@@ -52,6 +53,13 @@ master.menu.autheticated.system-configuration = Configuración del Sistema
 master.menu.patron = Patrocinador
 master.menu.patron.list-patronage = Mis Patrocinios
 master.menu.patron.dashboard = Mi Tablero
+
+
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Eres Inventor
+master.menu.inventor.items = Objetos
+master.menu.inventor.list-tools = Mis Herramientas
 
 # master.menu.user-account ####################################################
 

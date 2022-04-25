@@ -22,12 +22,13 @@
       <acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list"/>
       <acme:menu-separator/>
       <acme:menu-suboption code="master.menu.anonymous.list-toolkits" action="/any/toolkit/list-toolkits"/>
+      <acme:menu-suboption code="master.menu.any.item.Tool.list" action="/any/item/Tool/list"/>
 			<acme:menu-suboption code="master.menu.any.item.list-components" action="/any/item/list-components"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
 
 		</acme:menu-option>
-
+    
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/administrator-dashboard/show"/>
 			<acme:menu-suboption code="master.menu.administrator.system-configuration" action="/administrator/system-configuration/show"/>
@@ -56,9 +57,19 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.autheticated.system-configuration" action="/authenticated/system-configuration/show"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.inventor.items" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.list-tools" action="/inventor/item/list"/>		
+    	</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
+	
+	    <acme:menu-option code="master.menu.sign-up" action="/anonymous/user-account/create" access="isAnonymous()"/>
+		<acme:menu-option code="master.menu.sign-in" action="/master/sign-in" access="isAnonymous()"/>
+		
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')" action="/authenticated/user-account/update">
+		</acme:menu-option>
 		<acme:menu-option code="master.menu.sign-up" action="/anonymous/user-account/create" access="isAnonymous()"/>
 		<acme:menu-option code="master.menu.sign-in" action="/master/sign-in" access="isAnonymous()"/>
 
