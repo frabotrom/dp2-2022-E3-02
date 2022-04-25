@@ -1,0 +1,18 @@
+administrator.dashboard.form.title = Dashboard
+administrator.dashboard.form.label.totalComponents = Numero total de componentes:
+administrator.dashboard.form.label.averagePriceComponents = Precio promedio del componente
+administrator.dashboard.form.label.deviationPriceComponents = Desviacion del precio del componente
+administrator.dashboard.form.label.minimumPriceComponents = Precio minimo del componente
+administrator.dashboard.form.label.maximumPriceComponents = Precio maximo del componente
+
+administrator.dashboard.form.label.totalTools = Numero total de herramientas:
+administrator.dashboard.form.label.averagePriceTools = Precio promedio de la herramienta
+administrator.dashboard.form.label.deviationPriceTools = desviacion del precio de la herramienta
+administrator.dashboard.form.label.maximumPriceTools = Precio maximo de la herramienta
+administrator.dashboard.form.label.minimumPriceTools = Precio minimo de la herramienta
+
+administrator.dashboard.form.label.totalPatronages = Numero total de patrocionios:
+administrator.dashboard.form.label.averagePatronagesBudget = Precio promedio del patrocinio
+administrator.dashboard.form.label.deviationPatronagesBudget = Desviacion del presupuesto del patrocinio
+administrator.dashboard.form.label.minimumPatronagesBudget = Presupuesto minimo del patrocinio
+administrator.dashboard.form.label.maximumPatronagesBudget = Presupuesto maximo del patrocinio
