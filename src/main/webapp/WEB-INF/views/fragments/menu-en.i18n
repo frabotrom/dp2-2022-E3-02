@@ -49,6 +49,7 @@ master.menu.autheticated.system-configuration = System Configuration
 
 master.menu.patron = Patron
 master.menu.patron.list-patronage = My Patronages
+master.menu.patron.dashboard = My Dashboard
 
 # master.menu.user-account ####################################################
 

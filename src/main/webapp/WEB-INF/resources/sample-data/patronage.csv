@@ -3,5 +3,7 @@ patronage-001,inventor-002,patron-001,PROPOSED,"PAT-001-A",Buleria buleria,EUR 4
 patronage-002,inventor-003,patron-002,PROPOSED,"PAT-001-B",Complicated,EUR 123.00,2022/03/14 12:00,2022/03/15 12:00,2022/04/16 18:00,null
 patronage-003,inventor-003,patron-001,PROPOSED,"PAT-001-C",Complicated,EUR 123.00,2022/03/15 12:00,2022/03/16 12:00,2022/04/16 18:00,null
 patronage-004,inventor-001,patron-003,PROPOSED,"PAT-001-D",Complicated,EUR 123.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,null
-patronage-005,inventor-001,patron-002,PROPOSED,"PAT-001-E",Complicated,EUR 123.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,null
-patronage-006,inventor-001,patron-002,PROPOSED,"PAT-001-F",Complicated,EUR 123.00,2022/03/16 12:00,2022/03/17  12:00,2022/04/17 18:00,null
+patronage-005,inventor-001,patron-002,PROPOSED,"PAT-001-E",Complicated,EUR 178.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,null
+patronage-006,inventor-001,patron-002,PROPOSED,"PAT-001-F",Complicated,USD 123.00,2022/03/16 12:00,2022/03/17  12:00,2022/04/17 18:00,null
+patronage-007,inventor-001,patron-002,ACCEPTED,"PAT-001-G",Complicated,EUR 247.00,2022/03/16 12:00,2022/03/17  12:00,2022/04/17 18:00,null
+patronage-008,inventor-001,patron-002,DENIED,"PAT-001-H",Complicated,EUR 123.00,2022/03/16 12:00,2022/03/17  12:00,2022/04/17 18:00,"https://www.twitch.tv/alexelcapo"
