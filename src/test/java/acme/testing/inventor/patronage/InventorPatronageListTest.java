@@ -13,7 +13,7 @@ public class InventorPatronageListTest extends TestHarness {
 	@Order(10)
 	public void positiveTest(final int recordIndex, final String status, final String code, final String legalStuff, final String budget,
 		final String creationDate, final String initialDate, final String finalDate, final String optionalLink, final String patronName,
-		final String patronEmail, final String patronCompany) {
+		final String patronEmail, final String patronCompany, final String period) {
 		
 		super.signIn("User1", "HIDDEN-PASSWORD");
 		
@@ -38,6 +38,7 @@ public class InventorPatronageListTest extends TestHarness {
 		super.checkInputBoxHasValue("initialDate", initialDate);
 		super.checkInputBoxHasValue("finalDate", finalDate);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
+		super.checkInputBoxHasValue("period", period);
 		super.checkInputBoxHasValue("patronName", patronName);
 		super.checkInputBoxHasValue("patronEmail", patronEmail);
 		super.checkInputBoxHasValue("patronCompany", patronCompany);

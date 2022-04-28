@@ -1,2 +1,7 @@
-recordIndex,status,code,legalStuff,budget,creationDate,initialDate,finalDate,optionalLink,patronName,patronEmail,patronCompany
-0,PROPOSED,"PAT-001-A",Buleria buleria,"EUR 456,700.00",2022/01/20 12:00,2022/01/20 12:00,2022/03/01 12:00,"https://www.twitch.tv/alexelcapo","Acme, Administrator","administrator@acme.com","Dunder Mifflin, Inc."
+recordIndex,status,code,legalStuff,budget,creationDate,initialDate,finalDate,optionalLink,patronName,patronEmail,patronCompany,period
+0,ACCEPTED,"PAT-001-B","LegalStuff2",USD 123.00,2022/03/14 12:00,2022/03/15 12:00,2022/04/16 18:00,,"UserSurname6, UserName6","user6@acme.com",Company1,32
+1,DENIED,"PAT-001-E","LegalStuff5",EUR 214.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,"https://ev.us.es/","UserSurname6, UserName6","user6@acme.com",Company1,31
+2,ACCEPTED,"PAT-001-G","LegalStuff7",EUR 174.00,2022/03/17 12:00,2022/03/18 12:00,2022/04/18 18:00,,"UserSurname7, UserName7","user7@acme.com",Company2,31
+3,PROPOSED,"PAT-001-I","LegalStuff9",EUR 201.00,2022/03/18 12:00,2022/03/18 12:00,2022/04/20 18:00,"https://ev.us.es/","UserSurname7, UserName7","user7@acme.com","Company2",33
+4,ACCEPTED,"PAT-001-J","LegalStuff10",USD 217.00,2022/03/18 12:00,2022/03/18 12:00,2022/04/20 18:00,,"UserSurname8, UserName8","user8@acme.com","Company3",33
+5,DENIED,"PAT-001-K","LegalStuff11",EUR 189.00,2022/03/19 12:00,2022/03/19 12:00,2022/04/21 18:00,"https://ev.us.es/","UserSurname8, UserName8","user8@acme.com","Company3",33

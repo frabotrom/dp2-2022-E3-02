@@ -11,18 +11,18 @@ public class PatronPatronageListTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/patron/patronage/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10) 
-	public void positiveTest(final int recordIndex, final String status, final String code, 
-		final String legalStuff, final String budget, final String creationDate, final String initialDate, 
-		final String finalDate, final String optionalLink, final String name, final String surname, final String email ) {
+	public void positiveTest(final int recordIndex, final String status, final String code, final String legalStuff, final String budget,
+		final String creationDate, final String initialDate, final String finalDate, final String optionalLink, final String name,
+		final String email, final String company, final String period) {
 		
-		super.signIn("user2", "HIDDEN-PASSWORD");
+		super.signIn("user6", "HIDDEN-PASSWORD");
 		
 		super.clickOnMenu("Patron","My Patronages");
 		super.checkListingExists();
-		super.sortListing(1, "asc"); 
-		
-		super.checkColumnHasValue(recordIndex, 0, status);
-		super.checkColumnHasValue(recordIndex, 1, code);
+		super.sortListing(0, "asc"); 
+
+		super.checkColumnHasValue(recordIndex, 0, code);
+		super.checkColumnHasValue(recordIndex, 1, status);
 		super.checkColumnHasValue(recordIndex, 2, budget);
 		super.checkColumnHasValue(recordIndex, 3, creationDate);
 		super.checkColumnHasValue(recordIndex, 4, initialDate);
@@ -30,17 +30,18 @@ public class PatronPatronageListTest extends TestHarness {
 		
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.checkInputBoxHasValue("status", status);
 		super.checkInputBoxHasValue("code", code);
+		super.checkInputBoxHasValue("status", status);
 		super.checkInputBoxHasValue("legalStuff", legalStuff);
 		super.checkInputBoxHasValue("budget", budget);
 		super.checkInputBoxHasValue("creationDate", creationDate);
 		super.checkInputBoxHasValue("initialDate", initialDate);
 		super.checkInputBoxHasValue("finalDate", finalDate);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
+		super.checkInputBoxHasValue("period", period);
 		super.checkInputBoxHasValue("inventorName", name);
-		super.checkInputBoxHasValue("inventorSurname", surname);
 		super.checkInputBoxHasValue("inventorEmail", email);
+		super.checkInputBoxHasValue("inventorCompany", company);
 		
 		super.signOut();
 	}

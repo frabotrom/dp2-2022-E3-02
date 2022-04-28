@@ -19,8 +19,7 @@ patron.patronage.form.label.finalDate = Fecha de Finalización
 patron.patronage.form.label.optionalLink = Enlace
 patron.patronage.form.label.title = Perfil del Inventor
 
-patron.patronage.form.label.name = Nombre
-patron.patronage.form.label.surname = Apellidos
-patron.patronage.form.label.email = Correo
-patron.patronage.form.button.create = Crear
-authenticated.consumer.consumer.form.button.update = Actualizar
+patron.patronage.form.label.period = Periodo de Tiempo (Días)
+patron.patronage.form.label.name = Nombre del Inventor
+patron.patronage.form.label.email = Email del Inventor
+patron.patronage.form.label.company = Compañía del Inventor

@@ -1,4 +1,7 @@
-recordIndex,status,code,legalStuff,budget,creationDate,initialDate,finalDate,link,inventorName,inventorSurname,inventorEmail
-0,PROPOSED,"PAT-001-B",Complicated,EUR 123.00,2022/03/14 12:00,2022/03/15 12:00,2022/04/16 18:00,,User7,Userino7,user7@suckme.com
-1,PROPOSED,"PAT-001-E",Complicated,EUR 123.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,,Administrator,Acme,administrator@acme.com
-2,PROPOSED,"PAT-001-F",Complicated,EUR 123.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,,Administrator,Acme,administrator@acme.com
+recordIndex,status,code,legalStuff,budget,creationDate,initialDate,finalDate,link,inventorName,inventorEmail,inventorCompany,period
+0,PROPOSED,"PAT-001-A","LegalStuff1",EUR 456.00,2022/01/20 12:00,2022/01/20 12:00,2022/03/01 12:00,"https://ev.us.es/","Acme, Administrator","administrator@acme.com","Company0",40
+1,ACCEPTED,"PAT-001-B","LegalStuff2",USD 123.00,2022/03/14 12:00,2022/03/15 12:00,2022/04/16 18:00,,"UserSurname1, UserName1","user1@acme.com","Company1",32
+2,PROPOSED,"PAT-001-C","LegalStuff3",USD 128.00,2022/03/15 12:00,2022/03/16 12:00,2022/04/16 18:00,"https://ev.us.es/","UserSurname2, UserName2","user2@acme.com","Company2",31
+3,PROPOSED,"PAT-001-D","LegalStuff4",EUR 201.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,"https://ev.us.es/","Acme, Administrator","administrator@acme.com","Company0",31
+4,DENIED,"PAT-001-E","LegalStuff5",EUR 214.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,"https://ev.us.es/","UserSurname1, UserName1","user1@acme.com","Company1",31
+5,ACCEPTED,"PAT-001-F","LegalStuff6",EUR 407.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,,"UserSurname2, UserName2","user2@acme.com","Company2",31

@@ -16,12 +16,13 @@
 	<acme:input-moment code="patron.patronage.form.label.initialDate" path="initialDate"/>
 	<acme:input-moment code="patron.patronage.form.label.finalDate" path="finalDate"/>
 	<acme:input-url code="patron.patronage.form.label.optionalLink" path="optionalLink"/>
+	<acme:input-integer code="patron.patronage.form.label.period" path="period"/>
 	
 	<%-- Inventor Profile--%>
 	<hr>
     <br>
     <h3><acme:message code="patron.patronage.form.label.title"/></h3>
     <acme:input-textbox code="patron.patronage.form.label.name" path="inventorName"/>
-    <acme:input-textbox code="patron.patronage.form.label.surname" path="inventorSurname"/>
-    <acme:input-email code="patron.patronage.form.label.email" path="inventorEmail"/>	
+    <acme:input-email code="patron.patronage.form.label.email" path="inventorEmail"/>
+    <acme:input-email code="patron.patronage.form.label.company" path="inventorCompany"/>		
 </acme:form>

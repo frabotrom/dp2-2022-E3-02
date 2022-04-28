@@ -14,6 +14,7 @@ public class AnyChirpListTest extends TestHarness{
 	public void positiveTestComponents(final int recordIndex, final String creationDate, final String title, final String author,final String body, 
 		 final String email) {
 
+		// Tener cuidado con los test que los datos que se muestran dependen de una fecha reciente
 		
 		super.clickOnMenu("Anonymous","Chirps Recent List");
 		super.checkListingExists();
