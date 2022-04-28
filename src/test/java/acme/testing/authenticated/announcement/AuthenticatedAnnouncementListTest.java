@@ -14,6 +14,8 @@ public class AuthenticatedAnnouncementListTest extends TestHarness{
 	public void positiveTest(final int recordIndex, final String title, final String body, final String creationDate,
 		final String critical, final String moreInfo) 
 	{
+		// Tener cuidado con los test que los datos que se muestran dependen de una fecha reciente
+		
 		super.signIn("User1", "HIDDEN-PASSWORD");
 		
 		super.clickOnMenu("Authenticated","Recent Announcements");

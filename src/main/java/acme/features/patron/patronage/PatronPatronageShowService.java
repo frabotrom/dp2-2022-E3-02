@@ -46,10 +46,11 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		assert entity != null;
 		assert model != null;
 		
-		model.setAttribute("inventorName", entity.getInventor().getUserAccount().getIdentity().getName());
-		model.setAttribute("inventorSurname", entity.getInventor().getUserAccount().getIdentity().getSurname());
-		model.setAttribute("inventorEmail", entity.getInventor().getUserAccount().getIdentity().getEmail());
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "creationDate","initialDate","finalDate","optionalLink");
+		model.setAttribute("period", entity.periodOfTime());
+		model.setAttribute("inventorName", entity.getInventor().getUserAccount().getIdentity().getFullName());
+		model.setAttribute("inventorEmail", entity.getInventor().getUserAccount().getIdentity().getEmail());
+		model.setAttribute("inventorCompany", entity.getInventor().getCompany());
 
 	}
 

@@ -16,7 +16,7 @@ public class PatronDashboardShowTest extends TestHarness{
 		final String averageBudgetAccepted, final String deviationBudgetAccepted, final String minimunBudgetAccepted, final String maximunBudgetAccepted,
 		final String averageBudgetDenied, final String deviationBudgetDenied, final String minimunBudgetDenied, final String maximunBudgetDenied) {
 		
-		super.signIn("User2", "HIDDEN-PASSWORD");
+		super.signIn("User6", "HIDDEN-PASSWORD");
 		
 		super.clickOnMenu("Patron","My Dashboard");
 		

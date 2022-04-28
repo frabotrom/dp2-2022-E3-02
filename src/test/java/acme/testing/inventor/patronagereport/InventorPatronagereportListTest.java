@@ -27,7 +27,7 @@ public class InventorPatronagereportListTest extends TestHarness{
 		super.checkInputBoxHasValue("sequenceNumber", sequenceNumber);
 		super.checkInputBoxHasValue("creationMoment", creationMoment);
 		super.checkInputBoxHasValue("memorandum", memorandum);
-		super.checkInputBoxHasValue("link", link);
+		super.checkInputBoxHasValue("optionalLink", link);
 }
 	
 }

@@ -1,11 +1,10 @@
-patron.patronage.list.label.status = Status
+ patron.patronage.list.label.status = Status
 patron.patronage.list.label.code = Code
 patron.patronage.list.label.budget = Budget
 patron.patronage.list.label.creationDate = Creation Date
 patron.patronage.list.label.initialDate = Start Date
 patron.patronage.list.label.finalDate = End Date
 patron.patronage.list.button.create = Create
-
 
 patron.patronage.form.label.status = Status
 patron.patronage.form.label.proposed = PROPOSED
@@ -19,6 +18,8 @@ patron.patronage.form.label.initialDate = Start Date
 patron.patronage.form.label.finalDate = End Date
 patron.patronage.form.label.optionalLink = Link
 patron.patronage.form.label.title = Inventor's Profile
-patron.patronage.form.label.name = Name
-patron.patronage.form.label.surname = Surname
-patron.patronage.form.label.email = E-mail
+
+patron.patronage.form.label.period = Period of Time (Days)
+patron.patronage.form.label.name = Inventor Name
+patron.patronage.form.label.email = Inventor E-mail
+patron.patronage.form.label.company = Inventor Company
