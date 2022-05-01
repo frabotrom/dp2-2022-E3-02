@@ -21,6 +21,8 @@ public class AuthenticatedAnnouncementShowService implements AbstractShowService
 	public boolean authorise(final Request<Announcement> request) {
 		assert request != null;
 		
+		// No hace falta dado que el sistema ya comprueba que el usuario este autentificados
+		
 		return true;
 	}
 	

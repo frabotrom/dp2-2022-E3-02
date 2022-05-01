@@ -15,9 +15,9 @@ public class ListToolkitTests extends TestHarness {
 		final String title, final String description, final String asemblyNotes, final String info) {
 
 
-		super.clickOnMenu("Anonymous","Toolkits");
+		super.clickOnMenu("Anonymous","Toolkits List");
 		super.checkListingExists();
-		super.sortListing(1, "asc");
+		super.sortListing(0, "asc");
 
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, title);

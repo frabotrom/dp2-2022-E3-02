@@ -35,7 +35,7 @@
     <br>
     <h3><acme:message code="inventor.patronage.form.label.title"/></h3>
 	<acme:input-textbox code="inventor.patronage.form.label.patronName" path="patronName"/>
-	<acme:input-textbox code="inventor.patronage.form.label.patronEmail" path="patronEmail"/>
+	<acme:input-email code="inventor.patronage.form.label.patronEmail" path="patronEmail"/>
 	<acme:input-textbox code="inventor.patronage.form.label.patronCompany" path="patronCompany"/>
 </acme:form>
 

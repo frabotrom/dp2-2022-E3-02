@@ -1,22 +1,39 @@
-administrator.dashboard.form.title = Dashboard
-administrator.dashboard.form.label.totalComponents = Total number of components:
-administrator.dashboard.form.label.averagePriceComponents = Average component price
-administrator.dashboard.form.label.deviationPriceComponents = Price component deviation
-administrator.dashboard.form.label.minimumPriceComponents = Minimum price component
-administrator.dashboard.form.label.maximumPriceComponents = Maximun price component
+admin.patronage.form.label.titleGlobal = Global Statistics
+admin.dashboard.form.label.totalComponents = Total Components
+admin.dashboard.form.label.totalTools = Total Tools
+admin.dashboard.form.label.totalPatronages = Total Patronages
 
-administrator.dashboard.form.label.totalTools = Total number of tools:
-administrator.dashboard.form.label.averagePriceTools = Average tool price
-administrator.dashboard.form.label.deviationPriceTools = Price tool deviation
-administrator.dashboard.form.label.maximumPriceTools = Maximum price tool
-administrator.dashboard.form.label.minimumPriceTools = Minimum price tool
+admin.patronage.form.label.titleComponents= Components Price Statistics
+admin.dashboard.form.label.averagePriceComponents = Average (By Currency and Technology)
+admin.dashboard.form.label.deviationPriceComponents = Deviation (By Currency and Technology)
+admin.dashboard.form.label.minimunPriceComponents = Minimun (By Currency and Technology)
+admin.dashboard.form.label.maximunPriceComponents = Maximun (By Currency and Technology)
 
-administrator.dashboard.form.label.totalPatronages = Total number of patronages:
+admin.patronage.form.label.titleTools = Tools Price Statistics 
+admin.dashboard.form.label.averagePriceTools = Average (By Currency)
+admin.dashboard.form.label.deviationPriceTools = Deviation (By Currency)
+admin.dashboard.form.label.minimunPriceTools = Minimun (By Currency)
+admin.dashboard.form.label.maximunPriceTools = Maximun (By Currency)
 
-administrator.dashboard.form.label.averagePatronagesBudget = Average patronage budget
-administrator.dashboard.form.label.deviationPatronagesBudget = Patronage budget deviation
-administrator.dashboard.form.label.minimumPatronagesBudget = Minimum patronage budget
-administrator.dashboard.form.label.maximumPatronagesBudget = Maximum patronage budget
+admin.patronage.form.label.titleTotal = Global Patronages Statistics
+admin.dashboard.form.label.totalProposedPatronages = Total Proposed Patronages
+admin.dashboard.form.label.totalAcceptedPatronages = Total Accepted Patronages
+admin.dashboard.form.label.totalDeniedPatronages = Total Denied Patronages
 
+admin.patronage.form.label.titleProposed = Proposed Patronages Statistics
+admin.dashboard.form.label.averageBudgetProposed = Average (By Currency)
+admin.dashboard.form.label.deviationBudgetProposed = Deviation (By Currency)
+admin.dashboard.form.label.minimunBudgetProposed = Minimun (By Currency)
+admin.dashboard.form.label.maximunBudgetProposed = Maximun (By Currency)
 
+admin.patronage.form.label.titleAccepted = Accepted Patronages Statistics
+admin.dashboard.form.label.averageBudgetAccepted= Average (By Currency)
+admin.dashboard.form.label.deviationBudgetAccepted = Deviation (By Currency)
+admin.dashboard.form.label.minimunBudgetAccepted = Minimun (By Currency)
+admin.dashboard.form.label.maximunBudgetAccepted = Maximun (By Currency)
 
+admin.patronage.form.label.titleDenied = Denied Patronages Statistics
+admin.dashboard.form.label.averageBudgetDenied= Average (By Currency)
+admin.dashboard.form.label.deviationBudgetDenied = Deviation (By Currency)
+admin.dashboard.form.label.minimunBudgetDenied = Minimun (By Currency)
+admin.dashboard.form.label.maximunBudgetDenied = Maximun (By Currency)

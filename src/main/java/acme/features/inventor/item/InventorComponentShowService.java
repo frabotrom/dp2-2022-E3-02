@@ -26,6 +26,7 @@ public class InventorComponentShowService implements AbstractShowService<Invento
 		int id;
 		Item item;
 
+		// También se comprueba que sea del tipo component
 		id = request.getModel().getInteger("id");
 		item = this.repository.findComponentById(id);
 		result = item != null && item.getInventor().getId() == request.getPrincipal().getActiveRoleId();

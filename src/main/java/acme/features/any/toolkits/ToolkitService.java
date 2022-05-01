@@ -20,7 +20,17 @@ public class ToolkitService implements AbstractShowService<Any,Toolkit> {
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
 		assert request != null;
-		return true;
+		
+		final boolean result;
+		Toolkit toolkit;
+		int id;
+		
+		// Para comprobar que un toolkit no está en draftmode
+		id=request.getModel().getInteger("id");
+		toolkit=this.repository.findOneToolkitById(id);
+		result = toolkit != null && !toolkit.isDraftMode();
+		
+		return result;
 	}
 
 	@Override
@@ -39,8 +49,6 @@ public class ToolkitService implements AbstractShowService<Any,Toolkit> {
 		assert request != null;
 		assert model != null;
 		request.unbind(toolkit, model, "code","title","description","asemblyNotes","info");
-		//model.setAttribute("confirmation", false);
-		//model.setAttribute("readonly", true);
 	}
 	
 }

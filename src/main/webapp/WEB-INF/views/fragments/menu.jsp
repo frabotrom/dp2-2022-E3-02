@@ -10,7 +10,7 @@
 - they accept any liabilities with respect to them.
 --%>
 
-<%@page language="java" import="acme.framework.helpers.PrincipalHelper,acme.roles.Provider,acme.roles.Consumer"%>
+<%@page language="java" import="acme.framework.helpers.PrincipalHelper"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
@@ -20,8 +20,8 @@
 	<acme:menu-left>
 		
 		<acme:menu-option code="master.menu.anonymous">
-      <acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list"/>
-      <acme:menu-separator/>
+      		<acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list"/>
+      		<acme:menu-separator/>
       		<acme:menu-suboption code="master.menu.any.toolkit.list" action="/any/toolkit/list-toolkits"/>
 			<acme:menu-suboption code="master.menu.any.item.list-components" action="/any/item/list-components"/>
 			<acme:menu-separator/>
@@ -67,10 +67,6 @@
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>
-			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRole('Provider')"/>
-			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update" access="hasRole('Provider')"/>
-			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRole('Consumer')"/>
-			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update" access="hasRole('Consumer')"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>

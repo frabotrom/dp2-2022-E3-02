@@ -6,7 +6,7 @@
 <acme:form>
 	<acme:input-textbox code="any.toolkit.list.label.code" path="code"/>
 	<acme:input-textbox code="any.toolkit.list.label.title" path="title"/>
-	<acme:input-textbox code="any.toolkit.list.label.description" path="description"/>
+	<acme:input-textarea code="any.toolkit.list.label.description" path="description"/>
 	<acme:input-textbox code="any.toolkit.list.label.assemblyNotes" path="asemblyNotes"/>
 	<acme:input-url code="any.toolkit.list.label.info" path="info"/>
 	<acme:button code="any.toolkit.form.button.items" action="/any/item/list-items-toolkit?id=${id}"/>

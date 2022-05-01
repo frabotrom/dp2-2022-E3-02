@@ -3,7 +3,7 @@ recordIndex,enabled,name,surname,email,password,username,roles,rolesShow
 1,true,UserName10,UserSurname10,user10@acme.com,HIDDEN-PASSWORD,user10,"Patron","Patron"
 2,true,UserName2,UserSurname2,user2@acme.com,HIDDEN-PASSWORD,user2,"Authenticated, Inventor","Inventor, Authenticated"
 3,true,UserName3,UserSurname3,user3@acme.com,HIDDEN-PASSWORD,user3,"Authenticated, Inventor","Inventor, Authenticated"
-4,true,UserName4,UserSurname4,user4@acme.com,HIDDEN-PASSWORD,user4,"Authenticated, Inventor, Consumer","Consumer, Inventor, Authenticated"
+4,true,UserName4,UserSurname4,user4@acme.com,HIDDEN-PASSWORD,user4,"Authenticated, Inventor","Inventor, Authenticated"
 5,true,UserName5,UserSurname5,user5@acme.com,HIDDEN-PASSWORD,user5,"Authenticated, Inventor","Inventor, Authenticated"
 6,true,UserName6,UserSurname6,user6@acme.com,HIDDEN-PASSWORD,user6,"Authenticated, Patron","Patron, Authenticated"
 7,true,UserName7,UserSurname7,user7@acme.com,HIDDEN-PASSWORD,user7,"Patron","Patron"

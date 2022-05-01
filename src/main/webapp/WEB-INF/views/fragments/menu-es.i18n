@@ -20,12 +20,13 @@ master.menu.sign-out = Salir
 master.menu.anonymous = Anónimo
 master.menu.any.item.list-components = Lista de Componentes
 master.menu.any.chirp.list = Lista de Chirps Recientes
+master.menu.any.toolkit.list = Lista de Toolkits
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
 master.menu.administrator.system-configuration = Configuración del Sistema
-master.menu.administrator.dashboard = Panel de Indicadores
+master.menu.administrator.dashboard = Mi Tablero de Administrador
 master.menu.administrator.user-accounts = Cuentas de Usuario
 master.menu.administrator.populate-initial = Poblar BD (Inicial)
 master.menu.administrator.populate-sample = Poblar BD (Ejemplos)
@@ -48,17 +49,13 @@ master.menu.autheticated.system-configuration = Configuración del Sistema
 
 master.menu.patron = Patrocinador
 master.menu.patron.list-patronage = Mis Patrocinios
-master.menu.patron.dashboard = Mi Tablero
+master.menu.patron.dashboard = Mi Tablero de Patrocinios
 
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
 
 master.menu.user-account.general-data = Datos generales
-master.menu.user-account.provider = Datos de proveedor
-master.menu.user-account.become-provider = Hazte proveedor
-master.menu.user-account.consumer = Datos de consumidor
-master.menu.user-account.become-consumer = Hazte consumidor
 
 #master.menu.any ##############################################################
 

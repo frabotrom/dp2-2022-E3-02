@@ -159,7 +159,7 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, P
 		final Map<String, Double> res  = new HashMap<String, Double>();
 		
 		for(final List<String> l: list) {
-			res.put(l.get(0), Double.parseDouble(l.get(1)));
+			res.put(l.get(0), Double.parseDouble(String.format("%.2f", Double.parseDouble(l.get(1)))));
 		}
 		
 		return res;

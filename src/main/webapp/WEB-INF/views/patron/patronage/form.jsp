@@ -24,5 +24,5 @@
     <h3><acme:message code="patron.patronage.form.label.title"/></h3>
     <acme:input-textbox code="patron.patronage.form.label.name" path="inventorName"/>
     <acme:input-email code="patron.patronage.form.label.email" path="inventorEmail"/>
-    <acme:input-email code="patron.patronage.form.label.company" path="inventorCompany"/>		
+    <acme:input-textbox code="patron.patronage.form.label.company" path="inventorCompany"/>		
 </acme:form>

@@ -17,7 +17,18 @@ public class AnyUserAccountShowService implements AbstractShowService<Any, UserA
 	
 	@Override
 	public boolean authorise(final Request<UserAccount> request) {
-		return true;
+		assert request != null;
+		
+		final boolean result;
+		UserAccount userAccount;
+		int id;
+		
+		// Para comprobar que una cuenta de usuario está activa y a su vez no es ni de un usuario con los roles administrador ni anónimo
+		id=request.getModel().getInteger("id");
+		userAccount=this.repository.findOneUserAccountById(id);
+		result = userAccount != null && userAccount.isEnabled() && !userAccount.getAuthorityString().contains("Administrator");
+		
+		return result;
 	}
 
 	@Override

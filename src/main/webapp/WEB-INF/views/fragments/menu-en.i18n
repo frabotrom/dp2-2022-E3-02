@@ -20,12 +20,13 @@ master.menu.sign-out = Sign out
 master.menu.anonymous = Anonymous
 master.menu.any.item.list-components = Components List
 master.menu.any.chirp.list = Chirps Recent List
+master.menu.any.toolkit.list = Toolkits List
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
 master.menu.administrator.system-configuration = System Configuration
-master.menu.administrator.dashboard = Dashboard
+master.menu.administrator.dashboard = My Admin Dashboard
 master.menu.administrator.user-accounts = User Accounts
 master.menu.administrator.populate-initial = Populate DB (Initial)
 master.menu.administrator.populate-sample = Populate DB (Samples)
@@ -48,17 +49,13 @@ master.menu.autheticated.system-configuration = System Configuration
 
 master.menu.patron = Patron
 master.menu.patron.list-patronage = My Patronages
-master.menu.patron.dashboard = My Dashboard
+master.menu.patron.dashboard = My Patronage Dashboard
 
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
 
 master.menu.user-account.general-data = General data
-master.menu.user-account.provider = Provider data
-master.menu.user-account.become-provider = Become a provider
-master.menu.user-account.consumer = Consumer data
-master.menu.user-account.become-consumer = Become a consumer
 
 #master.menu.any ##############################################################
 
