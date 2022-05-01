@@ -1,18 +1,40 @@
-administrator.dashboard.form.title = Dashboard
-administrator.dashboard.form.label.totalComponents = Numero total de componentes:
-administrator.dashboard.form.label.averagePriceComponents = Precio promedio del componente
-administrator.dashboard.form.label.deviationPriceComponents = Desviacion del precio del componente
-administrator.dashboard.form.label.minimumPriceComponents = Precio minimo del componente
-administrator.dashboard.form.label.maximumPriceComponents = Precio maximo del componente
+admin.patronage.form.label.titleGlobal = Estadísticas Globales
+admin.dashboard.form.label.totalComponents = Total de Componentes
+admin.dashboard.form.label.totalTools = Total de Herramientas
+admin.dashboard.form.label.totalPatronages = Total de Patrocinios
 
-administrator.dashboard.form.label.totalTools = Numero total de herramientas:
-administrator.dashboard.form.label.averagePriceTools = Precio promedio de la herramienta
-administrator.dashboard.form.label.deviationPriceTools = desviacion del precio de la herramienta
-administrator.dashboard.form.label.maximumPriceTools = Precio maximo de la herramienta
-administrator.dashboard.form.label.minimumPriceTools = Precio minimo de la herramienta
+admin.patronage.form.label.titleComponents= Estadísticas del Precio de los Componentes
+admin.dashboard.form.label.averagePriceComponents = Media (Por Divisa y Tecnología)
+admin.dashboard.form.label.deviationPriceComponents = Desviación (Por Divisa y Tecnología)
+admin.dashboard.form.label.minimunPriceComponents = Mínimo (Por Divisa y Tecnología)
+admin.dashboard.form.label.maximunPriceComponents = Máximo (Por Divisa y Tecnología)
 
-administrator.dashboard.form.label.totalPatronages = Numero total de patrocionios:
-administrator.dashboard.form.label.averagePatronagesBudget = Precio promedio del patrocinio
-administrator.dashboard.form.label.deviationPatronagesBudget = Desviacion del presupuesto del patrocinio
-administrator.dashboard.form.label.minimumPatronagesBudget = Presupuesto minimo del patrocinio
-administrator.dashboard.form.label.maximumPatronagesBudget = Presupuesto maximo del patrocinio
+admin.patronage.form.label.titleTools = Estadísticas del Precio de las Herramientas
+admin.dashboard.form.label.averagePriceTools = Media (Por Divisa)
+admin.dashboard.form.label.deviationPriceTools = Desviación (Por Divisa)
+admin.dashboard.form.label.minimunPriceTools = Mínimo (Por Divisa)
+admin.dashboard.form.label.maximunPriceTools = Máximo (Por Divisa)
+
+admin.patronage.form.label.titleTotal = Estadísticas Globales de Patrocinios
+admin.dashboard.form.label.totalProposedPatronages = Total de Patrocinios Propuestos
+admin.dashboard.form.label.totalAcceptedPatronages = Total de Patrocinios Aceptados
+admin.dashboard.form.label.totalDeniedPatronages = Total de Patrocinios Denegados
+
+admin.patronage.form.label.titleProposed = Estadísticas de Patrocinios Propuestos
+admin.dashboard.form.label.averageBudgetProposed = Media (Por Divisa)
+admin.dashboard.form.label.deviationBudgetProposed = Desviación (Por Divisa)
+admin.dashboard.form.label.minimunBudgetProposed = Mínimo (Por Divisa)
+admin.dashboard.form.label.maximunBudgetProposed = Máximo (Por Divisa)
+
+admin.patronage.form.label.titleAccepted = Estadísticas de Patrocinios Aceptados
+admin.dashboard.form.label.averageBudgetAccepted = Media (Por Divisa)
+admin.dashboard.form.label.deviationBudgetAccepted = Desviación (Por Divisa)
+admin.dashboard.form.label.minimunBudgetAccepted = Mínimo (Por Divisa)
+admin.dashboard.form.label.maximunBudgetAccepted = Máximo (Por Divisa)
+
+admin.patronage.form.label.titleDenied = Estadísticas de Patrocinios Rechazados
+admin.dashboard.form.label.averageBudgetDenied = Media (Por Divisa)
+admin.dashboard.form.label.deviationBudgetDenied = Desviación (Por Divisa)
+admin.dashboard.form.label.minimunBudgetDenied = Mínimo (Por Divisa)
+admin.dashboard.form.label.maximunBudgetDenied = Máximo (Por Divisa)
+

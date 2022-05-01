@@ -9,62 +9,97 @@ import acme.framework.repositories.AbstractRepository;
 
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
+	
+	// Global -----------------------------------------------------------------------------------------------------
+	
+	@Query("select count(i) from Item i where i.type = 1")
+	Integer totalComponents();
+	
+	@Query("select count(i) from Item i where i.type = 0")
+	Integer totalTools();
+	
+	@Query("select p.status, count(p) from Patronage p group by p.status")
+	List<List<String>> totalPatronages();
+	
+	// Components -----------------------------------------------------------------------------------------------------
+	
+	@Query("select i.technology, i.retailPrice.currency, avg(i.retailPrice.amount) from Item i where i.type = 1 group by i.retailPrice.currency, i.technology")
+	List<List<String>> averagePriceComponents();
+	
+	@Query("select i.technology, i.retailPrice.currency, stddev(i.retailPrice.amount) from Item i where i.type = 1 group by i.retailPrice.currency, i.technology")
+	List<List<String>> deviationPriceComponents();
+	
+	@Query("select i.technology, i.retailPrice.currency, min(i.retailPrice.amount) from Item i where i.type = 1 group by i.retailPrice.currency, i.technology")
+	List<List<String>> minimunPriceComponents();
+	
+	@Query("select i.technology, i.retailPrice.currency, max(i.retailPrice.amount) from Item i where i.type = 1 group by i.retailPrice.currency, i.technology")
+	List<List<String>> maximunPriceComponents();
+	
+	// Tools -----------------------------------------------------------------------------------------------------
+	
+	@Query("select i.retailPrice.currency, avg(i.retailPrice.amount) from Item i where i.type = 0 group by i.retailPrice.currency")
+	List<List<String>> averagePriceTools();
+	
+	@Query("select i.retailPrice.currency, stddev(i.retailPrice.amount) from Item i where i.type = 0 group by i.retailPrice.currency")
+	List<List<String>> deviationPriceTools();
+	
+	@Query("select i.retailPrice.currency, min(i.retailPrice.amount) from Item i where i.type = 0 group by i.retailPrice.currency")
+	List<List<String>> minimunPriceTools();
+	
+	@Query("select i.retailPrice.currency, max(i.retailPrice.amount) from Item i where i.type = 0 group by i.retailPrice.currency")
+	List<List<String>> maximunPriceTools();
 
-	@Query("SELECT count(i) FROM Item i WHERE i.type = 'COMPONENT'")
-	Long totalComponents();
-
-	@Query("select i.technology, i.retailPrice.currency, avg(i.retailPrice.amount) from Item i where i.type = 'COMPONENT' group by i.retailPrice.currency, i.technology")
-	List<Object[]> findAveragePriceComponents();
+	// Total Patronages -----------------------------------------------------------------------------------------------------
 	
-	@Query("select i.technology, i.retailPrice.currency, stddev(i.retailPrice.amount) from Item i where i.type = 'COMPONENT' group by i.retailPrice.currency, i.technology")
-	List<Object[]> findDeviationPriceComponents();
+	@Query("select count(p) from Patronage p where p.status = 0")
+	Integer totalProposedPatronages();
 	
-	@Query("select i.technology, i.retailPrice.currency, min(i.retailPrice.amount) from Item i where i.type = 'COMPONENT' group by i.retailPrice.currency, i.technology")
-	List<Object[]> findMinimumPriceComponents();
+	@Query("select count(p) from Patronage p where p.status = 1")
+	Integer totalAcceptedPatronages();
 	
-	@Query("select i.technology, i.retailPrice.currency, max(i.retailPrice.amount) from Item i where i.type = 'COMPONENT' group by i.retailPrice.currency, i.technology")
-	List<Object[]> findMaximumPriceComponents();
+	@Query("select count(p) from Patronage p where p.status = 2")
+	Integer totalDeniedPatronages();
 	
-	@Query(value = "SELECT i.technology, i.retailPrice.currency ,avg(i.retailPrice.amount),stddev(i.retailPrice.amount),min(i.retailPrice.amount),max(i.retailPrice.amount) FROM Item i WHERE i.type = 'COMPONENT' GROUP BY  i.retailPrice.currency,  i.technology", nativeQuery=true)
-	List<Object[]> findMetricsComponents();
-
-	@Query("SELECT count(i) FROM Item i WHERE i.type = 'TOOL'")
-	Long totalTools();
+	// Proposed -----------------------------------------------------------------------------------------------------
 	
-	@Query("select i.retailPrice.currency, avg(i.retailPrice.amount) from Item i where i.type = 'TOOL' group by i.retailPrice.currency")
-	List<Object[]> findAverageToolsPrice();
+	@Query("select p.budget.currency, avg(p.budget.amount) from Patronage p where p.status = 0 group by p.budget.currency")
+	List<List<String>> averageBudgetProposed();
 	
-	@Query("select i.retailPrice.currency, stddev(i.retailPrice.amount) from Item i where i.type = 'TOOL' group by i.retailPrice.currency")
-	List<Object[]> findDeviationToolsPrice();
+	@Query("select p.budget.currency, stddev(p.budget.amount) from Patronage p where p.status = 0 group by p.budget.currency")
+	List<List<String>> deviationBudgetProposed();
 	
-	@Query("select i.retailPrice.currency, min(i.retailPrice.amount) from Item i where i.type = 'TOOL' group by i.retailPrice.currency")
-	List<Object[]> findMinimumToolsPrice();
+	@Query("select p.budget.currency, min(p.budget.amount) from Patronage p where p.status = 0 group by p.budget.currency")
+	List<List<String>> minimunBudgetProposed();
 	
-	@Query("select i.retailPrice.currency, max(i.retailPrice.amount) from Item i where i.type = 'TOOL' group by i.retailPrice.currency")
-	List<Object[]> findMaximumToolsPrice();
-
-	@Query(value = "SELECT i.retailPrice.currency ,avg(i.retailPrice.amount),stddev(i.retailPrice.amount),min(i.retailPrice.amount),max(i.retailPrice.amount) FROM Item i WHERE i.type = 'TOOL' GROUP BY i.retailPrice.currency", nativeQuery=true)
-	List<Object[]> findMetricsTools();
-
-	@Query("SELECT p.status,count(p) FROM Patronage p GROUP BY p.status")
-	List<Object[]> totalPatronages();
+	@Query("select p.budget.currency, max(p.budget.amount) from Patronage p where p.status = 0 group by p.budget.currency")
+	List<List<String>> maximunBudgetProposed();
 	
-	@Query("select p.status from Patronage p group by p.status")
-	List<Object[]> findStatusPatronages();
+	// Accepted -----------------------------------------------------------------------------------------------------
 	
-	@Query("select p.status, avg(p.budget.amount) from Patronage p group by p.status")
-	List<Object[]> findAveragePatronagesBudget();
+	@Query("select p.budget.currency, avg(p.budget.amount) from Patronage p where p.status = 1 group by p.budget.currency")
+	List<List<String>> averageBudgetAccepted();
+		
+	@Query("select p.budget.currency, stddev(p.budget.amount) from Patronage p where p.status = 1 group by p.budget.currency")
+	List<List<String>> deviationBudgetAccepted();
+		
+	@Query("select p.budget.currency, min(p.budget.amount) from Patronage p where p.status = 1 group by p.budget.currency")
+	List<List<String>> minimunBudgetAccepted();
+		
+	@Query("select p.budget.currency, max(p.budget.amount) from Patronage p where p.status = 1 group by p.budget.currency")
+	List<List<String>> maximunBudgetAccepted();
 	
-	@Query("select p.status, stddev(p.budget.amount) from Patronage p group by p.status")
-	List<Object[]> findDeviationPatronagesBudget();
+	// Denied -----------------------------------------------------------------------------------------------------
 	
-	@Query("select p.status, min(p.budget.amount) from Patronage p group by p.status")
-	List<Object[]> findMinimumPatronagesBudget();
-	
-	@Query("select p.status, max(p.budget.amount) from Patronage p group by p.status")
-	List<Object[]> findMaximumPatronagesBudget();
-	
-	@Query("SELECT p.status, avg(p.budget.amount),stddev(p.budget.amount),min(p.budget.amount),max(p.budget.amount) FROM Patronage p GROUP BY p.status")
-	List<Object[]> findMetricsPatronagesBudget();
+	@Query("select p.budget.currency, avg(p.budget.amount) from Patronage p where p.status = 2 group by p.budget.currency")
+	List<List<String>> averageBudgetDenied();
+			
+	@Query("select p.budget.currency, stddev(p.budget.amount) from Patronage p where p.status = 2 group by p.budget.currency")
+	List<List<String>> deviationBudgetDenied();
+			
+	@Query("select p.budget.currency, min(p.budget.amount) from Patronage p where p.status = 2 group by p.budget.currency")
+	List<List<String>> minimunBudgetDenied();
+			
+	@Query("select p.budget.currency, max(p.budget.amount) from Patronage p where p.status = 2 group by p.budget.currency")
+	List<List<String>> maximunBudgetDenied();
 
 }

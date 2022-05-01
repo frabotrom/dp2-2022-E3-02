@@ -18,7 +18,7 @@ public class PatronDashboardShowTest extends TestHarness{
 		
 		super.signIn("User6", "HIDDEN-PASSWORD");
 		
-		super.clickOnMenu("Patron","My Dashboard");
+		super.clickOnMenu("Patron","My Patronage Dashboard");
 		
 		super.checkFormExists();
 		super.checkInputBoxHasValue("totalProposedPatronages", totalProposedPatronages);

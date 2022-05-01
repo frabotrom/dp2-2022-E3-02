@@ -1,17 +1,13 @@
 package acme.features.administrator.dashboard;
 
-import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
-import acme.entities.PatronageStatus;
 import acme.forms.dashboards.AdminDashboard;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -21,140 +17,247 @@ import acme.framework.services.AbstractShowService;
 @Service
 public class AdministratorDashboardShowService implements AbstractShowService<Administrator, AdminDashboard>{
 	
-	@Autowired
-	protected AdministratorDashboardRepository repository;
-	
-	@Override
-	public boolean authorise(final Request<AdminDashboard> request) {
-		assert request != null;
-		return true;
-	}
+	// Internal state ---------------------------------------------------------
 
-	@Override
-	public AdminDashboard findOne(final Request<AdminDashboard> request) {
-		assert request != null;
+			@Autowired
+			protected AdministratorDashboardRepository repository;
 
-		final AdminDashboard result;
-		
-		//Components(Agrupado por currency y technology)
-		
-		final Long totalComponents;
-		totalComponents = this.repository.totalComponents();
-		
-	    final Map<Pair<String, String>, Double>    averagePriceComponents  = new HashMap<>();
-	    final Map<Pair<String, String>, Double>    deviationPriceComponents = new HashMap<>();
-	    final Map<Pair<String, String>, Double>    minimumPriceComponents = new HashMap<>();
-	    final Map<Pair<String, String>, Double>    maximumPriceComponents = new HashMap<>();
-	
-	    
-		final List<Object[]> metricsComponents = this.repository.findMetricsComponents();
-	    for(final Object[] metricC : metricsComponents) {
-			final String currency = (String) metricC[1];
-			final String technology = (String) metricC[0];
-			final Double avg = (Double) metricC[2];
-			final Double stdev = (Double) metricC[3];
-			final Double min = (Double) metricC[4];
-			final Double max = (Double) metricC[5];
+		// AbstractShowService<Patron, AdminDashboard> interface ----------------
+
+
+		@Override
+		public boolean authorise(final Request<AdminDashboard> request) {
+			assert request != null;
 			
-			averagePriceComponents.put(Pair.of(currency, technology), avg);
-			deviationPriceComponents.put(Pair.of(currency, technology), stdev);
-			minimumPriceComponents.put(Pair.of(currency, technology), min);
-			maximumPriceComponents.put(Pair.of(currency, technology), max);
+			return true;
 		}
-	    
-	   //Tools(Agrupado por currency)
-	    
-	    final Long totalTools;
-	    totalTools = this.repository.totalTools();
-	    
-	    final Map<String, Double>                  averagePriceTools = new HashMap<>();
-	    final Map<String, Double>                  deviationPriceTools = new HashMap<>();
-	    final Map<String, Double>                  minimumPriceTools = new HashMap<>();
-	    final Map<String, Double>                  maximumPriceTools = new HashMap<>();
-	    
-	    final List<Object[]> metricsTools = this.repository.findMetricsTools();
-	    
-	    for(final Object[] metricT : metricsTools) {
-			final String currency = (String) metricT[0];
-			final Double avg = (Double) metricT[1];
-			final Double stdev = (Double) metricT[2];
-			final Double min = (Double) metricT[3];
-			final Double max = (Double) metricT[4];
+		
+		@Override
+		public AdminDashboard findOne(final Request<AdminDashboard> request) {
+			assert request != null;
 			
-			averagePriceTools.put(currency, avg);
-			deviationPriceTools.put(currency, stdev);
-			minimumPriceTools.put(currency, min);
-			maximumPriceTools.put(currency, max);
-	    }
-	    
-	    // Patronages(Agrupado por status)
-	    
-	    final List<Object[]> totalPatronages;
-	    totalPatronages = this.repository.totalPatronages();
-	    
-    	final Map<PatronageStatus, Long> mapTotalPatronages = new EnumMap<>(PatronageStatus.class);
-	    for(final Object[] fila : totalPatronages) {
-	    	final PatronageStatus status = (PatronageStatus) fila[0];
-	    	final Long number = (Long) fila[1];
-	    	mapTotalPatronages.put(status, number);
-	    }
-	    
-	    final Map<PatronageStatus, Double>         averagePatronagesBudget= new EnumMap<>(PatronageStatus.class);
-	    final Map<PatronageStatus, Double>         deviationPatronagesBudget= new EnumMap<>(PatronageStatus.class);
-	    final Map<PatronageStatus, Double>         minimumPatronagesBudget= new EnumMap<>(PatronageStatus.class);
-	    final Map<PatronageStatus, Double>         maximumPatronagesBudget= new EnumMap<>(PatronageStatus.class);
-
-
-	    final List<Object[]> metricsPatronagesBudget = this.repository.findMetricsPatronagesBudget();
-	    
-	    for(final Object[] fila : metricsPatronagesBudget) {
-			final PatronageStatus status = (PatronageStatus) fila[0];
-			final Double avg = (Double) fila[1];
-			final Double stdev = (Double) fila[2];
-			final Double min = (Double) fila[3];
-			final Double max = (Double) fila[4];
+			AdminDashboard result;
+			result = new AdminDashboard();
+						
+			// Global -----------------------------------------------------------------------------------------------------
 			
-			averagePatronagesBudget.put(status, avg);
-			deviationPatronagesBudget.put(status, stdev);
-			minimumPatronagesBudget.put(status, min);
-			maximumPatronagesBudget.put(status, max);
-	    }
-	    
-		result = new AdminDashboard();
-		result.setTotalComponents(totalComponents);
-		result.setAveragePriceComponents(averagePriceComponents);
-		result.setDeviationPriceComponents(deviationPriceComponents);
-		result.setMinimunPriceComponents(minimumPriceComponents);
-		result.setMaximunPriceComponents(maximumPriceComponents);
-		result.setTotalTools(totalTools);
-		result.setAveragePriceTools(averagePriceTools);
-		result.setDeviationPriceTools(deviationPriceTools);
-		result.setMinimunPriceTools(minimumPriceTools);
-		result.setMaximunPriceTools(maximumPriceTools);
-		result.setTotalPatronages(mapTotalPatronages);
-		result.setAveragePatronagesBudget(averagePatronagesBudget);
-		result.setDeviationPatronagesBudget(deviationPatronagesBudget);
-		result.setMinimumPatronagesBudget(minimumPatronagesBudget);
-		result.setMaximumPatronagesBudget(maximumPatronagesBudget);
-		
-		return result;
-	}
+			final Integer totalComponents;
+			final Integer totalTools;
+			final List<List<String>> totalPatronagesList;
+			
+			totalComponents = this.repository.totalComponents();
+			totalTools = this.repository.totalTools();
+			totalPatronagesList = this.repository.totalPatronages();
+			
+			result.setTotalComponents(totalComponents);
+			result.setTotalTools(totalTools);
+			final Map<String, Integer> totalPatronages = this.listTransform2(totalPatronagesList);
+			result.setTotalPatronages(totalPatronages);
+			
+			// Components -----------------------------------------------------------------------------------------------------
+			
+			List<List<String>> averagePriceComponentsList;
+			averagePriceComponentsList = this.repository.averagePriceComponents();
+			final Map<Pair<String,String>, Double> averagePriceComponents = this.listTransform3(averagePriceComponentsList);
+			
+			List<List<String>> deviationPriceComponentsList;
+			deviationPriceComponentsList = this.repository.deviationPriceComponents();
+			final Map<Pair<String,String>, Double> deviationPriceComponents = this.listTransform3(deviationPriceComponentsList);
+			
+			List<List<String>> minimunPriceComponentsList;
+			minimunPriceComponentsList = this.repository.minimunPriceComponents();
+			final Map<Pair<String,String>, Double> minimunPriceComponents = this.listTransform3(minimunPriceComponentsList);
+			
+			List<List<String>> maximunPriceComponentsList;
+			maximunPriceComponentsList = this.repository.maximunPriceComponents();
+			final Map<Pair<String,String>, Double> maximunPriceComponents = this.listTransform3(maximunPriceComponentsList);
+			
+			result.setAveragePriceComponents(averagePriceComponents);
+			result.setDeviationPriceComponents(deviationPriceComponents);
+			result.setMinimunPriceComponents(minimunPriceComponents);
+			result.setMaximunPriceComponents(maximunPriceComponents);
+			
+			// Tools -----------------------------------------------------------------------------------------------------
+			
+			List<List<String>> averagePriceToolsList;
+			averagePriceToolsList = this.repository.averagePriceTools();
+			final Map<String, Double> averagePriceTools = this.listTransform(averagePriceToolsList);
+			
+			List<List<String>> deviationPriceToolsList;
+			deviationPriceToolsList = this.repository.deviationPriceTools();
+			final Map<String, Double> deviationPriceTools = this.listTransform(deviationPriceToolsList);
+			
+			List<List<String>> minimunPriceToolsList;
+			minimunPriceToolsList = this.repository.minimunPriceTools();
+			final Map<String, Double> minimunPriceTools = this.listTransform(minimunPriceToolsList);
+			
+			List<List<String>> maximunPriceToolsList;
+			maximunPriceToolsList = this.repository.maximunPriceTools();
+			final Map<String, Double> maximunPriceTools = this.listTransform(maximunPriceToolsList);
+			
+			result.setAveragePriceTools(averagePriceTools);
+			result.setDeviationPriceTools(deviationPriceTools);
+			result.setMinimunPriceTools(minimunPriceTools);
+			result.setMaximunPriceTools(maximunPriceTools);
+			
+			// Total Patronages -----------------------------------------------------------------------------------------------------
+			
+			final Integer totalProposedPatronages;
+			final Integer totalAcceptedPatronages;
+			final Integer totalDeniedPatronages;
+			
+			totalProposedPatronages = this.repository.totalProposedPatronages();
+			totalAcceptedPatronages = this.repository.totalAcceptedPatronages();
+			totalDeniedPatronages = this.repository.totalDeniedPatronages();
+			
+			result.setTotalProposedPatronages(totalProposedPatronages);
+			result.setTotalAcceptedPatronages(totalAcceptedPatronages);
+			result.setTotalDeniedPatronages(totalDeniedPatronages);
+			
+			// Proposed -----------------------------------------------------------------------------------------------------
+			
+			List<List<String>> averageBudgetProposedList;
+			averageBudgetProposedList = this.repository.averageBudgetProposed();
+			final Map<String, Double> averageBudgetProposed = this.listTransform(averageBudgetProposedList);
+			
+			List<List<String>> deviationBudgetProposedList;
+			deviationBudgetProposedList = this.repository.deviationBudgetProposed();
+			final Map<String, Double> deviationBudgetProposed = this.listTransform(deviationBudgetProposedList);
+			
+			List<List<String>> minimunBudgetProposedList;
+			minimunBudgetProposedList = this.repository.minimunBudgetProposed();
+			final Map<String, Double> minimunBudgetProposed = this.listTransform(minimunBudgetProposedList);
+			
+			List<List<String>> maximunBudgetProposedList;
+			maximunBudgetProposedList = this.repository.maximunBudgetProposed();
+			final Map<String, Double> maximunBudgetProposed = this.listTransform(maximunBudgetProposedList);
+			
+			result.setAverageBudgetProposed(averageBudgetProposed);
+			result.setDeviationBudgetProposed(deviationBudgetProposed);
+			result.setMinimunBudgetProposed(minimunBudgetProposed);
+			result.setMaximunBudgetProposed(maximunBudgetProposed);
+			
+			// Accepted -----------------------------------------------------------------------------------------------------
+			
+			List<List<String>> averageBudgetAcceptedList;
+			averageBudgetAcceptedList = this.repository.averageBudgetAccepted();
+			final Map<String, Double> averageBudgetAccepted = this.listTransform(averageBudgetAcceptedList);
+			
+			List<List<String>> deviationBudgetAcceptedList;
+			deviationBudgetAcceptedList = this.repository.deviationBudgetAccepted();
+			final Map<String, Double> deviationBudgetAccepted = this.listTransform(deviationBudgetAcceptedList);
+			
+			List<List<String>> minimunBudgetAcceptedList;
+			minimunBudgetAcceptedList = this.repository.minimunBudgetAccepted();
+			final Map<String, Double> minimunBudgetAccepted = this.listTransform(minimunBudgetAcceptedList);
+			
+			List<List<String>> maximunBudgetAcceptedList;
+			maximunBudgetAcceptedList = this.repository.maximunBudgetAccepted();
+			final Map<String, Double> maximunBudgetAccepted = this.listTransform(maximunBudgetAcceptedList);
+			
+			result.setAverageBudgetAccepted(averageBudgetAccepted);
+			result.setDeviationBudgetAccepted(deviationBudgetAccepted);
+			result.setMinimunBudgetAccepted(minimunBudgetAccepted);
+			result.setMaximunBudgetAccepted(maximunBudgetAccepted);
+			
+			// Denied -----------------------------------------------------------------------------------------------------
+			
+			List<List<String>> averageBudgetDeniedList;
+			averageBudgetDeniedList = this.repository.averageBudgetDenied();
+			final Map<String, Double> averageBudgetDenied = this.listTransform(averageBudgetDeniedList);
+			
+			List<List<String>> deviationBudgetDeniedList;
+			deviationBudgetDeniedList = this.repository.deviationBudgetDenied();
+			final Map<String, Double> deviationBudgetDenied = this.listTransform(deviationBudgetDeniedList);
+			
+			List<List<String>> minimunBudgetDeniedList;
+			minimunBudgetDeniedList = this.repository.minimunBudgetDenied();
+			final Map<String, Double> minimunBudgetDenied = this.listTransform(minimunBudgetDeniedList);
+			
+			List<List<String>> maximunBudgetDeniedList;
+			maximunBudgetDeniedList = this.repository.maximunBudgetDenied();
+			final Map<String, Double> maximunBudgetDenied = this.listTransform(maximunBudgetDeniedList);
+			
+			result.setAverageBudgetDenied(averageBudgetDenied);
+			result.setDeviationBudgetDenied(deviationBudgetDenied);
+			result.setMinimunBudgetDenied(minimunBudgetDenied);
+			result.setMaximunBudgetDenied(maximunBudgetDenied);
 
-	@Override
-	public void unbind(final Request<AdminDashboard> request, final AdminDashboard entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
+			return result;
+		}
 
-		request.unbind(entity, model, //
-			"totalComponents", "averagePriceComponents", "deviationPriceComponents", "minimunPriceComponents", "maximunPriceComponents", //
-			"totalTools", "averagePriceTools", "deviationPriceTools", "minimunPriceTools", "maximunPriceTools", //
-			"totalPatronages", "averagePatronagesBudget", "deviationPatronagesBudget","minimumPatronagesBudget", "maximumPatronagesBudget");
+		@Override
+		public void unbind(final Request<AdminDashboard> request, final AdminDashboard entity, final Model model) {
+			assert request != null;
+			assert entity != null;
+			assert model != null;
+
+			request.unbind(entity, model, "totalComponents", "totalTools", "totalProposedPatronages", "totalAcceptedPatronages", "totalDeniedPatronages");
+			
+			model.setAttribute("totalPatronages", entity.getTotalPatronages().toString());
+			
+			model.setAttribute("averagePriceComponents", entity.getAveragePriceComponents().toString());
+			model.setAttribute("deviationPriceComponents", entity.getDeviationPriceComponents().toString());
+			model.setAttribute("minimunPriceComponents", entity.getMinimunPriceComponents().toString());
+			model.setAttribute("maximunPriceComponents", entity.getMaximunPriceComponents().toString());
+			
+			model.setAttribute("averagePriceTools", entity.getAveragePriceTools().toString());
+			model.setAttribute("deviationPriceTools", entity.getDeviationPriceTools().toString());
+			model.setAttribute("minimunPriceTools", entity.getMinimunPriceTools().toString());
+			model.setAttribute("maximunPriceTools", entity.getMaximunPriceTools().toString());
+			
+			model.setAttribute("averageBudgetProposed", entity.getAverageBudgetProposed().toString());
+			model.setAttribute("deviationBudgetProposed", entity.getDeviationBudgetProposed().toString());
+			model.setAttribute("minimunBudgetProposed", entity.getMinimunBudgetProposed().toString());
+			model.setAttribute("maximunBudgetProposed", entity.getMaximunBudgetProposed().toString());
+			
+			model.setAttribute("averageBudgetAccepted", entity.getAverageBudgetAccepted().toString());
+			model.setAttribute("deviationBudgetAccepted", entity.getDeviationBudgetAccepted().toString());
+			model.setAttribute("minimunBudgetAccepted", entity.getMinimunBudgetAccepted().toString());
+			model.setAttribute("maximunBudgetAccepted", entity.getMaximunBudgetAccepted().toString());
+			
+			model.setAttribute("averageBudgetDenied", entity.getAverageBudgetDenied().toString());
+			model.setAttribute("deviationBudgetDenied", entity.getDeviationBudgetDenied().toString());
+			model.setAttribute("minimunBudgetDenied", entity.getMinimunBudgetDenied().toString());
+			model.setAttribute("maximunBudgetDenied", entity.getMaximunBudgetDenied().toString());
+			
+		}
 		
-		final Set<String> technologies = entity.getMinimunPriceComponents().keySet().stream().map(Pair::getFirst).collect(Collectors.toSet());
-		model.setAttribute("technology", technologies);
 		
-		final Set<String> currencies = entity.getDeviationPriceTools().keySet();
-		model.setAttribute("currency", currencies);
-	}
-}	
+		
+		
+		public Map<String, Double> listTransform(final List<List<String>> list) {
+			
+			final Map<String, Double> res  = new HashMap<String, Double>();
+			
+			for(final List<String> l: list) {
+				res.put(l.get(0), Double.parseDouble(String.format("%.2f", Double.parseDouble(l.get(1)))));
+			}
+			
+			return res;
+		}
+		
+		public Map<String, Integer> listTransform2(final List<List<String>> list) {
+			
+			final Map<String, Integer> res  = new HashMap<String, Integer>();
+			
+			for(final List<String> l: list) {
+				res.put(l.get(0), Integer.parseInt(l.get(1)));
+			}
+			
+			return res;
+		}
+		
+		public Map<Pair<String,String>, Double> listTransform3(final List<List<String>> list) {
+			
+			final Map<Pair<String,String>, Double> res  = new HashMap<Pair<String,String>, Double>();
+			
+			for(final List<String> l: list) {
+				final Pair<String, String> pair = Pair.of(l.get(0), l.get(1));
+				res.put(pair, Double.parseDouble(String.format("%.2f", Double.parseDouble(l.get(2)))));
+			}
+			
+			return res;
+		}
+
+}

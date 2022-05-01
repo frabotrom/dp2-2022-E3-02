@@ -10,6 +10,4 @@
 	<acme:input-textarea code="any.item.list.label.description" path="description"/>
 	<acme:input-url code="any.item.list.label.link" path="link"/>
 	<acme:input-money code="any.item.list.label.retailPrice" path="retailPrice"/>
-	
-	
 </acme:form>

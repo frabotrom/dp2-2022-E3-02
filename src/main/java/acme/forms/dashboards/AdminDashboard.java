@@ -4,7 +4,6 @@ import java.util.Map;
 
 import org.springframework.data.util.Pair;
 
-import acme.entities.PatronageStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,44 +12,79 @@ import lombok.Setter;
 public class AdminDashboard {
 	// Serialisation identifier -----------------------------------------------
 
-		protected static final long	serialVersionUID	= 1L;
+	protected static final long	serialVersionUID	= 1L;
 		
-		// Attributes -------------------------------------------------------------
+	// Attributes -------------------------------------------------------------
 		
-		// Totals -------------------------------------------------------------
-		protected Long					totalComponents; 
+	// Global -------------------------------------------------------------
+	
+	protected Integer							totalComponents; 
 		
-		protected Long					totalTools;
+	protected Integer							totalTools;
 		
-		protected Map<PatronageStatus, Long>  totalPatronages;		
+	protected Map<String, Integer>  			totalPatronages;		
 		
-		// Components Price ---------------------------------------------------------
+	// Components  ---------------------------------------------------------
 		
-		protected Map<Pair<String,String>, Double>		averagePriceComponents;
+	protected Map<Pair<String,String>, Double>		averagePriceComponents;
 		
-		protected Map<Pair<String,String>, Double>		deviationPriceComponents;
+	protected Map<Pair<String,String>, Double>		deviationPriceComponents;
 		
-		protected Map<Pair<String,String>, Double>		minimunPriceComponents;
+	protected Map<Pair<String,String>, Double>		minimunPriceComponents;
 		
-		protected Map<Pair<String,String>, Double>		maximunPriceComponents;
+	protected Map<Pair<String,String>, Double>		maximunPriceComponents;
 		
-		// Tools Price ---------------------------------------------------------
+	// Tools  ---------------------------------------------------------
 		
-		protected Map<String, Double>		averagePriceTools;
+	protected Map<String, Double>		averagePriceTools;
 				
-		protected Map<String, Double>		deviationPriceTools;
+	protected Map<String, Double>		deviationPriceTools;
 			
-		protected Map<String, Double>		minimunPriceTools;
+	protected Map<String, Double>		minimunPriceTools;
 				
-		protected Map<String, Double>		maximunPriceTools;
+	protected Map<String, Double>		maximunPriceTools;
+	
+	
+	//Patronages -------------------------------------------------------------
 		
-		//Patronages
+	// Totals -------------------------------------------------------------
+	
+	protected Integer					totalProposedPatronages;
+	
+	protected Integer					totalAcceptedPatronages;
+	
+	protected Integer					totalDeniedPatronages;
+	
+	
+	// Proposed -------------------------------------------------------------
+	
+	protected Map<String, Double>		averageBudgetProposed;
+	
+	protected Map<String, Double>		deviationBudgetProposed;
+	
+	protected Map<String, Double>		minimunBudgetProposed;
+	
+	protected Map<String, Double>		maximunBudgetProposed;
+	
+	
+	// Accepted -------------------------------------------------------------
+	
+	protected Map<String, Double>		averageBudgetAccepted;
 		
-		protected Map<PatronageStatus, Double>         averagePatronagesBudget;
-	    
-		protected Map<PatronageStatus, Double>         deviationPatronagesBudget;
-	    
-		protected Map<PatronageStatus, Double>         minimumPatronagesBudget;
-	    
-		protected Map<PatronageStatus, Double>         maximumPatronagesBudget;
+	protected Map<String, Double>		deviationBudgetAccepted;
+	
+	protected Map<String, Double>		minimunBudgetAccepted;
+	
+	protected Map<String, Double>		maximunBudgetAccepted;
+		
+	
+	// Denied -------------------------------------------------------------
+		
+	protected Map<String, Double>		averageBudgetDenied;
+	
+	protected Map<String, Double>		deviationBudgetDenied;
+
+	protected Map<String, Double>		minimunBudgetDenied;
+
+	protected Map<String, Double>		maximunBudgetDenied;
 }

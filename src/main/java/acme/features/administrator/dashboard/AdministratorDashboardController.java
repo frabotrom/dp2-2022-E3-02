@@ -15,7 +15,7 @@ public class AdministratorDashboardController extends AbstractController<Adminis
 	//Internal state
 	
 	@Autowired
-	protected AdministratorDashboardShowService2 showService;
+	protected AdministratorDashboardShowService showService;
 	
 	//Constructor
 	
