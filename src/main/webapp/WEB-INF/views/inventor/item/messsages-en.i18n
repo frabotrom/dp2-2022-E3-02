@@ -6,3 +6,7 @@ inventor.item.list.label.description = Description
 inventor.item.list.label.link = Link
 inventor.item.list.label.retailPrice = Price
 inventor.item.list.label.visible = Visibility
+inventor.item.list.button.create.component = Create Component
+inventor.item.form.button.update = Update Component
+inventor.item.form.button.delete = Delete Component
+inventor.item.form.button.publish = Publish Component

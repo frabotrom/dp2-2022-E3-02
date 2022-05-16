@@ -27,17 +27,34 @@ public class InventorComponentController extends AbstractController<Inventor, It
 	// Internal state ---------------------------------------------------------
 	
 	@Autowired
-	protected InventorComponentListService	listService;
+	protected InventorComponentListService	 listComponentService;
 	
 	@Autowired
-	protected InventorComponentShowService	showService;
+	protected InventorComponentShowService	  showComponentService;
+	
+	@Autowired
+	protected InventorComponentCreateService  createComponentService;
+	
+	@Autowired
+	protected InventorComponentDeleteService  deleteComponentService;
 
+	@Autowired
+	protected InventorComponentUpdateService  updateComponentService;
+	
+	@Autowired
+	protected InventorComponentPublishService publishComponentService;
 	
 	// Constructors -----------------------------------------------------------
 	
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", this.listService);
-		super.addCommand("show", this.showService);
+		super.addCommand("list-components","list", this.listComponentService);
+		super.addCommand("show", this.showComponentService);
+		super.addCommand("create-component","create", this.createComponentService);
+		super.addCommand("delete-component","delete", this.deleteComponentService);
+		super.addCommand("update-component","update", this.updateComponentService);
+		super.addCommand("publish-component","update",this.publishComponentService);
+
+
 	}
 }

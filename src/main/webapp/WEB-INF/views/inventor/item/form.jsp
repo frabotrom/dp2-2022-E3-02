@@ -14,4 +14,17 @@
 		<acme:input-option code="Visible" value="TRUE" selected="${visible == true}"/>
 		<acme:input-option code="Not Visible" value="FALSE" selected="${visible == false}"/>
 	</acme:input-select>
+	
+	<jstl:choose>
+        <jstl:when test="${acme:anyOf(command,'create-component')}">
+            <acme:submit code="inventor.item.form.button.create" action="/inventor/item/create-component"/>
+        </jstl:when>
+        <jstl:when test="${acme:anyOf(command,'show, update, delete,publish') && visible==false}"> 
+            <acme:submit code="inventor.item.form.button.update" action="/inventor/item/update-component"/>
+            <acme:submit code="inventor.item.form.button.delete" action="/inventor/item/delete-component"/>
+        	<acme:submit code="inventor.item.form.button.publish" action="/inventor/item/publish-component"/>
+
+        </jstl:when>        
+    </jstl:choose>
+	
 </acme:form>
