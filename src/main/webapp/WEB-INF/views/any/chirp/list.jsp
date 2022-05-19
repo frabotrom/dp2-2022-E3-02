@@ -9,3 +9,5 @@
 	<acme:list-column code="any.chirp.list.label.body" path="body" width="30%"/>
 	<acme:list-column code="any.chirp.list.label.email" path="email" width="15%"/>
 </acme:list>
+
+<acme:button code="any.chirp.list.label.button.create" action="/any/chirp/create"/>
