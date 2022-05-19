@@ -22,6 +22,7 @@
 		<acme:menu-option code="master.menu.anonymous">
       		<acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list"/>
       		<acme:menu-separator/>
+      		<acme:menu-suboption code="master.menu.any.item.Tool.list" action="/any/item/list-tools"/>
       		<acme:menu-suboption code="master.menu.any.toolkit.list" action="/any/toolkit/list-toolkits"/>
 			<acme:menu-suboption code="master.menu.any.item.list-components" action="/any/item/list-components"/>
 			<acme:menu-separator/>
