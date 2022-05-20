@@ -10,3 +10,4 @@ inventor.item.list.button.create.component = Crear Componente
 inventor.item.form.button.update = Actualizar Componente
 inventor.item.form.button.delete = Eliminar Componente
 inventor.item.form.button.publish = Publicar Componente
+inventor.item.form.error.non-accepted-currency = Esta moneda no es aceptada

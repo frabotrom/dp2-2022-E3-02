@@ -49,7 +49,7 @@ public class InventorComponentUpdateService implements AbstractUpdateService<Inv
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice","link","published");		
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice","link","visible");		
 	}
 
 	@Override
@@ -93,7 +93,6 @@ public class InventorComponentUpdateService implements AbstractUpdateService<Inv
 			existing=this.repository.findComponentById(entity.getId());
 			if(existing!=null) {
 				errors.state(request,existing.getId()==entity.getId() , "code", "inventor.item.form.error.duplicated-code");
-
 			}
 
 		}
@@ -101,14 +100,14 @@ public class InventorComponentUpdateService implements AbstractUpdateService<Inv
 		if (!errors.hasErrors("retailPrice")) {
 			
 			final String[] currencies=this.repository.findSystemConfiguration().getAcceptedCurrencies().split(",");
-			Boolean acceptedCurrency=false;
+			Boolean accepted=false;
 			for(int i=0;i<currencies.length;i++) {
 				if(entity.getRetailPrice().getCurrency().equals(currencies[i].trim())) {
-					acceptedCurrency=true;
+					accepted=true;
 				}
 			}
-			errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.item.form.error.negative-salary");
-			errors.state(request, acceptedCurrency, "retailPrice", "inventor.item.form.error.non-accepted-currency");
+			errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.item.form.error.negative-price");
+			errors.state(request, accepted, "retailPrice", "inventor.item.form.error.non-accepted-currency");
 
 		}
 
