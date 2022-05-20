@@ -21,6 +21,7 @@ master.menu.anonymous = Anónimo
 master.menu.any.item.list-components = Lista de Componentes
 master.menu.any.chirp.list = Lista de Chirps Recientes
 master.menu.any.toolkit.list = Lista de Toolkits
+master.menu.any.item.Tool.list= Lista de Herramientas
 
 # master.menu.administrator ###################################################
 
