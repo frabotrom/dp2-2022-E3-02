@@ -37,7 +37,7 @@ public class AnyToolShowService implements AbstractShowService<Any, Item>{
 		assert entity != null;
 		assert request != null;
 		assert model != null;
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice","visible");
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice","link");
 	}
   
 }
