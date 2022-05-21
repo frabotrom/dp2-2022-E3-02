@@ -15,7 +15,7 @@ public class InventorComponentShowService implements AbstractShowService<Invento
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected InventorComponentRepository repository;
+	protected InventorItemRepository repository;
 
 
 	@Override

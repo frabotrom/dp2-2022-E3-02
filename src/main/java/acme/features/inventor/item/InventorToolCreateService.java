@@ -12,7 +12,7 @@ import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorComponentCreateService implements AbstractCreateService<Inventor, Item>{
+public class InventorToolCreateService implements AbstractCreateService<Inventor, Item>{
 	
 	@Autowired
 	protected InventorItemRepository repository;
@@ -43,7 +43,7 @@ public class InventorComponentCreateService implements AbstractCreateService<Inv
 		assert entity != null;
 		assert errors != null;
 		entity.setVisible(false);
-		entity.setType(ItemType.COMPONENT);
+		entity.setType(ItemType.TOOL);
 
 		request.bind(entity, errors, "name", "code", "technology", "description", "retailPrice","link");
 	}

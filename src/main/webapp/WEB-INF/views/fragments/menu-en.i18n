@@ -38,6 +38,7 @@ master.menu.inventor = Inventor
 master.menu.inventor.patronage = My Patronages
 master.menu.inventor.patronagereport = My Patronage Reports
 master.menu.inventor.components = My Components
+master.menu.inventor.tools = My Tools
 
 #master.menu.authenticated ####################################################
 

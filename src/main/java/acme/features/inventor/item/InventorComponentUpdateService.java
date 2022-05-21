@@ -17,7 +17,7 @@ public class InventorComponentUpdateService implements AbstractUpdateService<Inv
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected InventorComponentRepository repository;
+	protected InventorItemRepository repository;
 
 	// AbstractUpdateService<Inventor, Item> -------------------------------------
 

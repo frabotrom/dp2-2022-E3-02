@@ -12,3 +12,6 @@ inventor.item.form.button.delete = Delete Component
 inventor.item.form.button.publish = Publish Component
 inventor.item.form.error.non-accepted-currency = This currency is not accepted
 inventor.item.form.button.create = Create component
+inventor.item.tool.form.button.update = Update Tool
+inventor.item.tool.form.button.delete = Delete Tool
+inventor.item.tool.form.button.publish = Publish Tool

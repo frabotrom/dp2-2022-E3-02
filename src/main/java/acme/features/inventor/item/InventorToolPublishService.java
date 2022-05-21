@@ -12,7 +12,7 @@ import acme.framework.services.AbstractUpdateService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorComponentPublishService implements AbstractUpdateService<Inventor, Item> {
+public class InventorToolPublishService implements AbstractUpdateService<Inventor, Item> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -28,7 +28,7 @@ public class InventorComponentPublishService implements AbstractUpdateService<In
 
 		boolean result;
 		final int id = request.getModel().getInteger("id");
-		final Item comp = this.repository.findComponentById(id);
+		final Item comp = this.repository.findToolById(id);
 		final Inventor inventor = comp.getInventor();
 
 		result =  !comp.isVisible() && request.isPrincipal(inventor);
@@ -42,7 +42,7 @@ public class InventorComponentPublishService implements AbstractUpdateService<In
 
 		Item result;
 		final int id = request.getModel().getInteger("id");
-		result = this.repository.findComponentById(id);
+		result = this.repository.findToolById(id);
 
 		return result;
 	}
@@ -113,7 +113,7 @@ public class InventorComponentPublishService implements AbstractUpdateService<In
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice","link","published");		
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice","link","visible");		
 	}
 
 	@Override
@@ -124,5 +124,5 @@ public class InventorComponentPublishService implements AbstractUpdateService<In
 		entity.setVisible(true);
 		this.repository.save(entity);
 	}
-
 }
+

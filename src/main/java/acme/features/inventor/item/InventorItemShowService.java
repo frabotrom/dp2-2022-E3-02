@@ -1,19 +1,16 @@
 package acme.features.inventor.item;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.Principal;
-import acme.framework.services.AbstractListService;
+import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorComponentListService implements AbstractListService<Inventor, Item> {
+public class InventorItemShowService implements AbstractShowService<Inventor, Item> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -24,23 +21,33 @@ public class InventorComponentListService implements AbstractListService<Invento
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
+		
+		boolean result;
+		int id;
+		Item item;
 
-		return true;
-	}
-
-	@Override
-	public Collection<Item> findMany(final Request<Item> request) {
-		assert request != null;
-
-		Collection<Item> result;
-		Principal principal;
-
-		principal = request.getPrincipal();
-		result = this.repository.findComponentsByInventorId(principal.getActiveRoleId());
+		// También se comprueba que sea del tipo tool
+		id = request.getModel().getInteger("id");
+		item = this.repository.findItemById(id);
+		result = item != null && item.getInventor().getId() == request.getPrincipal().getActiveRoleId();
 
 
 		return result;
 	}
+
+	@Override
+	public Item findOne(final Request<Item> request) {
+		assert request != null;
+
+		Item result;
+		int id;
+
+		id = request.getModel().getInteger("id");
+		result = this.repository.findItemById(id);
+
+		return result;
+	}
+
 
 	@Override
 	public void unbind(final Request<Item> request, final Item entity, final Model model) {
@@ -48,14 +55,7 @@ public class InventorComponentListService implements AbstractListService<Invento
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "retailPrice");
-		
-		if(entity.isVisible()) {
-			model.setAttribute("visible", "Visible");
-		}
-		else {
-			model.setAttribute("visible", "Not Visible");
-		}
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "type", "visible");
 	}
 
 }

@@ -13,13 +13,22 @@ import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor;
 
 @Repository
-public interface InventorComponentRepository extends AbstractRepository{
+public interface InventorItemRepository extends AbstractRepository{
 
 	@Query("select i from Item i where i.type = 1 and i.inventor.id = :inventorId")
 	Collection<Item> findComponentsByInventorId(@Param("inventorId") int inventorId);
+	
+	@Query("select i from Item i where i.type = 0 and i.inventor.id = :inventorId")
+	Collection<Item> findToolsByInventorId(@Param("inventorId") int inventorId);
 
 	@Query("select i from Item i where i.id = :id and i.type = 1")
 	Item findComponentById(@Param("id") int id);
+	
+	@Query("select i from Item i where i.id = :id and i.type = 0")
+	Item findToolById(@Param("id") int id);
+	
+	@Query("select i from Item i where i.id = :id")
+	Item findItemById(@Param("id") int id);
 	
 	@Query("select inventor from Inventor inventor WHERE inventor.id=:id")
 	Optional<Inventor> findInventorById(@Param("id") int id);
@@ -29,5 +38,8 @@ public interface InventorComponentRepository extends AbstractRepository{
 
 	@Query("select sc from SystemConfiguration sc")
 	SystemConfiguration findSystemConfiguration();
+
+	
+
 	
 }
