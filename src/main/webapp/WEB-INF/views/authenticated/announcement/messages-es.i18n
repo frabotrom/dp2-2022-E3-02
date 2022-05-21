@@ -1,9 +1,9 @@
 authenticated.announcement.list.label.creationDate = Fecha de publicacion
 authenticated.announcement.list.label.title = Titulo
 authenticated.announcement.list.label.body = Cuerpo del anuncio
+authenticated.announcement.list.label.critical = Critico
 
 authenticated.announcement.form.label.title = Titulo
 authenticated.announcement.form.label.creationDate = Fecha de publicacion
 authenticated.announcement.form.label.body = Cuerpo del anuncio
 authenticated.announcement.form.label.moreInfo = Enlaces
-authenticated.announcement.form.label.critical = Critico

@@ -32,6 +32,7 @@ master.menu.administrator.user-accounts = User Accounts
 master.menu.administrator.populate-initial = Populate DB (Initial)
 master.menu.administrator.populate-sample = Populate DB (Samples)
 master.menu.administrator.shut-down = Shut Down
+master.menu.administrator.announcement.create = Create Announcement
 
 # master.menu.inventor ##########################################################
 
