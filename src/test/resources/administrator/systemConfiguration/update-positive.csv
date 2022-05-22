@@ -1,0 +1,3 @@
+strongSpamTerms,weakSpamTerms,systemCurrency,acceptedCurrencies,weakThreshold,strongThreshold
+"sex, hard core, viagra, cialis, sexo, hardcore, fuck you","sexy, nigeria, you've won, has ganado, loser","YEN","EUR, USD, GBP, YEN",0.15,0.85
+,,"USD","EUR, USD, GBP, YEN",0.15,0.85

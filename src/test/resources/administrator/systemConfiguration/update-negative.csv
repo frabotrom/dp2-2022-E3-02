@@ -1,0 +1,8 @@
+strongSpamTerms,weakSpamTerms,systemCurrency,acceptedCurrencies,weakThreshold,strongThreshold
+"sex, hard core, viagra, cialis, sexo, hardcore","sexy, nigeria, you've won, has ganado","WON","EUR, USD, GBP",0.75,0.85
+"sex, hard core, viagra, cialis, sexo, hardcore","sexy, nigeria, you've won, has ganado","YUAN","EUR, USD, GBP",0.75,0.85
+"sex, hard core, viagra, cialis, sexo, hardcore","sexy, nigeria, you've won, has ganado","EUR","EUR, USD, GBP, YUAN",0.75,0.85
+"sex, hard core, viagra, cialis, sexo, hardcore","sexy, nigeria, you've won, has ganado",,,0.75,0.85
+"sex, hard core, viagra, cialis, sexo, hardcore","sexy, nigeria, you've won, has ganado","EUR","EUR, USD, GBP",0.75,0.45
+sex, hard core, viagra, cialis, sexo, hardcore","sexy, nigeria, you've won, has ganado","EUR","EUR, USD, GBP",1.75,0.85
+sex, hard core, viagra, cialis, sexo, hardcore","sexy, nigeria, you've won, has ganado","EUR","EUR, USD, GBP",0.75,1.85
