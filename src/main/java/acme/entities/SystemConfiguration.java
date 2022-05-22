@@ -2,7 +2,6 @@ package acme.entities;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Range;
@@ -19,11 +18,9 @@ public class SystemConfiguration extends AbstractEntity {
 	// ------------------------------------------------------------------
 	private static final long serialVersionUID = 1L;
 	// ------------------------------------------------------------------
-		
-	@NotNull
+	
 	protected String strongSpamTerms;
 	
-	@NotNull
 	protected String weakSpamTerms;
 	
 	@NotBlank

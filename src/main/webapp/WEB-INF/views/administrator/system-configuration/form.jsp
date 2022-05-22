@@ -10,5 +10,11 @@
 	<acme:input-textarea code="administrator.configuration.form.label.accepted-currencies" path="acceptedCurrencies"/>
 	<acme:input-double code="administrator.configuration.form.label.weak-threshold" path="weakThreshold"/>
 	<acme:input-double code="administrator.configuration.form.label.strong-threshold" path="strongThreshold"/>
+	
+	<jstl:choose>
+		<jstl:when test="${acme:anyOf(command, 'show, update')}">
+			<acme:submit code="administrator.configuration.form.label.update" action="/administrator/system-configuration/update"/>
+		</jstl:when>	
+	</jstl:choose>
 
 </acme:form>
