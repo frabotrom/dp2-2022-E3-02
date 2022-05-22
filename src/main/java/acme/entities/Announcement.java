@@ -26,7 +26,7 @@ public class Announcement extends AbstractEntity{
 
 	protected static final long	serialVersionUID	= 1L;
 
-	// Attributes
+	// Attributes -----------------------------------------------------------
 
 	@NotNull
 	@Past
@@ -46,5 +46,16 @@ public class Announcement extends AbstractEntity{
 
 	@URL
 	protected String			moreInfo;
+	
+	// Derived attributes ----------------------------------------------------
+	
+//	public boolean isSpam(final SystemConfiguration systemConfiguration) {
+//		final String text = this.getTitle() + "\n" + this.getBody();
+//		return SpamDetector.isSpam(text, 
+//			systemConfiguration.getWeakSpamTerms(), 
+//			systemConfiguration.getStrongSpamTerms(), 
+//			systemConfiguration.getStrongSpamTermsThreshold(), 
+//			systemConfiguration.getWeakSpamTermsThreshold());
+//	}
 
 }

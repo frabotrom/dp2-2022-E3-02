@@ -1,9 +1,9 @@
 authenticated.announcement.list.label.creationDate = Publication date
 authenticated.announcement.list.label.title = Title
 authenticated.announcement.list.label.body = Body
+authenticated.announcement.list.label.critical = Critical
 
 authenticated.announcement.form.label.title = Title
 authenticated.announcement.form.label.creationDate = Publication date
 authenticated.announcement.form.label.body = Announcement body
 authenticated.announcement.form.label.moreInfo = Links
-authenticated.announcement.form.label.critical = Critical

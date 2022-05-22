@@ -1,0 +1,5 @@
+key,title,body,critical,moreInfo
+0,"Anuncio 1","Cuerpo 1",true,"http:/www.google.com"
+1,"Anuncio 2","Cuerpo 2",false,"http:/starwars.fandom.com"
+2,"Anuncio 3","Cuerpo 3",false,"http:/starwars.fandom.com"
+3,"Anuncio 4","Cuerpo 4",false,"http:/asd.golger.moc"
