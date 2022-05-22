@@ -5,7 +5,10 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Patronage;
+import acme.entities.PatronageStatus;
 import acme.entities.Patronagereport;
+import acme.features.inventor.patronage.InventorPatronageRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
@@ -17,7 +20,9 @@ public class InventorPatronagereportListService implements AbstractListService<I
 	// Internal state -------------------------------------------------------------------
 
 	@Autowired
-	protected InventorPatronagereportRepository repository;
+	protected InventorPatronageRepository patronageRepository;
+	@Autowired
+	protected InventorPatronagereportRepository patronagereportRepository;
 
 	// AbstractListService<Inventor, PatronageReport> interface ---------------------------
 
@@ -25,7 +30,17 @@ public class InventorPatronagereportListService implements AbstractListService<I
 	public boolean authorise(final Request<Patronagereport> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int patronageId;
+		Patronage patronage;
+
+		patronageId = request.getModel().getInteger("patronageId");
+		patronage = this.patronageRepository.findOnePatronageById(patronageId);
+		
+		result = patronage.getInventor().getId() == request.getPrincipal().getActiveRoleId();
+		result = result && patronage.getStatus().equals(PatronageStatus.ACCEPTED);
+
+		return result;
 	}
 
 	@Override
@@ -36,7 +51,7 @@ public class InventorPatronagereportListService implements AbstractListService<I
 		int inventorId;
 
 		inventorId = request.getPrincipal().getActiveRoleId();
-		result = this.repository.findPatronageReportsByInventorId(inventorId);
+		result = this.patronagereportRepository.findPatronageReportsByInventorId(inventorId);
 
 		return result;
 	}
