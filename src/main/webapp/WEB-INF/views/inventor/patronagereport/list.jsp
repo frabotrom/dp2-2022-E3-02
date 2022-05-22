@@ -7,3 +7,5 @@
 	<acme:list-column code="inventor.patronage-report.list.label.sequenceNumber" path="sequenceNumber"/>
 	<acme:list-column code="inventor.patronage-report.list.label.creationMoment" path="creationMoment"/>
 </acme:list>
+
+<acme:button  code="inventor.patronage-report.list.button.create" action="/inventor/patronagereport/create?patronageId=${patronageId}"/>
