@@ -8,13 +8,13 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.announcement.form.label.title = T�tulo:
-administrator.announcement.form.label.critical = Cr�tico:
-administrator.announcement.form.label.notcritical= No Cr�tico
+administrator.announcement.form.label.title = TÃ­tulo:
+administrator.announcement.form.label.critical = CrÃ­tico:
+administrator.announcement.form.label.notcritical= No CrÃ­tico
 administrator.announcement.form.label.body = Cuerpo:
-administrator.announcement.form.label.url = M�s Informaci�n:
+administrator.announcement.form.label.url = MÃ¡s InformaciÃ³n:
 
-administrator.announcement.form.label.confirmation = �Est� seguro de que quiere crear el anuncio?
+administrator.announcement.form.label.confirmation = Â¿EstÃ¡ seguro de que quiere crear el anuncio?
 
 administrator.announcement.form.button.create = Crear
 
