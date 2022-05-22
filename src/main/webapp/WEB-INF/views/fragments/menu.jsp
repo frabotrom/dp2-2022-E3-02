@@ -23,8 +23,8 @@
       		<acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list"/>
       		<acme:menu-separator/>
       		<acme:menu-suboption code="master.menu.any.item.Tool.list" action="/any/item/list-tools"/>
-      		<acme:menu-suboption code="master.menu.any.toolkit.list" action="/any/toolkit/list-toolkits"/>
 			<acme:menu-suboption code="master.menu.any.item.list-components" action="/any/item/list-components"/>
+      		<acme:menu-suboption code="master.menu.any.toolkit.list" action="/any/toolkit/list-toolkits"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
 
@@ -47,6 +47,7 @@
 			<acme:menu-suboption code="master.menu.inventor.patronagereport" action="/inventor/patronagereport/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.inventor.components" action="/inventor/item/list"/>
+			<acme:menu-suboption code="master.menu.inventor.toolkit" action="/inventor/toolkit/list-toolkits"/>
 		</acme:menu-option>	
 		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">

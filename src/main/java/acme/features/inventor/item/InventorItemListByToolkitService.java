@@ -1,4 +1,4 @@
-package acme.features.any.item;
+package acme.features.inventor.item;
 
 import java.util.Collection;
 
@@ -9,39 +9,41 @@ import acme.entities.Item;
 import acme.entities.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Any;
 import acme.framework.services.AbstractListService;
+import acme.roles.Inventor;
 
 @Service
-public class AnyToolListByToolkit implements AbstractListService<Any, Item>{
+public class InventorItemListByToolkitService implements AbstractListService<Inventor, Item>{
 
 	@Autowired
-	protected AnyItemRepository repository;
+	protected InventorComponentRepository repository;
 	
-	// AbstractListService<Any, Item> interface --------------
+// AbstractListService<Any, Invention> interface --------------
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
 		
 		final boolean result;
-		Toolkit toolkit;
-		int toolkitId;
+		final int toolkitId;
+		final Toolkit toolkit;
 		
-		// Para comprobar que un toolkit no está en draftmode
 		toolkitId = request.getModel().getInteger("id");
-		toolkit=this.repository.findOneToolkitByToolkitId(toolkitId);
-		result = toolkit != null && !toolkit.isDraftMode();
-		
+		toolkit = this.repository.findToolkitById(toolkitId);
+		result = toolkit != null && request.getPrincipal().getActiveRoleId()==toolkit.getInventor().getId();
+
 		return result;
 	}
 	
 	@Override
 	public Collection<Item> findMany(final Request<Item> request) {
 		assert request != null;
+		
 		Collection<Item> result;
 		final int toolkitId = request.getModel().getInteger("id");
-		result = this.repository.findAllComponentsByToolkitId(toolkitId);
+		
+		result = this.repository.findAllItemsByToolkitId(toolkitId);
+		
 		return result;
 	}
 	
@@ -51,6 +53,6 @@ public class AnyToolListByToolkit implements AbstractListService<Any, Item>{
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "code", "name", "technology", "retailPrice");
+		request.unbind(entity, model, "code", "name", "retailPrice", "visible");
 	}
 }
