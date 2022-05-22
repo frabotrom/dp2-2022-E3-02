@@ -11,30 +11,23 @@ import acme.framework.roles.Any;
 
 @Controller
 public class AnyChirpController extends AbstractController<Any, Chirp> {
-	
+
 	// Internal state ---------------------------------------------------------
 
-		@Autowired
-		protected AnyChirpListService	listService;
-		
-		@Autowired
-		protected AnyChirpShowService showService;
+	@Autowired
+	protected AnyChirpListService	listService;
 
-		@Autowired
-		protected AnyChirpCreateService createService;
-		
-		@Autowired
-		protected AnyChirpUpdateService updateService;
-		
+	@Autowired
+	protected AnyChirpCreateService	createService;
+
 	// Constructors -----------------------------------------------------------
 
 
-		@PostConstruct
-		protected void initialise() {
-			super.addCommand("list", this.listService);
-			super.addCommand("show", this.showService);
-			super.addCommand("create", this.createService);
-			super.addCommand("update", this.updateService);
-		}
+	@PostConstruct
+	protected void initialise() {
+		super.addCommand("list", this.listService);
+		super.addCommand("create", this.createService);
+	}
 
 }
+
