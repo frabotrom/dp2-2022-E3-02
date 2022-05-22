@@ -1,3 +1,4 @@
+
 package acme.features.inventor.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +13,10 @@ import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorComponentCreateService implements AbstractCreateService<Inventor, Item>{
-	
+public class InventorComponentCreateService implements AbstractCreateService<Inventor, Item> {
+
 	@Autowired
 	protected InventorItemRepository repository;
-
 
 	// AbstractCreateService<Inventor, Item> interface -------------------------
 
@@ -45,7 +45,7 @@ public class InventorComponentCreateService implements AbstractCreateService<Inv
 		entity.setVisible(false);
 		entity.setType(ItemType.COMPONENT);
 
-		request.bind(entity, errors, "name", "code", "technology", "description", "retailPrice","link");
+		request.bind(entity, errors, "name", "code", "technology", "description", "retailPrice", "link");
 	}
 
 	@Override
@@ -54,14 +54,23 @@ public class InventorComponentCreateService implements AbstractCreateService<Inv
 		assert entity != null;
 		assert errors != null;
 
-		final Item equalCode=this.repository.findItemByCode(entity.getCode()).orElse(null);
+		final Item equalCode = this.repository.findItemByCode(entity.getCode()).orElse(null);
 
-		if(!errors.hasErrors("code")) {
-			errors.state(request, equalCode==null, "code", "inventor.item.form.error.duplicated-code");
+		if (!errors.hasErrors("code")) {
+			errors.state(request, equalCode == null, "code", "inventor.item.form.error.duplicated-code");
 		}
 
 		if (!errors.hasErrors("retailPrice")) {
-			errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.item.form.error.negative-salary");
+
+			final String[] currencies = this.repository.findSystemConfiguration().getAcceptedCurrencies().split(",");
+			Boolean accepted = false;
+			for (int i = 0; i < currencies.length; i++) {
+				if (entity.getRetailPrice().getCurrency().equals(currencies[i].trim())) {
+					accepted = true;
+				}
+			}
+			errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.item.form.error.negative-price");
+			errors.state(request, accepted, "retailPrice", "inventor.item.form.error.non-accepted-currency");
 		}
 
 	}
@@ -72,8 +81,7 @@ public class InventorComponentCreateService implements AbstractCreateService<Inv
 		assert entity != null;
 		assert model != null;
 
-
-		request.unbind( entity,model,"name", "code", "technology", "description","retailPrice", "link","published");
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "published");
 
 	}
 

@@ -7,17 +7,17 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class TestInventorCreateComponent extends TestHarness{
+public class TestInventorCreateTool extends TestHarness{
 	@ParameterizedTest
-	@CsvFileSource(resources= "/inventor/item/componentsCreate.csv", encoding = "utf-8", numLinesToSkip=1)
+	@CsvFileSource(resources= "/inventor/item/toolsCreate.csv", encoding = "utf-8", numLinesToSkip=1)
 	@Order(10)
 	public void positiveTest(final int recordIndex, final String name, final String code, final String technology,final String description, 
 		 final String retailPrice, final String link, final String visible) {
 		super.signIn("User1","HIDDEN-PASSWORD");
-		super.clickOnMenu("Inventor","My Components");
+		super.clickOnMenu("Inventor","My Tools");
 		super.checkListingExists();
 		
-		super.clickOnButton("Create Component");
+		super.clickOnButton("Create tool");
 		super.checkFormExists();
 		super.fillInputBoxIn("name", name);
 		super.fillInputBoxIn("code", code);
@@ -26,8 +26,8 @@ public class TestInventorCreateComponent extends TestHarness{
 		super.fillInputBoxIn("retailPrice", retailPrice);
 		//super.fillInputBoxIn("visible", visible);
 		
-		super.clickOnSubmit("Create component");
-		super.clickOnMenu("Inventor","My Components");
+		super.clickOnSubmit("Create Tool");
+		super.clickOnMenu("Inventor","My Tools");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, code);
@@ -50,22 +50,22 @@ public class TestInventorCreateComponent extends TestHarness{
 	}
 	
 	@ParameterizedTest
-	@CsvFileSource(resources= "/inventor/item/componentsCreateNegative.csv", encoding = "utf-8", numLinesToSkip=1)
+	@CsvFileSource(resources= "/inventor/item/toolsCreateNegative.csv", encoding = "utf-8", numLinesToSkip=1)
 	@Order(10)
 	public void negativeTest(final int recordIndex, final String name, final String code, final String technology,final String description, 
 		 final String retailPrice, final String link, final String visible) {
 		super.signIn("User1","HIDDEN-PASSWORD");
-		super.clickOnMenu("Inventor","My Components");
+		super.clickOnMenu("Inventor","My Tools");
 		super.checkListingExists();
 		
-		super.clickOnButton("Create Component");
+		super.clickOnButton("Create tool");
 		super.checkFormExists();
 		super.fillInputBoxIn("name", name);
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("technology", technology);
 		super.fillInputBoxIn("description", description);
 		super.fillInputBoxIn("retailPrice", retailPrice);
-		super.clickOnSubmit("Create component");
+		super.clickOnSubmit("Create Tool");
 		
 		super.checkErrorsExist();
 		
@@ -76,13 +76,12 @@ public class TestInventorCreateComponent extends TestHarness{
 	@Test
 	public void hackingTest() {
 		super.checkNotLinkExists("Inventor");
-		super.navigate("/inventor/item/create-component");
+		super.navigate("/inventor/item/create-tool");
 		super.checkPanicExists();
 		
 		super.signIn("User6", "HIDDEN-PASSWORD");
-		super.navigate("/inventor/item/create-component");
+		super.navigate("/inventor/item/create-tool");
 		super.checkPanicExists();
 		
 	}
-
 }

@@ -28,49 +28,45 @@ public class InventorItemController extends AbstractController<Inventor, Item> {
 	
 	//Components
 	@Autowired
-	protected InventorComponentListService	 listComponentService;
+	protected InventorComponentListService 	  listComponentService;
 		
 	@Autowired
 	protected InventorComponentCreateService  createComponentService;
 	
-	@Autowired
-	protected InventorComponentDeleteService  deleteComponentService;
-
-	@Autowired
-	protected InventorComponentUpdateService  updateComponentService;
-	
-	@Autowired
-	protected InventorComponentPublishService publishComponentService;
 	
 	//Tools
 	@Autowired
-	protected InventorToolListService	 listToolService;
-	
-	@Autowired
-	protected InventorItemShowService	  showItemService;
+	protected InventorToolListService	      listToolService;
 	
 	@Autowired 
-	protected InventorToolCreateService createToolService;
+	protected InventorToolCreateService       createToolService;
 	
-	@Autowired 
-	protected InventorToolDeleteService deleteToolService;
+	
+	//Item
+	@Autowired
+	protected InventorItemPublishService      publishItemService;
 	
 	@Autowired
-	protected InventorToolPublishService publishToolService;
+	protected InventorItemShowService	      showItemService;
+	
+	@Autowired
+	protected InventorItemUpdateService       updateItemService;
+	
+	@Autowired 
+	protected InventorItemDeleteService       deleteItemService;
+	
 	// Constructors -----------------------------------------------------------
 	
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list-components","list", this.listComponentService);
 		super.addCommand("create-component","create", this.createComponentService);
-		super.addCommand("delete-component","delete", this.deleteComponentService);
-		super.addCommand("update-component","update", this.updateComponentService);
-		super.addCommand("publish-component","update",this.publishComponentService);
 		super.addCommand("list-tools","list", this.listToolService);
-		super.addCommand("delete-tool","delete", this.deleteToolService);
 		super.addCommand("create-tool","create", this.createToolService);
-		super.addCommand("publish-tool","update",this.publishToolService);
 		super.addCommand("show", this.showItemService);
+		super.addCommand("delete", this.deleteItemService);
+		super.addCommand("update", this.updateItemService);
+		super.addCommand("publish","update",this.publishItemService);
 
 
 	}

@@ -11,7 +11,7 @@ import acme.framework.services.AbstractDeleteService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorComponentDeleteService implements AbstractDeleteService<Inventor, Item> {
+public class InventorItemDeleteService implements AbstractDeleteService<Inventor, Item> {
 	
 	// Internal state ---------------------------------------------------------
 
@@ -26,7 +26,7 @@ public class InventorComponentDeleteService implements AbstractDeleteService<Inv
 
 		boolean result;
 		final int id = request.getModel().getInteger("id");
-		final Item comp = this.repository.findComponentById(id);
+		final Item comp = this.repository.findItemById(id);
 		final Inventor inventor = comp.getInventor();
 		result = !comp.isVisible() && request.isPrincipal(inventor);
 
@@ -49,7 +49,7 @@ public class InventorComponentDeleteService implements AbstractDeleteService<Inv
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice","link","published");				
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice","link","visible");				
 	}
 
 	@Override
@@ -58,7 +58,7 @@ public class InventorComponentDeleteService implements AbstractDeleteService<Inv
 
 		Item result;
 		final int id = request.getModel().getInteger("id");
-		result = this.repository.findComponentById(id);
+		result = this.repository.findItemById(id);
 		return result;
 	}
 

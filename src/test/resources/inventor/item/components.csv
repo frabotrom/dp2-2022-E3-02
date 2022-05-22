@@ -5,4 +5,4 @@ recordIndex,name,code,technology,description,retailPrice,link,visible
 3,"Name11","ITM-001-K","Technology11","Description11","EUR 761.00","https://ev.us.es/",Visible
 4,"Name12","ITM-001-L","Technology12","Description12","EUR 630.00",,Visible
 5,"Name13","ITM-001-M","Technology13","Description13","EUR 299.00","https://ev.us.es/",Not Visible
-6,"Name14","ITM-001-N","Technology14","Description14","EUR 888.00","https://ev.us.es/",Visible
+6,"Name14","ITM-001-N","Technology14","Description14","EUR 888.00","https://ev.us.es/",Not Visible

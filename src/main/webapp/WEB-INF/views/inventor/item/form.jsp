@@ -38,15 +38,15 @@
          <jstl:when test="${acme:anyOf(command,'create-tool')}">
             <acme:submit code="inventor.item.form.button.create.tool" action="/inventor/item/create-tool"/>
         </jstl:when>
-        <jstl:when test="${acme:anyOf(command,'show,update-component,delete-component,publish-component') && visible == false && type=='COMPONENT'}"> 
-            <acme:submit code="inventor.item.form.button.update" action="/inventor/item/update-component"/>
-            <acme:submit code="inventor.item.form.button.delete" action="/inventor/item/delete-component"/>
-        	<acme:submit code="inventor.item.form.button.publish" action="/inventor/item/publish-component"/>
+        <jstl:when test="${acme:anyOf(command,'show,update,delete,publish') && visible == false && type=='COMPONENT'}"> 
+            <acme:submit code="inventor.item.form.button.update" action="/inventor/item/update"/>
+            <acme:submit code="inventor.item.form.button.delete" action="/inventor/item/delete"/>
+        	<acme:submit code="inventor.item.form.button.publish" action="/inventor/item/publish"/>
         </jstl:when>
-        <jstl:when test="${acme:anyOf(command,'show,update-tool,delete-tool,publish-tool') && visible == false && type=='TOOL'}"> 
-            <acme:submit code="inventor.item.tool.form.button.update" action="/inventor/item/update-tool"/>
-            <acme:submit code="inventor.item.tool.form.button.delete" action="/inventor/item/delete-tool"/>
-        	<acme:submit code="inventor.item.tool.form.button.publish" action="/inventor/item/publish-tool"/>
+        <jstl:when test="${acme:anyOf(command,'show,update,delete,publish') && visible == false && type=='TOOL'}"> 
+            <acme:submit code="inventor.item.tool.form.button.update" action="/inventor/item/update"/>
+            <acme:submit code="inventor.item.tool.form.button.delete" action="/inventor/item/delete"/>
+        	<acme:submit code="inventor.item.tool.form.button.publish" action="/inventor/item/publish"/>
         </jstl:when>         
     </jstl:choose>
 	

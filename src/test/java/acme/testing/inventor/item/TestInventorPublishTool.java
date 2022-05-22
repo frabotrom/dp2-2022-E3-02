@@ -5,19 +5,19 @@ import org.junit.jupiter.api.Test;
 
 import acme.testing.TestHarness;
 
-public class TestInventorPublishComponent extends TestHarness{
+public class TestInventorPublishTool extends TestHarness{
 	@Test
 	@Order(10)
 	public void positiveTest() {
 		super.signIn("User1", "HIDDEN-PASSWORD");
 
-		super.clickOnMenu("Inventor", "My Components");
+		super.clickOnMenu("Inventor", "My Tools");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 
 		super.clickOnListingRecord(2);
 		super.checkFormExists();
-		super.clickOnSubmit("Publish Component");
+		super.clickOnSubmit("Publish Tool");
 		super.checkNotErrorsExist();
 
 		super.signOut();
@@ -32,7 +32,7 @@ public class TestInventorPublishComponent extends TestHarness{
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 
-		super.clickOnListingRecord(1);
+		super.clickOnListingRecord(0);
 		super.checkFormExists();
 		super.checkNotButtonExists("Publish Component");
 

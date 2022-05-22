@@ -7,17 +7,17 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class TestInventorListComponents extends TestHarness{
+public class TestInventorListTools extends TestHarness{
 	
 	@ParameterizedTest
-	@CsvFileSource(resources= "/inventor/item/components.csv", encoding = "utf-8", numLinesToSkip=1)
+	@CsvFileSource(resources= "/inventor/item/tools.csv", encoding = "utf-8", numLinesToSkip=1)
 	@Order(10)
 	public void positiveTest(final int recordIndex, final String name, final String code, final String technology,final String description, 
 		 final String retailPrice, final String link, final String visible) {
 		
 		super.signIn("User1", "HIDDEN-PASSWORD");
 		
-		super.clickOnMenu("Inventor", "My Components");
+		super.clickOnMenu("Inventor", "My Tools");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		
@@ -41,14 +41,15 @@ public class TestInventorListComponents extends TestHarness{
 		super.signOut();
 
 	}
+	
 	@Test
 	public void hackingTest() {
 		super.checkNotLinkExists("Inventor");
-		super.navigate("/inventor/item/list-components");
+		super.navigate("/inventor/item/list-tools");
 		super.checkPanicExists();
 		
 		super.signIn("User6", "HIDDEN-PASSWORD");
-		super.navigate("/inventor/item/list-components");
+		super.navigate("/inventor/item/list-tools");
 		super.checkPanicExists();
 		
 	}
