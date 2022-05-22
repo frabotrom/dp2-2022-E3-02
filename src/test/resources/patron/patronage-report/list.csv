@@ -1,0 +1,6 @@
+recordIndex,sequenceNumber,creationMoment,memorandum,link,patronage.code,patronage.status,patronage.legalStuff,patronage.budget,patronage.creationDate,patronage.initalDate,patronage.finalDate,patronage.optionalLink
+0,PAT-001-A:0001,"2022/03/02 12:00","Memorandum1","",PAT-001-A,PROPOSED,"LegalStuff1",EUR 456.00,2022/01/20 12:00,2022/01/20 12:00,2022/03/01 12:00,"https://ev.us.es/"
+1,PAT-001-B:0002,"2022/03/03 12:00","Memorandum2","https://ev.us.es/",PAT-001-B,ACCEPTED,"LegalStuff2",USD 123.00,2022/03/14 12:00,2022/03/15 12:00,2022/04/16 18:00,""
+2,PAT-001-C:0003,"2022/03/04 12:00","Memorandum3","https://ev.us.es/",PAT-001-C,PROPOSED,"LegalStuff3",USD 128.00,2022/03/15 12:00,2022/03/16 12:00,2022/04/16 18:00,"https://ev.us.es/"
+3,PAT-001-D:0004,"2022/03/05 12:00","Memorandum4","https://ev.us.es/",PAT-001-D,PROPOSED,"LegalStuff4",EUR 201.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,"https://ev.us.es/"
+4,PAT-001-E:0005,"2022/03/06 12:00","Memorandum5","",PAT-001-E,DENIED,"LegalStuff5",EUR 214.00,2022/03/16 12:00,2022/03/17 12:00,2022/04/17 18:00,"https://ev.us.es/"

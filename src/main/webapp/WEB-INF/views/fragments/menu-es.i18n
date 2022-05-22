@@ -51,6 +51,7 @@ master.menu.autheticated.system-configuration = Configuración del Sistema
 master.menu.patron = Patrocinador
 master.menu.patron.list-patronage = Mis Patrocinios
 master.menu.patron.dashboard = Mi Tablero de Patrocinios
+master.menu.patron.list-patronage-reports = Mis Reportes de Patrocinios
 
 # master.menu.user-account ####################################################
 

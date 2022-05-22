@@ -1,0 +1,20 @@
+patron.patronage-report.form.label.sequenceNumber = Numero de secuencia
+patron.patronage-report.form.label.creationMoment = Fecha de creacion
+patron.patronage-report.form.label.memorandum = Memorandum
+patron.patronage-report.form.label.optionalLink = Link
+
+patron.patronage-report.form.label.patronage.code = Codigo del patrocinio
+patron.patronage-report.form.label.patronage.status = Estado
+patron.patronage-report.form.label.patronage.budget = Presupuesto
+patron.patronage-report.form.label.patronage.optionalLink = Link
+patron.patronage-report.form.label.patronage.patron = Patron
+patron.patronage-report.form.label.patronage.inventor = Inventor
+patron.patronage-report.form.label.patronage.legalStuff = Legal
+patron.patronage-report.form.label.patronage.creationDate = Fecha de creacion
+patron.patronage-report.form.label.patronage.initialDate = Fecha de inicio
+patron.patronage-report.form.label.patronage.finalDate = Fecha final
+patron.patronage-report.form.label.title = Patrocinio
+
+patron.patronage-report.form.label.patronage.proposed = PROPUESTO
+patron.patronage-report.form.label.patronage.accepted = ACEPTADO
+patron.patronage-report.form.label.patronage.denied = DENEGADO
