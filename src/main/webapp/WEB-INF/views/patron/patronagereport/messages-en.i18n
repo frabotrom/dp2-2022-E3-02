@@ -2,4 +2,19 @@ patron.patronage-report.form.label.sequenceNumber = Sequence Number
 patron.patronage-report.form.label.creationMoment = Creation moment
 patron.patronage-report.form.label.memorandum = Memorandum
 patron.patronage-report.form.label.optionalLink = Link
+
 patron.patronage-report.form.label.patronage.code = Patronage Code
+patron.patronage-report.form.label.patronage.status = Status
+patron.patronage-report.form.label.patronage.budget = Budget
+patron.patronage-report.form.label.patronage.optionalLink = Link
+patron.patronage-report.form.label.patronage.patron = Patron
+patron.patronage-report.form.label.patronage.inventor = Inventor
+patron.patronage-report.form.label.patronage.legalStuff = Legal
+patron.patronage-report.form.label.patronage.creationDate = Creation Date
+patron.patronage-report.form.label.patronage.initialDate = Initial Date
+patron.patronage-report.form.label.patronage.finalDate = Final Date
+patron.patronage-report.form.label.title = Patronage
+
+patron.patronage-report.form.label.patronage.proposed = PROPOSED
+patron.patronage-report.form.label.patronage.accepted = ACCEPTED
+patron.patronage-report.form.label.patronage.denied = DENIED

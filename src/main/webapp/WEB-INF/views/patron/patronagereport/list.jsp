@@ -7,4 +7,6 @@
 	<acme:list-column code="patron.patronage-report.form.label.sequenceNumber" path="sequenceNumber"/>
 	<acme:list-column code="patron.patronage-report.form.label.creationMoment" path="creationMoment"/>
 	<acme:list-column code="patron.patronage-report.form.label.memorandum" path="memorandum"/>
+	<acme:list-column code="patron.patronage-report.form.label.patronage.code" path="patronage.code"/>
+	
 </acme:list>

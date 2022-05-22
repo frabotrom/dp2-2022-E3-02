@@ -12,7 +12,7 @@ public class PatronPatronageReportListTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/patron/patronage-report/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTestPatronageReportsAsPatron(final int recordIndex, final String sequenceNumber, final String creationMoment, final String memorandum, final String link) {
+	public void positiveTestPatronageReportsAsPatron(final int recordIndex, final String sequenceNumber, final String creationMoment, final String memorandum, final String link, final String patronageCode) {
 
 		super.signIn("user6", "HIDDEN-PASSWORD");
 
@@ -24,6 +24,7 @@ public class PatronPatronageReportListTest extends TestHarness {
 		super.checkColumnHasValue(recordIndex, 0, sequenceNumber);
 		super.checkColumnHasValue(recordIndex, 1, creationMoment);
 		super.checkColumnHasValue(recordIndex, 2, memorandum);
+		super.checkColumnHasValue(recordIndex, 3, patronageCode);
 
 		super.signOut();
 
