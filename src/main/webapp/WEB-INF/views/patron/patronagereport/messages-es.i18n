@@ -1,0 +1,5 @@
+patron.patronage-report.form.label.sequenceNumber = Numero de secuencia
+patron.patronage-report.form.label.creationMoment = Fecha de creacion
+patron.patronage-report.form.label.memorandum = Memorandum
+patron.patronage-report.form.label.optionalLink = Link
+patron.patronage-report.form.label.patronage.code = Codigo del patrocinio
