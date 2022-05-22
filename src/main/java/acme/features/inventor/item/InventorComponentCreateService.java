@@ -81,7 +81,7 @@ public class InventorComponentCreateService implements AbstractCreateService<Inv
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "published");
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link", "visible");
 
 	}
 
