@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
-import acme.entities.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
@@ -18,22 +17,13 @@ public class AnyToolListByToolkit implements AbstractListService<Any, Item>{
 	@Autowired
 	protected AnyItemRepository repository;
 	
-	// AbstractListService<Any, Item> interface --------------
+// AbstractListService<Any, Invention> interface --------------
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
-		
-		final boolean result;
-		Toolkit toolkit;
-		int toolkitId;
-		
-		// Para comprobar que un toolkit no está en draftmode
-		toolkitId = request.getModel().getInteger("id");
-		toolkit=this.repository.findOneToolkitByToolkitId(toolkitId);
-		result = toolkit != null && !toolkit.isDraftMode();
-		
-		return result;
+
+		return true;
 	}
 	
 	@Override
