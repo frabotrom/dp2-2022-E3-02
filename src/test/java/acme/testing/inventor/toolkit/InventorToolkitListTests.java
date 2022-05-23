@@ -23,7 +23,6 @@ public class InventorToolkitListTests extends TestHarness {
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, title);
 		super.checkColumnHasValue(recordIndex, 2, info);
-		super.checkColumnHasValue(recordIndex, 3, draftMode);
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
@@ -32,7 +31,6 @@ public class InventorToolkitListTests extends TestHarness {
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("asemblyNotes", asemblyNotes);
 		super.checkInputBoxHasValue("info", info);
-		super.checkInputBoxHasValue("draftMode", draftMode);
 		
 		super.signOut();
 

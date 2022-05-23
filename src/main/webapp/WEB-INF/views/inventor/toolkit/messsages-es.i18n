@@ -4,4 +4,11 @@ inventor.toolkit.list.label.info = Información
 inventor.toolkit.list.label.description = Descripción
 inventor.toolkit.list.label.assemblyNotes = Instrucciones
 inventor.toolkit.list.label.draftMode = Modo Borrador
+inventor.toolkit.list.button.create = Crear Toolkit
+
 inventor.toolkit.form.button.items = Herramientas/Componentes del Toolkit
+inventor.toolkit.form.button.create = Crear Toolkit
+inventor.toolkit.form.button.delete = Eliminar
+inventor.toolkit.form.button.update = Editar
+inventor.toolkit.form.button.publish = Publicar
+inventor.toolkit.form.label.price = Precio
