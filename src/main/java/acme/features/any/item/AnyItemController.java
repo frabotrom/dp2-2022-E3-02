@@ -16,13 +16,10 @@ public class AnyItemController extends AbstractController<Any,Item> {
 	protected AnyComponentListService listAllComponentsService;
 	
 	@Autowired
-	protected AnyComponentShowService componentShowService;
-	
-	@Autowired
 	protected AnyToolListService	listAllToolsService;
 
 	@Autowired
-	protected AnyToolShowService	toolShowService;
+	protected AnyItemShowService	itemShowService;
   
 	@Autowired
 	protected AnyToolListByToolkit	listAllByToolkitService;
@@ -30,10 +27,9 @@ public class AnyItemController extends AbstractController<Any,Item> {
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("show", this.toolShowService);
+		super.addCommand("show", this.itemShowService);
 		super.addCommand("list-tools", "list", this.listAllToolsService);
 		super.addCommand("list-items-toolkit",  "list", this.listAllByToolkitService);
-		super.addCommand("show-component", this.componentShowService);
 		super.addCommand("list-components","list", this.listAllComponentsService);
 	}
 }

@@ -26,7 +26,6 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		int id;
 		Item item;
 
-		// También se comprueba que sea del tipo tool
 		id = request.getModel().getInteger("id");
 		item = this.repository.findItemById(id);
 		result = item != null && item.getInventor().getId() == request.getPrincipal().getActiveRoleId();

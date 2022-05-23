@@ -45,7 +45,7 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 		entity.setVisible(false);
 		entity.setType(ItemType.TOOL);
 
-		request.bind(entity, errors, "name", "code", "technology", "description", "retailPrice","visible");
+		request.bind(entity, errors, "name", "code", "technology", "description", "retailPrice", "link");
 	}
 
 	@Override
@@ -81,8 +81,7 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 		assert entity != null;
 		assert model != null;
 
-
-		request.unbind( entity,model,"name", "code", "technology", "description","retailPrice", "link","published");
+		request.unbind(entity, model, "name", "code", "technology", "description","retailPrice", "link", "visible");
 
 	}
 
