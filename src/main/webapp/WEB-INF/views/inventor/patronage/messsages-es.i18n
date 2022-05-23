@@ -23,6 +23,8 @@ inventor.patronage.form.label.patronName = Nombre del Patrocinador
 inventor.patronage.form.label.patronEmail = Email del Patrocinador
 inventor.patronage.form.label.patronCompany = Compañía del Patrocinador
 
+inventor.patronage.form.button.accept = Aceptar Patrocinio
+inventor.patronage.form.button.deny = Rechazar Patrocinio
 
 inventor.patronage.list.label.status = Estado
 inventor.patronage.list.label.code = Código

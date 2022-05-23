@@ -10,3 +10,5 @@ patronage-008,inventor-001,patron-003,DENIED,"PAT-001-H","LegalStuff8",EUR 162.0
 patronage-009,inventor-002,patron-003,PROPOSED,"PAT-001-I","LegalStuff9",EUR 201.00,2022/03/18 12:00,2022/03/18 12:00,2022/04/20 18:00,"https://ev.us.es/"
 patronage-010,inventor-002,patron-004,ACCEPTED,"PAT-001-J","LegalStuff10",USD 217.00,2022/03/18 12:00,2022/03/18 12:00,2022/04/20 18:00,null
 patronage-011,inventor-002,patron-004,DENIED,"PAT-001-K","LegalStuff11",EUR 189.00,2022/03/19 12:00,2022/03/19 12:00,2022/04/21 18:00,"https://ev.us.es/"
+patronage-012,inventor-002,patron-004,PROPOSED,"PAT-001-L","LegalStuff12",USD 217.00,2022/03/22 12:00,2022/03/22 12:00,2022/07/20 18:00,null
+patronage-013,inventor-002,patron-004,PROPOSED,"PAT-001-M","LegalStuff13",EUR 189.00,2022/03/22 12:00,2022/03/22 12:00,2022/07/21 18:00,"https://ev.us.es/"
