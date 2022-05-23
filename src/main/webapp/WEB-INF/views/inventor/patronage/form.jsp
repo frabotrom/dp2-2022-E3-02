@@ -30,6 +30,16 @@
 	<acme:input-url code="inventor.patronage.form.label.optionalLink" path="optionalLink"/>	
 	<acme:input-integer code="inventor.patronage.form.label.period" path="period"/>
 	
+	<jstl:choose>
+		<jstl:when test="${ status=='PROPOSED' }">
+			<acme:submit code="inventor.patronage.form.button.accept"
+				action="/inventor/patronage/accept?id=${id}" />
+			<acme:submit code="inventor.patronage.form.button.deny"
+				action="/inventor/patronage/deny?id=${id}" />
+		</jstl:when>
+	</jstl:choose>
+	
+	
 	<%-- Patron Profile--%>
 	<hr>
     <br>
