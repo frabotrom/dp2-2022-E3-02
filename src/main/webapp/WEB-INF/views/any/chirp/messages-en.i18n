@@ -3,3 +3,8 @@ any.chirp.list.label.author = Author
 any.chirp.list.label.creationDate = Creation Date
 any.chirp.list.label.body = Body
 any.chirp.list.label.email = Email
+any.chirp.list.label.button.create = Create New Chirp
+
+any.chirp.form.label.confirmation = Confirm the chirp(once created, chirps can not be edited or deleted)
+
+any.chirp.form.error.spam = Contains prohibited words

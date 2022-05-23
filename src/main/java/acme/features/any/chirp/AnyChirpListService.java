@@ -15,45 +15,46 @@ import acme.framework.services.AbstractListService;
 
 @Service
 public class AnyChirpListService implements AbstractListService<Any, Chirp> {
-	
+
 	// Internal state ---------------------------------------------------------
 
-		@Autowired
-		protected AnyChirpRepository repository;
+	@Autowired
+	protected AnyChirpRepository repository;
 
-	// AbstractListService<Inventor, Patronage>  interface -------------------------
-		
-		@Override
-		public boolean authorise(final Request<Chirp> request) {
-			assert request != null;
+	// AbstractListService<Administrator, Shout> interface --------------
 
-			return true;
-		}
-		
-		@Override
-		public Collection<Chirp> findMany(final Request<Chirp> request) {
-			assert request != null;
 
-			Collection<Chirp> result;
-			Calendar calendar;
-			Date deadline;
-			
-			calendar = Calendar.getInstance();
-			calendar.add(Calendar.MONTH, -1);
-			deadline = calendar.getTime();
-			
-			result = this.repository.findAllRecentChirps(deadline);
+	@Override
+	public boolean authorise(final Request<Chirp> request) {
+		assert request != null;
 
-			return result;
-		}
-		
-		@Override
-		public void unbind(final Request<Chirp> request, final Chirp entity, final Model model) {
-			assert request != null;
-			assert entity != null;
-			assert model != null;
+		return true;
+	}
 
-			request.unbind(entity, model, "creationDate", "title", "author", "body", "email");
-		}
+	@Override
+	public Collection<Chirp> findMany(final Request<Chirp> request) {
+		assert request != null;
+
+		Collection<Chirp> result;
+		Calendar calendar;
+		Date deadline;
+
+		calendar = Calendar.getInstance();
+		calendar.add(Calendar.MONTH, -1);
+		deadline = calendar.getTime();
+
+		result = this.repository.findAllRecentChirps(deadline);
+
+		return result;
+	}
+
+	@Override
+	public void unbind(final Request<Chirp> request, final Chirp entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+
+		request.unbind(entity, model, "creationDate", "title", "author", "body", "email");
+	}
 
 }

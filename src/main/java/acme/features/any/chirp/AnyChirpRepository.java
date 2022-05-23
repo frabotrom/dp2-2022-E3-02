@@ -15,5 +15,8 @@ public interface AnyChirpRepository extends AbstractRepository {
 	
 	@Query("select c from Chirp c where c.creationDate > :deadline")
 	Collection<Chirp> findAllRecentChirps(@Param("deadline") Date deadline);
+	
+	@Query("select c from Chirp c where c.id = :id")
+	Chirp findOneChirpById(@Param("id") int id);
 
 }

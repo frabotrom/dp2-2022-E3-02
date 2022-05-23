@@ -1,0 +1,9 @@
+recordIndex,title,author,body,email,confirmation
+0,"","","","",false
+1,"title","","","",false
+2,"title","author","","",false
+3,"title","author","body","",false
+4,"title","author","body","email",false
+5,"title","author",body","mail@mail.com",false
+6,"","","","",true
+7,"sex","sexy sex","nigeria sex","sexy@sex.com",true
