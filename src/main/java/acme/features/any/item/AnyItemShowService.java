@@ -10,7 +10,7 @@ import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AnyToolShowService implements AbstractShowService<Any, Item>{
+public class AnyItemShowService implements AbstractShowService<Any, Item>{
 
 	@Autowired
 	protected AnyItemRepository repository;
@@ -19,7 +19,17 @@ public class AnyToolShowService implements AbstractShowService<Any, Item>{
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
-		return true;
+		
+		final boolean result;
+		Item item;
+		int id;
+		
+		// Para comprobar que es visible
+		id=request.getModel().getInteger("id");
+		item=this.repository.findOneItemById(id);
+		result = item != null && item.isVisible();
+		
+		return result;
 	}
 
 	@Override

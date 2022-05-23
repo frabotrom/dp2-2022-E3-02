@@ -13,6 +13,7 @@ public class TestInventorCreateComponent extends TestHarness{
 	@Order(10)
 	public void positiveTest(final int recordIndex, final String name, final String code, final String technology,final String description, 
 		 final String retailPrice, final String link, final String visible) {
+		
 		super.signIn("User1","HIDDEN-PASSWORD");
 		super.clickOnMenu("Inventor","My Components");
 		super.checkListingExists();
