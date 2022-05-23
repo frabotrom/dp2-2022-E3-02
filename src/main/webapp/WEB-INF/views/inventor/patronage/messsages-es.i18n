@@ -22,6 +22,7 @@ inventor.patronage.form.label.period = Periodo de Tiempo (Días)
 inventor.patronage.form.label.patronName = Nombre del Patrocinador
 inventor.patronage.form.label.patronEmail = Email del Patrocinador
 inventor.patronage.form.label.patronCompany = Compañía del Patrocinador
+inventor.patronage.list.button.createReport = Crear Patronage Report
 
 
 inventor.patronage.list.label.status = Estado

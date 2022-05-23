@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Patronage;
-import acme.entities.PatronageStatus;
 import acme.entities.Patronagereport;
 import acme.features.inventor.patronage.InventorPatronageRepository;
 import acme.framework.components.models.Model;
@@ -31,16 +30,7 @@ public class InventorPatronagereportCreateService implements AbstractCreateServi
 	public boolean authorise(final Request<Patronagereport> request) {
 		assert request != null;
 
-		boolean result;
-		int patronageId;
-		Patronage patronage;
-
-		patronageId = request.getModel().getInteger("patronageId");
-		patronage = this.patronageRepository.findOnePatronageById(patronageId);
-		result = request.getPrincipal().getActiveRoleId() == patronage.getInventor().getId();
-		result = result && patronage.getStatus().equals(PatronageStatus.ACCEPTED);
-
-		return result;
+		return true;
 	}
 
 	@Override
@@ -50,17 +40,17 @@ public class InventorPatronagereportCreateService implements AbstractCreateServi
 		Patronagereport result;
 		int patronageId;
 		Patronage patronage;
-		Date date;
+		Date creationMoment;
 		String numPatronageReports;		
 		
 		patronageId = request.getModel().getInteger("patronageId");
 		patronage = this.patronageRepository.findOnePatronageById(patronageId);
-		date = new Date();
+		creationMoment = new Date(System.currentTimeMillis() - 1);
 		numPatronageReports = Integer.toString(this.patronagereportRepository.findPatronageReportByPatronageId(patronageId).size()+1);
 		
 		result = new Patronagereport();
 		result.setPatronage(patronage);
-		result.setCreationMoment(date);
+		result.setCreationMoment(creationMoment);
 		result.setSerialNumber(Long.valueOf("000"+ numPatronageReports));
 
 		return result;
@@ -103,6 +93,9 @@ public class InventorPatronagereportCreateService implements AbstractCreateServi
 		assert request != null;
 		assert entity != null;
 
+		Date creationMoment;
+		creationMoment = new Date(System.currentTimeMillis()-1);
+		entity.setCreationMoment(creationMoment);
 		this.patronagereportRepository.save(entity);
 		
 	}

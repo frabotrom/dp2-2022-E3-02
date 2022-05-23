@@ -30,6 +30,10 @@
 	<acme:input-url code="inventor.patronage.form.label.optionalLink" path="optionalLink"/>	
 	<acme:input-integer code="inventor.patronage.form.label.period" path="period"/>
 	
+	<hr>
+    <br>
+	<acme:button  code="inventor.patronage.list.button.createReport" action="/inventor/patronagereport/create?patronageId=${patronageId}"/>
+	
 	<%-- Patron Profile--%>
 	<hr>
     <br>

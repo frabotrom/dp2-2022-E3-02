@@ -28,19 +28,7 @@ public class InventorPatronagereportListService implements AbstractListService<I
 	public boolean authorise(final Request<Patronagereport> request) {
 		assert request != null;
 
-		final boolean result;
-		result = true;
-		
-//		int patronageId;
-//		Patronage patronage;
-//
-//		Object patronage1 = request.getModel().getAttribute("patronage");
-//		Patronage patronage = this.patronageRepository.findOnePatronageById(patronageId);
-//		
-//		result = patronage.getInventor().getId() == request.getPrincipal().getActiveRoleId();
-//		result = result && patronage.getStatus().equals(PatronageStatus.ACCEPTED);
-
-		return result;
+		return true;
 	}
 
 	@Override
@@ -55,6 +43,7 @@ public class InventorPatronagereportListService implements AbstractListService<I
 
 		return result;
 	}
+
 
 	@Override
 	public void unbind(final Request<Patronagereport> request, final Patronagereport entity, final Model model) {
