@@ -48,7 +48,8 @@
 			<acme:menu-suboption code="master.menu.inventor.patronage" action="/inventor/patronage/list"/>
 			<acme:menu-suboption code="master.menu.inventor.patronagereport" action="/inventor/patronagereport/list"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.inventor.components" action="/inventor/item/list"/>
+			<acme:menu-suboption code="master.menu.inventor.components" action="/inventor/item/list-components"/>
+			<acme:menu-suboption code="master.menu.inventor.tools" action="/inventor/item/list-tools"/>		
 		</acme:menu-option>	
 		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">

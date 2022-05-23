@@ -12,5 +12,5 @@ item-010,"Name10","ITM-001-J","Technology10","Description10","EUR 378.00",null,"
 item-011,"Name11","ITM-001-K","Technology11","Description11","EUR 761.00","https://ev.us.es/","COMPONENT",inventor-002,true
 item-012,"Name12","ITM-001-L","Technology12","Description12","EUR 630.00",null,"COMPONENT",inventor-002,true
 item-013,"Name13","ITM-001-M","Technology13","Description13","EUR 299.00","https://ev.us.es/","COMPONENT",inventor-002,false
-item-014,"Name14","ITM-001-N","Technology14","Description14","EUR 888.00","https://ev.us.es/","COMPONENT",inventor-002,true
+item-014,"Name14","ITM-001-N","Technology14","Description14","EUR 888.00","https://ev.us.es/","COMPONENT",inventor-002,false
 item-015,"Name15","ITM-001-O","Technology15","Description15","EUR 154.00",null,"COMPONENT",inventor-002,true
