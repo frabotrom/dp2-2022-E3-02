@@ -11,3 +11,5 @@
 	<acme:list-column code="patron.patronage.list.label.initialDate" path="initialDate"/>
 	<acme:list-column code="patron.patronage.list.label.finalDate" path="finalDate"/>
 </acme:list>
+
+<acme:button code="patron.patronage.form.button-create" action="/patron/patronage/create"/>

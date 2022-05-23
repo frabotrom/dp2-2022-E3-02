@@ -10,7 +10,7 @@
 		<acme:input-option code="patron.patronage.form.label.accepted" value="ACCEPTED" selected="${ status == 'ACCEPTED' }"/>
 		<acme:input-option code="patron.patronage.form.label.denied" value="DENIED" selected="${ status == 'DENIED' }"/>
 	</acme:input-select>
-	<acme:input-textbox code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
+	<acme:input-textarea code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
 	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
 	<acme:input-moment code="patron.patronage.form.label.creationDate" path="creationDate"/>
 	<acme:input-moment code="patron.patronage.form.label.initialDate" path="initialDate"/>
@@ -22,15 +22,19 @@
 	<hr>
     <br>
     <h3><acme:message code="patron.patronage.form.label.title"/></h3>
+    <acme:input-textbox code="patron.patronage.form.label.inventorid" path="inventorId"/>
     <acme:input-textbox code="patron.patronage.form.label.name" path="inventorName"/>
     <acme:input-email code="patron.patronage.form.label.email" path="inventorEmail"/>
-    <acme:input-textbox code="patron.patronage.form.label.company" path="inventorCompany"/>	
+    <acme:input-textbox code="patron.patronage.form.label.company" path="inventorCompany"/>
     
     <jstl:choose>
-    	<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && PatronageStatus == PROPOSED }">
-    		<acme:submit code="patron.patronage.form.button.update" action="/patron/patronage/update"/>
+    	<jstl:when test="${command == 'show' && PatronageStatus == PROPOSED }">
+    		<acme:button code="patron.patronage.form.button.update" action="/patron/patronage/update"/>
     		<acme:submit code="patron.patronage.form.button.delete" action="/patron/patronage/delete"/>
     		<acme:submit code="patron.patronage.form.button.publish" action="/patron/patronage/publish"/>
+    	</jstl:when>
+    	<jstl:when test="${command == update && PatronageStatus == PROPOSED }">
+    		<acme:submit code="patron.patronage.form.button.update" action="/patron/patronage/update"/>
     	</jstl:when>
     	<jstl:when test="${command == 'create' }">
     		<acme:submit code="patron.patronage.form.button.create" action="/patron/patronage/create"/>
