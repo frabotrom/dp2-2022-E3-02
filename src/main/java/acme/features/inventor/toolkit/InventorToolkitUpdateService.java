@@ -34,7 +34,7 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "title", "code", "description", "assemblyNotes", "info");
+		request.bind(entity, errors, "title", "code", "description", "asemblyNotes", "info");
 		
 	}
 
@@ -53,7 +53,7 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		model.setAttribute("price", currentPrice);
 		
 		
-		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "info","draftMode");
+		request.unbind(entity, model, "title", "code", "description", "asemblyNotes", "info", "draftMode");
 		
 	}
 
@@ -74,44 +74,6 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
-//		SpamDetector spamDetector;
-//		String strongSpamTerms;
-//		String weakSpamTerms;
-//		int strongSpamThreshold;
-//		int weakSpamThreshold;
-//		
-//		spamDetector = new SpamDetector();
-//		strongSpamTerms = this.repository.findStrongSpamTerms();
-//		weakSpamTerms = this.repository.findWeakSpamTerms();
-//		strongSpamThreshold = this.repository.findStrongSpamTreshold();
-//		weakSpamThreshold = this.repository.findWeakSpamTreshold();
-//		
-//		if(!errors.hasErrors("code") && !Objects.equals(this.repository.findToolkitById(entity.getId()).getCode(), entity.getCode())) {
-//			final Collection<String> codes = this.repository.findAllToolkitCodes();
-//			final String toolkitCode = entity.getCode();
-//			final boolean repeatedCode = codes.stream()
-//										.anyMatch(x -> x.equals(toolkitCode));
-//			errors.state(request, !repeatedCode, "code", "inventor.toolkit.form.error.repeated-code");
-//		}
-//		
-//		if(!errors.hasErrors("title")) {
-//			errors.state(request, !spamDetector.containsSpam(weakSpamTerms.split(","), weakSpamThreshold, entity.getTitle())
-//				&& !spamDetector.containsSpam(strongSpamTerms.split(","), strongSpamThreshold, entity.getTitle()),
-//				"title", "inventor.toolkit.form.error.spam");
-//		}
-//		
-//		if(!errors.hasErrors("description")) {
-//			errors.state(request, !spamDetector.containsSpam(weakSpamTerms.split(","), weakSpamThreshold, entity.getDescription())
-//				&& !spamDetector.containsSpam(strongSpamTerms.split(","), strongSpamThreshold, entity.getDescription()),
-//				"description", "inventor.toolkit.form.error.spam");
-//		}
-//		
-//		if(!errors.hasErrors("assemblyNotes")) {
-//			errors.state(request, !spamDetector.containsSpam(weakSpamTerms.split(","), weakSpamThreshold, entity.getAssemblyNotes())
-//				&& !spamDetector.containsSpam(strongSpamTerms.split(","), strongSpamThreshold, entity.getAssemblyNotes()),
-//				"assemblyNotes", "inventor.toolkit.form.error.spam");
-//		}
 	}
 
 	@Override

@@ -14,7 +14,6 @@
 	
 		<jstl:when test="${draftMode == true && acme:anyOf(command, 'show,update,delete,publish')}">
 		<acme:input-money code="inventor.toolkit.form.label.price" path="price" placeholder="${price}" readonly="true"/>
-		<acme:button code="inventor.toolkit.form.button.quantity" action="/inventor/quantity/list?toolkitId=${id}"/>
 		<acme:submit code="inventor.toolkit.form.button.update" action="/inventor/toolkit/update"/>
 		<acme:submit code="inventor.toolkit.form.button.delete" action="/inventor/toolkit/delete"/>
 		<acme:submit code="inventor.toolkit.form.button.publish" action="/inventor/toolkit/publish"/>

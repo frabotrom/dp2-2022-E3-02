@@ -12,3 +12,6 @@ inventor.toolkit.form.button.delete = Eliminar
 inventor.toolkit.form.button.update = Editar
 inventor.toolkit.form.button.publish = Publicar
 inventor.toolkit.form.label.price = Precio
+
+inventor.toolkit.form.error.repeated-code = El código ya existe
+inventor.toolkit.form.error.empty-amounts = El toolkit no tiene ningún item
