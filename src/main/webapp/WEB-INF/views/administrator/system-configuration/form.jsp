@@ -8,8 +8,8 @@
 	<acme:input-textarea code="administrator.configuration.form.label.weak-spam-terms" path="weakSpamTerms"/>
 	<acme:input-textbox code="administrator.configuration.form.label.system-currency" path="systemCurrency"/>
 	<acme:input-textarea code="administrator.configuration.form.label.accepted-currencies" path="acceptedCurrencies"/>
-	<acme:input-double code="administrator.configuration.form.label.weak-threshold" path="weakThreshold"/>
 	<acme:input-double code="administrator.configuration.form.label.strong-threshold" path="strongThreshold"/>
+	<acme:input-double code="administrator.configuration.form.label.weak-threshold" path="weakThreshold"/>
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(command, 'show, update')}">

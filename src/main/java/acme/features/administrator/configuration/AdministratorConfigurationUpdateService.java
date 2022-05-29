@@ -38,10 +38,6 @@ public class AdministratorConfigurationUpdateService implements AbstractUpdateSe
 		assert entity != null;
 		assert errors != null;
 		
-		if (!errors.hasErrors("strongThreshold") && !errors.hasErrors("weakThreshold")) {
-			errors.state(request, entity.getStrongThreshold()>entity.getWeakThreshold(),"strongThreshold", "administrator.configuration.form.error.threshold");
-			errors.state(request, entity.getStrongThreshold()>entity.getWeakThreshold(),"weakThreshold", "administrator.configuration.form.error.threshold");
-		}
 		
 		if (!errors.hasErrors("systemCurrency")) {
 			
