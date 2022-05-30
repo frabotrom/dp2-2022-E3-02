@@ -13,6 +13,7 @@ import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.components.SpamDetector;
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -47,6 +48,20 @@ public class Chirp extends AbstractEntity {
 	
 	@Email
 	protected String email;
+	
+	// Derived attributes ----------------------------------------------------
+	
+	public boolean titleHasSpam(final SystemConfiguration systemConfiguration) {
+		return SpamDetector.isSpam(this.getTitle() , systemConfiguration);
+	}
+		
+	public boolean bodyHasSpam(final SystemConfiguration systemConfiguration) {
+		return SpamDetector.isSpam(this.getBody() , systemConfiguration);
+	}
+	
+	public boolean authorHasSpam(final SystemConfiguration systemConfiguration) {
+		return SpamDetector.isSpam(this.getAuthor() , systemConfiguration);
+	}
 	
 
 }

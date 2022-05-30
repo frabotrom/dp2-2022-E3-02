@@ -5,6 +5,6 @@ any.chirp.list.label.body = Cuerpo
 any.chirp.list.label.email = Email
 any.chirp.list.label.button.create = Crea un nuevo chirp
 
-any.chirp.form.label.confirmation = Confirma el nuevo chirp(una vez creado, los chirps no pueden ser editados ni eliminados)
+any.chirp.form.label.confirmation = Confirma el nuevo chirp (una vez creado, los chirps no pueden ser editados ni eliminados)
 
-any.chirp.form.error.spam = Contiene palabras prohibidas
+any.chirp.form.error.spam = El chirp contiene spam

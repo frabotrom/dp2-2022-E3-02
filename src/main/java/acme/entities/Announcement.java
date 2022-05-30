@@ -13,6 +13,7 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.components.SpamDetector;
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -49,13 +50,12 @@ public class Announcement extends AbstractEntity{
 	
 	// Derived attributes ----------------------------------------------------
 	
-//	public boolean isSpam(final SystemConfiguration systemConfiguration) {
-//		final String text = this.getTitle() + "\n" + this.getBody();
-//		return SpamDetector.isSpam(text, 
-//			systemConfiguration.getWeakSpamTerms(), 
-//			systemConfiguration.getStrongSpamTerms(), 
-//			systemConfiguration.getStrongSpamTermsThreshold(), 
-//			systemConfiguration.getWeakSpamTermsThreshold());
-//	}
+	public boolean titleHasSpam(final SystemConfiguration systemConfiguration) {
+		return SpamDetector.isSpam(this.getTitle() , systemConfiguration);
+	}
+	
+	public boolean bodyHasSpam(final SystemConfiguration systemConfiguration) {
+		return SpamDetector.isSpam(this.getBody() , systemConfiguration);
+	}
 
 }

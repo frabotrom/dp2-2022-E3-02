@@ -65,21 +65,21 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 
 				final boolean confirmation = request.getModel().getBoolean("confirmation");
 				errors.state(request, confirmation, "confirmation", "any.chirp.form.label.confirmation");
-		//
-		//		if(!errors.hasErrors("title")) {
-		//			final boolean isTitleSpam = this.spamService.isSpam(entity.getTitle());
-		//			errors.state(request, !isTitleSpam, "title", "any.chirp.form.error.spam");
-		//		}
-		//		
-		//		if(!errors.hasErrors("author")) {
-		//			final boolean isAuthorSpam = this.spamService.isSpam(entity.getAuthor());
-		//			errors.state(request, !isAuthorSpam, "author", "any.chirp.form.error.spam");
-		//		}
-		//		
-		//		if(!errors.hasErrors("body")) {
-		//			final boolean isBodySpam = this.spamService.isSpam(entity.getBody());
-		//			errors.state(request, !isBodySpam, "body", "any.chirp.form.error.spam");
-		//		}
+		
+				if(!errors.hasErrors("title")) {
+					final boolean isTitleSpam = entity.titleHasSpam(this.repository.getSystemConfiguration());
+					errors.state(request, !isTitleSpam, "title", "any.chirp.form.error.spam");
+				}
+				
+				if(!errors.hasErrors("author")) {
+					final boolean isAuthorSpam = entity.authorHasSpam(this.repository.getSystemConfiguration());
+					errors.state(request, !isAuthorSpam, "author", "any.chirp.form.error.spam");
+				}
+				
+				if(!errors.hasErrors("body")) {
+					final boolean isBodySpam = entity.bodyHasSpam(this.repository.getSystemConfiguration());
+					errors.state(request, !isBodySpam, "body", "any.chirp.form.error.spam");
+				}
 
 	}
 

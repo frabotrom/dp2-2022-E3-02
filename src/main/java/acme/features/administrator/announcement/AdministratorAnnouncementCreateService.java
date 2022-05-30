@@ -77,20 +77,26 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert entity != null;
 		assert errors != null;
 
-		{
+		if (!errors.hasErrors("confirmation")) {
 			boolean confirmation;
 	
 			confirmation = request.getModel().getBoolean("confirmation");
 			errors.state(request, confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
 		}
 		
-//		{
-//			Boolean containsSpam;
-//			
-//			containsSpam = entity.containsSpam(this.repository.getSystemConfiguration());
-//			
-//			errors.state(request, !containsSpam, "*", "administrator.announcement.form.error.spam");
-//		}
+		if (!errors.hasErrors("title")) {
+			Boolean containsSpam;
+			
+			containsSpam = entity.titleHasSpam(this.repository.getSystemConfiguration());			
+			errors.state(request, !containsSpam, "title", "administrator.announcement.form.error.spam");
+		}
+		
+		if (!errors.hasErrors("body")) {
+			Boolean containsSpam;
+			
+			containsSpam = entity.bodyHasSpam(this.repository.getSystemConfiguration());			
+			errors.state(request, !containsSpam, "body", "administrator.announcement.form.error.spam");
+		}
 		
 	}
 
