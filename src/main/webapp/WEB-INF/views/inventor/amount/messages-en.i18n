@@ -1,0 +1,22 @@
+inventor.amount.list.label.item.name = Item Name
+inventor.amount.list.label.amount = Amount
+inventor.amount.list.button.create = Add Item
+inventor.amount.list.label.total-price = Total Price
+
+inventor.item.form.label.code = Code
+inventor.item.form.label.name = Name
+inventor.item.form.label.technology = Technology
+inventor.item.form.label.description = Description
+inventor.item.form.label.retailprice = Price
+inventor.item.form.label.type = Type
+inventor.item.form.label.link = Link
+inventor.item.form.label.inventor = Inventor
+inventor.item.form.label.amount = Amount
+
+inventor.amount.form.button.create = Add Item
+inventor.amount.form.button.delete = Delete from toolkit
+inventor.amount.form.button.update = Update
+inventor.amount.form.label.select.item = Item
+inventor.amount.form.label.amount = Amount
+inventor.amount.form.error.only-1-type-of-tool-allowed = You can't add more than one of each tool
+inventor.amount.form.error.repeated-item = This item is already in the toolkit

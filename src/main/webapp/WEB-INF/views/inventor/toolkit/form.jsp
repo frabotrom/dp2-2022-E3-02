@@ -13,14 +13,17 @@
 	<jstl:choose>
 	
 		<jstl:when test="${draftMode == true && acme:anyOf(command, 'show,update,delete,publish')}">
-		<acme:input-money code="inventor.toolkit.form.label.price" path="price" placeholder="${price}" readonly="true"/>
-		<acme:submit code="inventor.toolkit.form.button.update" action="/inventor/toolkit/update"/>
-		<acme:submit code="inventor.toolkit.form.button.delete" action="/inventor/toolkit/delete"/>
-		<acme:submit code="inventor.toolkit.form.button.publish" action="/inventor/toolkit/publish"/>
-		
-	<acme:button code="inventor.toolkit.form.button.items" action="/inventor/item/list-items-toolkit?id=${id}"/>
+			<acme:input-money code="inventor.toolkit.form.label.price" path="price" placeholder="${price}" readonly="true"/>
+			<acme:submit code="inventor.toolkit.form.button.update" action="/inventor/toolkit/update"/>
+			<acme:submit code="inventor.toolkit.form.button.delete" action="/inventor/toolkit/delete"/>
+			<acme:submit code="inventor.toolkit.form.button.publish" action="/inventor/toolkit/publish"/>
+			
+			<acme:button code="inventor.toolkit.form.button.addItems" action="/inventor/amount/list?id=${id}"/>
+			
+			<acme:button code="inventor.toolkit.form.button.items" action="/inventor/item/list-items-toolkit?id=${id}"/>
 		
 		</jstl:when>
+		
 		<jstl:when test="${draftMode == false && command == 'show'}">
 		<acme:input-money code="inventor.toolkit.form.label.price" path="price" placeholder="${price}" readonly="true"/>
 		
