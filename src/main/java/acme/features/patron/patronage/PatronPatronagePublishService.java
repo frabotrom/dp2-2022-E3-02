@@ -1,14 +1,16 @@
 
 package acme.features.patron.patronage;
 
-import java.util.Date;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.GregorianCalendar;
+import java.util.HashSet;
+import java.util.Set;
 
-import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Patronage;
-import acme.entities.PatronageStatus;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -18,38 +20,22 @@ import acme.roles.Patron;
 @Service
 public class PatronPatronagePublishService implements AbstractUpdateService<Patron, Patronage> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	protected PatronPatronageRepository repository;
-
-	// AbstractUpdateService<Patron, Patronage> -------------------------------------
 
 
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
-
 		boolean result;
 		int patronageId;
 		Patronage patronage;
+		Patron patron;
 
 		patronageId = request.getModel().getInteger("id");
-		patronage = this.repository.findOnePatronageById(patronageId);
-		result = (patronage != null && !patronage.getStatus().equals(PatronageStatus.ACCEPTED) && request.isPrincipal(patronage.getPatron()));
-
-		return result;
-	}
-
-	@Override
-	public Patronage findOne(final Request<Patronage> request) {
-		assert request != null;
-
-		Patronage result;
-		int id;
-
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOnePatronageById(id);
+		patronage = this.repository.findPatronageById(patronageId);
+		patron = patronage.getPatron();
+		result = patronage.isPublished() == false && request.isPrincipal(patron);
 
 		return result;
 	}
@@ -59,9 +45,33 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		entity.setInventor(this.repository.findInventorById(Integer.valueOf(request.getModel().getAttribute("inventorId").toString())));
-		
+
 		request.bind(entity, errors, "code", "legalStuff", "budget", "initialDate", "finalDate", "optionalLink");
+		entity.setInventor(this.repository.findInventorByUsername(request.getModel().getAttribute("inventor").toString()));
+	}
+
+	@Override
+	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+
+		request.unbind(entity, model, "code", "legalStuff", "budget", "initialDate", "finalDate", "optionalLink");
+		model.setAttribute("listInventor", this.repository.findAllInventors());
+		model.setAttribute("patronageId", entity.getId());
+	}
+
+	@Override
+	public Patronage findOne(final Request<Patronage> request) {
+		assert request != null;
+
+		Patronage patronage;
+		int id;
+
+		id = request.getModel().getInteger("id");
+		patronage = this.repository.findPatronageById(id);
+
+		return patronage;
 	}
 
 	@Override
@@ -71,64 +81,52 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 		assert errors != null;
 
 		if (!errors.hasErrors("code")) {
-			Patronage existing;
+			Patronage exists;
 
-			existing = this.repository.findOnePatronageByCode(entity.getCode());
-			if (existing != null) {
-				errors.state(request, existing.getId() == entity.getId(), "code", "patron.patronage.form.error.duplicated");
-			}
+			exists = this.repository.findOnePatronageByCode(entity.getCode());
+			errors.state(request, exists == null, "code", "patronage.patronage.form.error.duplicated");
 		}
 
-		if (!errors.hasErrors("initalDate")) {
-			final Date minimumStartDate = DateUtils.addMonths(entity.getCreationDate(), 1);
+		if (!errors.hasErrors("initialDate")) {
+			Calendar calendar;
 
-			errors.state(request, entity.getInitialDate().after(minimumStartDate), "initialDate", "patron.patronage.form.error.too-close-start-date");
+			calendar = new GregorianCalendar();
+			calendar.add(Calendar.MONTH, 1);
+			calendar.add(Calendar.DAY_OF_MONTH, -1);
 
+			errors.state(request, entity.getInitialDate().after(calendar.getTime()), "initialDate", "patron.patronage.form.error.initialDate");
 		}
+
 		if (!errors.hasErrors("finalDate")) {
-			final Date minimumFinishDate = DateUtils.addMonths(entity.getInitialDate(), 1);
+			Calendar calendar;
 
-			errors.state(request, entity.getFinalDate().after(minimumFinishDate), "finalDate", "patron.patronage.form.error.one-month");
+			calendar = new GregorianCalendar();
+			calendar.setTime(entity.getInitialDate());
+			calendar.add(Calendar.MONTH, 1);
+			calendar.add(Calendar.DAY_OF_MONTH, -1);
 
+			errors.state(request, entity.getFinalDate().after(calendar.getTime()), "finalDate", "patron.patronage.form.error.initialDate");
 		}
 
 		if (!errors.hasErrors("budget")) {
-			final String[] currencies = this.repository.findSystemConfiguration().getAcceptedCurrencies().split(",");
-			Boolean acceptedCurrency = false;
-			for (int i = 0; i < currencies.length; i++) {
-				if (entity.getBudget().getCurrency().equals(currencies[i].trim())) {
-					acceptedCurrency = true;
-				}
+			final Set<String> acceptedCurrencies;
+			final String[] acceptedCurrenciesSt = this.repository.findAcceptedCurrencies().split(";");
+			acceptedCurrencies = new HashSet<String>();
+			Collections.addAll(acceptedCurrencies, acceptedCurrenciesSt);
 
-			}
+			errors.state(request, entity.getBudget().getAmount() > 0., "budget", "patronage.patronage.form.error.budget.negative");
 
-			errors.state(request, entity.getBudget().getAmount() > 0, "budget", "patron.patronage.form.error.negative-budget");
-			errors.state(request, acceptedCurrency, "budget", "patron.patronage.form.error.non-accepted-currency");
+			errors.state(request, acceptedCurrencies.contains(entity.getBudget().getCurrency()), "budget", "patronage.patronage.form.error.budget.invalid");
 		}
-
-	}
-
-	@Override
-	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
-
-		request.unbind(entity, model, "code", "legalStuff", "budget", "initialDate", "finalDate", "optionalLink", "status", "creationDate", "period");
-		model.setAttribute("inventorName", this.repository.findInventor().getIdentity().getFullName());
-		model.setAttribute("inventorEmail", this.repository.findInventor().getIdentity().getEmail());
-		model.setAttribute("inventorCompany", this.repository.findInventor().getCompany());
-		model.setAttribute("inventorId", entity.getInventor().getId());
 	}
 
 	@Override
 	public void update(final Request<Patronage> request, final Patronage entity) {
 		assert request != null;
 		assert entity != null;
-		entity.setStatus(PatronageStatus.ACCEPTED);
 
+		entity.setPublished(true);
 		this.repository.save(entity);
-
 	}
 
 }

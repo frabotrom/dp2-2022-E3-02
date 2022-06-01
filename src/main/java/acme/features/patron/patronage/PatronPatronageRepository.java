@@ -3,7 +3,7 @@ package acme.features.patron.patronage;
 
 
 import java.util.Collection;
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -19,30 +19,33 @@ import acme.roles.Patron;
 @Repository
 public interface PatronPatronageRepository extends AbstractRepository {
 
+	@Query("SELECT p FROM Patronage p WHERE p.patron.id = :patronId")
+	Collection<Patronage> findPatronagesByPatron(@Param("patronId")Integer patronId);
+	
 	@Query("SELECT p FROM Patronage p WHERE p.id = :id")
 	Patronage findOnePatronageById(@Param("id")int id);
+
+	@Query("SELECT c FROM SystemConfiguration c")
+	SystemConfiguration getSystemConfiguration();
 	
-	@Query("SELECT p FROM Patronage p WHERE p.code LIKE :code")
+	@Query("SELECT patron from Patron patron where patron.id = :id")
+	Patron findPatronById(@Param("id")int id);
+	
+	@Query("SELECT p FROM Patronage p WHERE p.code = :code")
 	Patronage findOnePatronageByCode(@Param("code")String code);
 	
-	@Query("SELECT p FROM Patronage p WHERE p.patron.id = :patronid")
-	Collection<Patronage> findMyPatronages(@Param("patronid")Integer patronid);
+	@Query("SELECT ac.acceptedCurrencies from SystemConfiguration ac")
+	String findAcceptedCurrencies();
 	
-    @Query("select i from Inventor i")
-    Collection<Inventor> findInventors();
+	@Query("SELECT inventor from Inventor inventor where inventor.userAccount.username = :username")
+	Inventor findInventorByUsername(@Param("username")String username);
+	
+	@Query("SELECT inventor from Inventor inventor")
+	List<Inventor> findAllInventors();
+	
+	@Query("SELECT patronage from Patronage patronage where patronage.id = :id")
+	Patronage findPatronageById(@Param("id")int id);
 
-    @Query("select inventor from Inventor inventor WHERE inventor.id=:id")
-    Optional<Inventor> findInventorById(@Param("id")int id);
-	
-    @Query("select patron from Patron patron WHERE patron.id=:id")
-    Optional<Patron> findPatronById(@Param("id")int id);
-    
-	@Query("select sc from SystemConfiguration sc")
-	SystemConfiguration findSystemConfiguration();
-	
-	@Query("select c.systemCurrency from SystemConfiguration c")
-	String systemCurrency();
-	
-	@Query("select pr from  Patronagereport pr where pr.patronage.id = :patronageId")
-	Collection<Patronagereport> findManyPatronageReportsByPatronageId(@Param("patronageId")int patronageId);
+	@Query("select pr from Patronagereport pr where pr.patronage.id = :patronageid")
+	Collection<Patronagereport> findReportsByPatronageId(@Param("patronageid")int patronageid);
 }

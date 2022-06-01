@@ -1,13 +1,16 @@
+
 package acme.features.patron.patronage;
 
-import java.util.Date;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.GregorianCalendar;
+import java.util.HashSet;
+import java.util.Set;
 
-import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Patronage;
-import acme.entities.PatronageStatus;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -15,41 +18,25 @@ import acme.framework.services.AbstractUpdateService;
 import acme.roles.Patron;
 
 @Service
-public class PatronPatronageUpdateService implements AbstractUpdateService<Patron, Patronage>{
-
-	// Internal state ---------------------------------------------------------
+public class PatronPatronageUpdateService implements AbstractUpdateService<Patron, Patronage> {
 
 	@Autowired
 	protected PatronPatronageRepository repository;
-	
-
-	// AbstractUpdateService<Patron, Patronage> -------------------------------------
 
 
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
-		assert request != null;
 
+		assert request != null;
 		boolean result;
 		int patronageId;
 		Patronage patronage;
+		final Patron patron;
 
 		patronageId = request.getModel().getInteger("id");
-		patronage = this.repository.findOnePatronageById(patronageId);
-		result = (patronage != null && !patronage.getStatus().equals(PatronageStatus.ACCEPTED) && request.isPrincipal(patronage.getPatron()));
-
-		return result;
-	}
-
-	@Override
-	public Patronage findOne(final Request<Patronage> request) {
-		assert request != null;
-		
-		Patronage result;
-		int id;
-
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOnePatronageById(id);
+		patronage = this.repository.findPatronageById(patronageId);
+		patron = patronage.getPatron();
+		result = patronage.isPublished() == false && request.isPrincipal(patron);
 
 		return result;
 	}
@@ -59,50 +46,9 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		entity.setInventor(this.repository.findInventorById(Integer.valueOf(request.getModel().getAttribute("inventorId").toString())));
 
-
-		request.bind(entity, errors, "code", "legalStuff", "budget", "initialDate", "finalDate","optionalLink");
-	}
-
-	@Override
-	public void validate(final Request<Patronage> request, final Patronage entity, final Errors errors) {
-		assert request != null;
-		assert entity != null;
-		assert errors != null;
-		
-		if (!errors.hasErrors("code")) {
-			Patronage existing;
-
-			existing = this.repository.findOnePatronageByCode(entity.getCode());
-			if(existing!=null) {
-			errors.state(request, existing.getId()==entity.getId() , "code", "patron.patronage.form.error.duplicated");
-			}
-		}
-		
-		if(!errors.hasErrors("intialDate")) {
-			final Date minimumStartDate=DateUtils.addMonths(entity.getCreationDate(), 1);
-
-			
-			errors.state(request, entity.getInitialDate().after(minimumStartDate), "intialDate", "patron.patronage.form.error.too-close-start-date");
-			
-		}
-		if(!errors.hasErrors("finalDate")) {
-			final Date minimumFinishDate=DateUtils.addMonths(entity.getInitialDate(), 1);
-
-			errors.state(request, entity.getFinalDate().after(minimumFinishDate), "finalDate", "patron.patronage.form.error.one-month");
-			
-		}
-		
-		
-		if (!errors.hasErrors("budget")) {
-			final Boolean acceptedCurrency=this.repository.findSystemConfiguration().getAcceptedCurrencies()
-				.matches("(.*)"+entity.getBudget().getCurrency()+"(.*)");
-			
-			errors.state(request, entity.getBudget().getAmount() > 0, "budget", "patron.patronage.form.error.negative-budget");
-			errors.state(request, acceptedCurrency, "budget", "patron.patronage.form.error.non-accepted-currency");
-		}
-		
+		request.bind(entity, errors, "code", "legalStuff", "budget", "initialDate", "finalDate", "optionalLink");
+		entity.setInventor(this.repository.findInventorByUsername(request.getModel().getAttribute("inventor").toString()));
 
 	}
 
@@ -110,13 +56,71 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
 		assert request != null;
 		assert entity != null;
-		assert model != null;
+		assert model!=null;
+		
+		request.unbind(entity, model, "code", "legalStuff", "budget", "initialDate", "finalDate", "optionalLink", "published");
+		model.setAttribute("inventors", this.repository.findAllInventors());
+		model.setAttribute("patronageId", entity.getId());
+	}
 
-		request.unbind(entity, model, "code", "legalStuff", "budget", "intialDate", "finalDate","optionalLink","status");
-		model.setAttribute("inventorName", this.repository.findInventor().getIdentity().getFullName());
-		model.setAttribute("inventorEmail", this.repository.findInventor().getIdentity().getEmail());
-		model.setAttribute("inventorCompany", this.repository.findInventor().getCompany());
-		model.setAttribute("inventorId", entity.getInventor().getId());
+	@Override
+	public Patronage findOne(final Request<Patronage> request) {
+		assert request != null;
+
+		Patronage patronage;
+		int id;
+
+		id = request.getModel().getInteger("id");
+		patronage = this.repository.findPatronageById(id);
+
+		return patronage;
+	}
+
+	@Override
+	public void validate(final Request<Patronage> request, final Patronage entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		if (!errors.hasErrors("code")) {
+			Patronage exists;
+
+			exists = this.repository.findOnePatronageByCode(entity.getCode());
+			errors.state(request, exists == null, "code", "patronage.patronage.form.error.duplicated");
+		}
+
+		if (!errors.hasErrors("initialDate")) {
+			Calendar calendar;
+
+			calendar = new GregorianCalendar();
+			calendar.add(Calendar.MONTH, 1);
+			calendar.add(Calendar.DAY_OF_MONTH, -1);
+
+			errors.state(request, entity.getInitialDate().after(calendar.getTime()), "initialDate", "patron.patronage.form.error.initialDate");
+		}
+
+		if (!errors.hasErrors("finalDate")) {
+			Calendar calendar;
+
+			calendar = new GregorianCalendar();
+			calendar.setTime(entity.getInitialDate());
+			calendar.add(Calendar.MONTH, 1);
+			calendar.add(Calendar.DAY_OF_MONTH, -1);
+
+			errors.state(request, entity.getFinalDate().after(calendar.getTime()), "finishTime", "patron.patronage.form.error.finalDate");
+		}
+
+		if (!errors.hasErrors("budget")) {
+			final Set<String> acceptedCurrencies;
+			final String[] acceptedCurrenciesSt = this.repository.findAcceptedCurrencies().split(";");
+			acceptedCurrencies = new HashSet<String>();
+			Collections.addAll(acceptedCurrencies, acceptedCurrenciesSt);
+
+			errors.state(request, entity.getBudget().getAmount() > 0., "budget", "patronage.patronage.form.error.budget.negative");
+
+			errors.state(request, acceptedCurrencies.contains(entity.getBudget().getCurrency()), "budget", "patronage.patronage.form.error.budget.invalid");
+		}
+
 	}
 
 	@Override
@@ -128,5 +132,4 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 
 	}
 
-	
 }

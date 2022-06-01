@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Patronage;
-import acme.entities.PatronageStatus;
 import acme.entities.Patronagereport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -18,38 +17,22 @@ import acme.roles.Patron;
 @Service
 public class PatronPatronageDeleteService implements AbstractDeleteService<Patron, Patronage> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	protected PatronPatronageRepository repository;
-
-	// AbstractDeleteService<Patron, Patronage> -------------------------------------
 
 
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
-
 		boolean result;
 		int patronageId;
 		Patronage patronage;
+		Patron patron;
 
 		patronageId = request.getModel().getInteger("id");
-		patronage = this.repository.findOnePatronageById(patronageId);
-		result = (patronage != null && !patronage.getStatus().equals(PatronageStatus.ACCEPTED) && request.isPrincipal(patronage.getPatron()));
-
-		return result;
-	}
-
-	@Override
-	public Patronage findOne(final Request<Patronage> request) {
-		assert request != null;
-
-		Patronage result;
-		int id;
-
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOnePatronageById(id);
+		patronage = this.repository.findPatronageById(patronageId);
+		patron = patronage.getPatron();
+		result = patronage.isPublished() == false && request.isPrincipal(patron);
 
 		return result;
 	}
@@ -61,6 +44,7 @@ public class PatronPatronageDeleteService implements AbstractDeleteService<Patro
 		assert errors != null;
 
 		request.bind(entity, errors, "code", "legalStuff", "budget", "initialDate", "finalDate", "optionalLink");
+
 	}
 
 	@Override
@@ -69,7 +53,22 @@ public class PatronPatronageDeleteService implements AbstractDeleteService<Patro
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "code", "legalStuff", "budget", "initialDate", "finalDate", "optionalLink", "status");
+		request.unbind(entity, model, "code", "legalStuff", "budget", "initialDate", "finalDate", "optionalLink");
+
+		model.setAttribute("patronageId", entity.getId());
+	}
+
+	@Override
+	public Patronage findOne(final Request<Patronage> request) {
+		assert request != null;
+
+		Patronage patronage;
+		int id;
+
+		id = request.getModel().getInteger("id");
+		patronage = this.repository.findPatronageById(id);
+
+		return patronage;
 	}
 
 	@Override
@@ -85,14 +84,13 @@ public class PatronPatronageDeleteService implements AbstractDeleteService<Patro
 		assert request != null;
 		assert entity != null;
 
-		Collection<Patronagereport> patronagesReports;
-
-		patronagesReports = this.repository.findManyPatronageReportsByPatronageId(entity.getId());
-		for (final Patronagereport patronageReport : patronagesReports) {
-			this.repository.delete(patronageReport);
-		}
-
+		Collection<Patronagereport> reports;
+		
+		reports = this.repository.findReportsByPatronageId(entity.getId());
+		
+		this.repository.deleteAll(reports);	
 		this.repository.delete(entity);
+
 	}
 
 }

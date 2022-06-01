@@ -67,6 +67,9 @@ public class Patronage extends AbstractEntity {
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date  				finalDate;
+	
+	@NotNull
+	protected boolean 				published;
 
 	// Derived attributes
 	
