@@ -13,7 +13,7 @@ public class TestInventorListTools extends TestHarness{
 	@CsvFileSource(resources= "/inventor/item/tools.csv", encoding = "utf-8", numLinesToSkip=1)
 	@Order(10)
 	public void positiveTest(final int recordIndex, final String name, final String code, final String technology,final String description, 
-		 final String retailPrice, final String link, final String visible) {
+		 final String retailPrice, final String link, final String visible, final String boo) {
 		
 		super.signIn("User1", "HIDDEN-PASSWORD");
 		
@@ -36,7 +36,7 @@ public class TestInventorListTools extends TestHarness{
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("link", link);
-		super.checkInputBoxHasValue("visible", visible);
+		super.checkInputBoxHasValue("visible", boo);
 		
 		super.signOut();
 

@@ -1,3 +1,3 @@
-recordIndex,name,code,technology,description,retailPrice,link,visible
-7,"Name8","TOO-002-A","Technology8","Description8","EUR 120.00","https://ev.us.es/",Not Visible
-8,"Name9","TOO-002-B","Technology9","Description9","USD 114.00",,Not Visible
+recordIndex,name,code,technology,description,retailPrice,link,visible,boo
+7,"Name8","TOO-002-A","Technology8","Description8","EUR 120.00","https://ev.us.es/",Not Visible,"FALSE"
+8,"Name9","TOO-002-B","Technology9","Description9","USD 114.00",,Not Visible,"FALSE"

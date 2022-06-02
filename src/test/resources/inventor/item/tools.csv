@@ -1,8 +1,8 @@
-recordIndex,name,code,technology,description,retailPrice,link,visible
-0,"Name1","ITM-001-A","Technology1","Description1","EUR 100.00",,Visible
-1,"Name2","ITM-001-B","Technology2","Description2","EUR 123.00","https://ev.us.es/",Visible
-2,"Name3","ITM-001-C","Technology3","Description3","EUR 270.00","https://ev.us.es/",Not Visible
-3,"Name4","ITM-001-D","Technology4","Description4","EUR 468.00","https://ev.us.es/",Visible
-4,"Name5","ITM-001-E","Technology5","Description5","EUR 112.00",,Visible
-5,"Name6","ITM-001-F","Technology6","Description6","EUR 600.00",,Not Visible
-6,"Name7","ITM-001-G","Technology7","Description7","EUR 75.00","https://ev.us.es/",Visible
+recordIndex,name,code,technology,description,retailPrice,link,visible,boo
+0,"Name1","ITM-001-A","Technology1","Description1","EUR 100.00",,Visible,"TRUE"
+1,"Name2","ITM-001-B","Technology2","Description2","EUR 123.00","https://ev.us.es/",Visible,"TRUE"
+2,"Name3","ITM-001-C","Technology3","Description3","EUR 270.00","https://ev.us.es/",Not Visible,"FALSE"
+3,"Name4","ITM-001-D","Technology4","Description4","EUR 468.00","https://ev.us.es/",Visible,"TRUE"
+4,"Name5","ITM-001-E","Technology5","Description5","EUR 112.00",,Visible,"TRUE"
+5,"Name6","ITM-001-F","Technology6","Description6","EUR 600.00",,Not Visible,"FALSE"
+6,"Name7","ITM-001-G","Technology7","Description7","EUR 75.00","https://ev.us.es/",Visible,"TRUE"
