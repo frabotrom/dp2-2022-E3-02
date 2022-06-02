@@ -59,6 +59,8 @@ master.menu.patron.list-patronage-reports = Mis Reportes de Patrocinios
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
+master.menu.user-account.become-inventor = Convertirse en inventor
+master.menu.user-account.become-patron = Convertirse en patrón
 
 master.menu.user-account.general-data = Datos generales
 

@@ -59,6 +59,8 @@ master.menu.patron.list-patronage-reports = My Patronage Reports
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
+master.menu.user-account.become-inventor = Become an Inventor
+master.menu.user-account.become-patron = Become a Patron
 
 master.menu.user-account.general-data = General data
 
