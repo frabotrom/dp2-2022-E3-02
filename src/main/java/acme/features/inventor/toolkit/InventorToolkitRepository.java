@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.Amount;
+import acme.entities.SystemConfiguration;
 import acme.entities.Toolkit;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor;
@@ -44,5 +45,8 @@ public interface InventorToolkitRepository extends AbstractRepository {
 	@Modifying
 	@Query("DELETE FROM Amount a WHERE a.toolkit.id = :id")
 	void deleteAmountByToolkitId(@Param("id") int id);
+	
+	@Query("SELECT c FROM SystemConfiguration c")
+	SystemConfiguration getSystemConfiguration();
 	
 }

@@ -16,3 +16,4 @@ inventor.toolkit.form.button.addItems = Add Items
 
 inventor.toolkit.form.error.repeated-code = This code already exists
 inventor.toolkit.form.error.empty-amounts = Toolkit contains no items
+inventor.toolkit.error.spam = The toolkit contains spam terms
