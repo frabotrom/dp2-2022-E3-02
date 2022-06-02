@@ -1,0 +1,23 @@
+inventor.amount.list.label.item.name = Nombre
+inventor.amount.list.label.amount = Cantidad
+inventor.amount.list.button.create = Añadir Objeto
+inventor.amount.list.label.total-price = Precio Total
+
+inventor.item.form.label.code = Código
+inventor.item.form.label.name = Nombre
+inventor.item.form.label.technology = Tecnología
+inventor.item.form.label.description = Descripción
+inventor.item.form.label.retailprice = Precio
+inventor.item.form.label.type = Tipo
+inventor.item.form.label.link = Enlace
+inventor.item.form.label.inventor = Inventor
+inventor.item.form.label.amount = Cantidad
+
+inventor.amount.form.button.create = Añadir Objeto
+inventor.amount.form.button.delete = Eliminar del Toolkit
+inventor.amount.form.button.update = Actualizar
+inventor.amount.form.label.select.item = Objeto
+inventor.amount.form.label.amount = Cantidad
+inventor.amount.form.error.only-1-type-of-tool-allowed = No se puede añadir más de una herramienta de cada
+inventor.amount.form.error.repeated-item = Este objeto ya está en el toolkit
+inventor.amount.form.error.amount-must-be-positive = La cantidad debe ser mayor que cero

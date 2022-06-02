@@ -37,7 +37,7 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "title", "code", "description", "assemblyNotes", "info");
+		request.bind(entity, errors, "title", "code", "description", "asemblyNotes", "info");
 		
 	}
 
@@ -56,7 +56,7 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		model.setAttribute("price", currentPrice);
 		
 		
-		request.unbind(entity, model, "title", "code", "description", "assemblyNotes", "info", "draftMode");
+		request.unbind(entity, model, "title", "code", "description", "asemblyNotes", "info", "draftMode", "price");
 		
 	}
 
@@ -78,39 +78,10 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		assert entity != null;
 		assert errors != null;
 		
-		final List<Amount> quantities = this.repository.findAmountsByToolkitId(entity.getId());
+		final List<Amount> amounts = this.repository.findAmountsByToolkitId(entity.getId());
 		
-		errors.state(request, !quantities.isEmpty(), "*", "inventor.toolkit.form.error.empty-quantities");
-		
-//		SpamDetector spamDetector;
-//		String strongSpamTerms;
-//		String weakSpamTerms;
-//		int strongSpamThreshold;
-//		int weakSpamThreshold;
-//		
-//		spamDetector = new SpamDetector();
-//		strongSpamTerms = this.repository.findStrongSpamTerms();
-//		weakSpamTerms = this.repository.findWeakSpamTerms();
-//		strongSpamThreshold = this.repository.findStrongSpamTreshold();
-//		weakSpamThreshold = this.repository.findWeakSpamTreshold();
-//		
-//		if(!errors.hasErrors("title")) {
-//			errors.state(request, !spamDetector.containsSpam(weakSpamTerms.split(","), weakSpamThreshold, entity.getTitle())
-//				&& !spamDetector.containsSpam(strongSpamTerms.split(","), strongSpamThreshold, entity.getTitle()),
-//				"title", "inventor.toolkit.form.error.spam");
-//		}
-//		
-//		if(!errors.hasErrors("description")) {
-//			errors.state(request, !spamDetector.containsSpam(weakSpamTerms.split(","), weakSpamThreshold, entity.getDescription())
-//				&& !spamDetector.containsSpam(strongSpamTerms.split(","), strongSpamThreshold, entity.getDescription()),
-//				"description", "inventor.toolkit.form.error.spam");
-//		}
-//		
-//		if(!errors.hasErrors("assemblyNotes")) {
-//			errors.state(request, !spamDetector.containsSpam(weakSpamTerms.split(","), weakSpamThreshold, entity.getAssemblyNotes())
-//				&& !spamDetector.containsSpam(strongSpamTerms.split(","), strongSpamThreshold, entity.getAssemblyNotes()),
-//				"assemblyNotes", "inventor.toolkit.form.error.spam");
-//		}
+		errors.state(request, !amounts.isEmpty(), "*", "inventor.toolkit.form.error.empty-amounts");
+	
 	}
 
 	@Override
