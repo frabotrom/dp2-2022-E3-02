@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.Patronage;
+import acme.entities.SystemConfiguration;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -17,4 +18,7 @@ public interface InventorPatronageRepository extends AbstractRepository {
 	
 	@Query("select p from Patronage p where p.inventor.id = :inventorId")
 	Collection<Patronage> findManyPatronagesByInventorId(@Param("inventorId") int inventorId);
+	
+	@Query("SELECT c FROM SystemConfiguration c")
+	SystemConfiguration getSystemConfiguration();
 }

@@ -3,6 +3,7 @@ package acme.features.patron.patronage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.MoneyExchangeCalculator;
 import acme.entities.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -51,6 +52,8 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		model.setAttribute("inventorName", entity.getInventor().getUserAccount().getIdentity().getFullName());
 		model.setAttribute("inventorEmail", entity.getInventor().getUserAccount().getIdentity().getEmail());
 		model.setAttribute("inventorCompany", entity.getInventor().getCompany());
+		
+		model.setAttribute("budgetModified", MoneyExchangeCalculator.convertMoney(this.repository.getSystemConfiguration(), entity.getBudget()));
 
 	}
 

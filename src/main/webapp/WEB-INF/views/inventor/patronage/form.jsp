@@ -24,6 +24,7 @@
 	</acme:input-select>
 	<acme:input-textbox code="inventor.patronage.form.label.legalStuff" path="legalStuff"/>	
 	<acme:input-money code="inventor.patronage.form.label.budget" path="budget"/>
+	<acme:input-money code="inventor.patronage.form.label.budgetModified" path="budgetModified" readonly="true"/>
 	<acme:input-moment code="inventor.patronage.form.label.creationDate" path="creationDate"/>
 	<acme:input-moment code="inventor.patronage.form.label.initialDate" path="initialDate"/>
 	<acme:input-moment code="inventor.patronage.form.label.finalDate" path="finalDate"/>	

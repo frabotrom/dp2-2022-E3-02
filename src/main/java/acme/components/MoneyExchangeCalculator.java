@@ -3,7 +3,7 @@ package acme.components;
 import org.springframework.web.client.RestTemplate;
 
 import acme.entities.SystemConfiguration;
-import acme.forms.dashboards.MoneyExchange;
+import acme.forms.MoneyExchange;
 import acme.framework.datatypes.Money;
 
 public class MoneyExchangeCalculator {

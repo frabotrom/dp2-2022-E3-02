@@ -14,6 +14,7 @@ inventor.patronage.form.label.status = Estado
 inventor.patronage.form.label.code = Código
 inventor.patronage.form.label.legalStuff = Asuntos Legales
 inventor.patronage.form.label.budget = Presupuesto
+inventor.patronage.form.label.budgetModified = Presupuesto (en la Divisa del Sistema)
 inventor.patronage.form.label.creationDate = Fecha de Creación
 inventor.patronage.form.label.initialDate = Fecha Inicial
 inventor.patronage.form.label.finalDate = Fecha Final

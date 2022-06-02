@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.Item;
+import acme.entities.SystemConfiguration;
 import acme.entities.Toolkit;
 import acme.framework.repositories.AbstractRepository;
 
@@ -27,5 +28,8 @@ public interface AnyItemRepository extends AbstractRepository {
 	
 	@Query("select t from Toolkit t where t.id = :toolkitId")
 	Toolkit findOneToolkitByToolkitId(@Param("toolkitId") int toolkitId);
+	
+	@Query("SELECT c FROM SystemConfiguration c")
+	SystemConfiguration getSystemConfiguration();
 	
 }

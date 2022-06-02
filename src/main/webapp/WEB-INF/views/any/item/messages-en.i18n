@@ -3,5 +3,6 @@ any.item.list.label.code = Code
 any.item.list.label.technology = Technology
 any.item.list.label.inventor = Inventor
 any.item.list.label.retailPrice = Price
+any.item.list.label.retailPriceModified = Price (in the System Currency)
 any.item.list.label.link = Link
 any.item.list.label.description = Description

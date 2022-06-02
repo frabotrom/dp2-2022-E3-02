@@ -1,4 +1,4 @@
-package acme.forms.dashboards;
+package acme.forms;
 
 import java.util.Map;
 

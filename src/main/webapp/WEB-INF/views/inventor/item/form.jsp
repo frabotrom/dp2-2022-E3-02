@@ -20,6 +20,7 @@
 	<acme:input-textarea code="inventor.item.list.label.description" path="description"/>
 	<acme:input-url code="inventor.item.list.label.link" path="link"/>
 	<acme:input-money code="inventor.item.list.label.retailPrice" path="retailPrice"/>
+	<acme:input-money code="inventor.item.list.label.retailPriceModified" path="retailPriceModified" readonly="true"/>
 	
 	<jstl:choose>
 	<jstl:when test="${acme:anyOf(command,'show')}">

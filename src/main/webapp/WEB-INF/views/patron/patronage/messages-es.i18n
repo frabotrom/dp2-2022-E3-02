@@ -13,6 +13,7 @@ patron.patronage.form.label.denied = RECHAZADO
 patron.patronage.form.label.code = Código
 patron.patronage.form.label.legalStuff = Asuntos Legales
 patron.patronage.form.label.budget = Presupuesto
+patron.patronage.form.label.budgetModified = Presupuesto (en la Divisa del Sistema)
 patron.patronage.form.label.creationDate = Fecha de Creación
 patron.patronage.form.label.initialDate = Fecha de Inicio
 patron.patronage.form.label.finalDate = Fecha de Finalización
