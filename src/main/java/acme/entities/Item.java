@@ -12,6 +12,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.components.SpamDetector;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Inventor;
@@ -56,6 +57,18 @@ public class Item extends AbstractEntity {
 	protected boolean			visible;
 
 	// Derived attributes -----------------------------------------------------
+	
+	public boolean nameHasSpam(final SystemConfiguration systemConfiguration) {
+		return SpamDetector.isSpam(this.getName() , systemConfiguration);
+	}
+	
+	public boolean technologyHasSpam(final SystemConfiguration systemConfiguration) {
+		return SpamDetector.isSpam(this.getTechnology() , systemConfiguration);
+	}
+		
+	public boolean descriptionHasSpam(final SystemConfiguration systemConfiguration) {
+		return SpamDetector.isSpam(this.getDescription() , systemConfiguration);
+	}
 
 	// Relationships ----------------------------------------------------------
 	

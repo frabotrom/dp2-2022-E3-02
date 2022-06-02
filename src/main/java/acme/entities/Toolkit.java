@@ -14,6 +14,8 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.components.MoneyExchangeCalculator;
+import acme.components.SpamDetector;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Inventor;
@@ -66,45 +68,20 @@ public class Toolkit extends AbstractEntity{
 			
 			if(amount.getToolkit().getId()==this.id) {
 				
-				final Integer actualAmount = amount.getTotal();												// Cantidad de Items
+				final Integer actualItemAmount = amount.getTotal();											// Cantidad de Items
 				final String actualMoneyCurrency = amount.getItem().getRetailPrice().getCurrency();			// Moneda del precio del item		
-				final Double actualMoneyAmount = amount.getItem().getRetailPrice().getAmount();				// Precio del item	
+				final Money actualItemMoney = amount.getItem().getRetailPrice();							// Precio del item	
 				Double actualMoneyAmountConverted = null;													// Precio del item convertido (a la de por defecto)
 								
 				if(finalMoneyCurrency.equals(actualMoneyCurrency)) {
-					actualMoneyAmountConverted = actualMoneyAmount;
+					actualMoneyAmountConverted = actualItemMoney.getAmount();
 				}
 				
 				else {
-					if(finalMoneyCurrency.equals("EUR")) {
-						if(actualMoneyCurrency.equals("USD")) {
-							actualMoneyAmountConverted = actualMoneyAmount*0.92;
-						}
-						if(actualMoneyCurrency.equals("GBP")) {
-							actualMoneyAmountConverted = actualMoneyAmount*1.20;
-						}
-					}
-					
-					if(finalMoneyCurrency.equals("USD")) {
-						if(actualMoneyCurrency.equals("EUR")) {
-							actualMoneyAmountConverted = actualMoneyAmount*1.08;						
-						}
-						if(actualMoneyCurrency.equals("GBP")) {
-							actualMoneyAmountConverted = actualMoneyAmount*1.30;						
-						}				
-					}
-					
-					if(finalMoneyCurrency.equals("GBP")) {
-						if(actualMoneyCurrency.equals("USD")) {
-							actualMoneyAmountConverted = actualMoneyAmount*0.76;						
-						}
-						if(actualMoneyCurrency.equals("EUR")) {
-							actualMoneyAmountConverted = actualMoneyAmount*0.83;						
-						}					
-					}				
+					actualMoneyAmountConverted = MoneyExchangeCalculator.convertMoney(systemConfiguration, actualItemMoney).getAmount();
 				}
 				
-				finalMoneyAmount = finalMoneyAmount + actualAmount * actualMoneyAmountConverted;				
+				finalMoneyAmount = finalMoneyAmount + actualItemAmount * actualMoneyAmountConverted;				
 			}
 			
 			else {
@@ -119,8 +96,18 @@ public class Toolkit extends AbstractEntity{
 		return totalPriceMoney;
 	}
 	
-	// Implemantar el totalPrice en el Servicio. Hay que tener en cuenta de que hay que pasarle una lista de items que pertenezcan al toolkit
-	// Añadir la api que se encuentra en los starter projects
+	
+	public boolean titleHasSpam(final SystemConfiguration systemConfiguration) {
+		return SpamDetector.isSpam(this.getTitle() , systemConfiguration);
+	}
+	
+	public boolean descriptionHasSpam(final SystemConfiguration systemConfiguration) {
+		return SpamDetector.isSpam(this.getDescription() , systemConfiguration);
+	}
+	
+	public boolean asemblyNotesHasSpam(final SystemConfiguration systemConfiguration) {
+		return SpamDetector.isSpam(this.getAsemblyNotes() , systemConfiguration);
+	}
 	
 	
 	// Relationships ----------------------------------------------------------

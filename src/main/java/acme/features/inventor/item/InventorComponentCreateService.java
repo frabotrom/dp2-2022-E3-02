@@ -55,6 +55,21 @@ public class InventorComponentCreateService implements AbstractCreateService<Inv
 		assert errors != null;
 
 		final Item equalCode = this.repository.findItemByCode(entity.getCode()).orElse(null);
+		
+		if(!errors.hasErrors("name")) {
+			final boolean isNameSpam = entity.nameHasSpam(this.repository.getSystemConfiguration());
+			errors.state(request, !isNameSpam, "name", "inventor.item.component.form.error.spam");
+		}
+		
+		if(!errors.hasErrors("technology")) {
+			final boolean isTechnologySpam = entity.technologyHasSpam(this.repository.getSystemConfiguration());
+			errors.state(request, !isTechnologySpam, "technology", "inventor.item.component.form.error.spam");
+		}
+		
+		if(!errors.hasErrors("description")) {
+			final boolean isDescriptionSpam = entity.descriptionHasSpam(this.repository.getSystemConfiguration());
+			errors.state(request, !isDescriptionSpam, "description", "inventor.item.component.form.error.spam");
+		}
 
 		if (!errors.hasErrors("code")) {
 			errors.state(request, equalCode == null, "code", "inventor.item.form.error.duplicated-code");

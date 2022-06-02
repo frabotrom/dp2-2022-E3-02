@@ -12,7 +12,8 @@ inventor.toolkit.form.button.delete = Eliminar
 inventor.toolkit.form.button.update = Editar
 inventor.toolkit.form.button.publish = Publicar
 inventor.toolkit.form.label.price = Precio
-inventor.toolkit.form.button.addItems = Añadir Objetos
+inventor.toolkit.form.button.addItems = AÃ±adir Objetos
 
 inventor.toolkit.form.error.repeated-code = El código ya existe
 inventor.toolkit.form.error.empty-amounts = El toolkit no tiene ningún item
+inventor.toolkit.form.error.spam = El toolkit contiene spam

@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
-import acme.entities.SystemConfiguration;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -62,25 +61,20 @@ public class InventorItemPublishService implements AbstractUpdateService<Invento
 		assert entity != null;
 		assert errors != null;
 		
-		  if(!errors.hasErrors("name")) {
-	            final SystemConfiguration sc = this.repository.findSystemConfiguration();
-	            //final SpamDetector sd = new SpamDetector(sc.getStrongSpamTerms(), sc.getWeakSpamTerms(), sc.getStrongThreshold(), sc.getWeakThreshold());
-	            //final boolean isNameSpam = sd.isSpam(entity.getName());
-	            //errors.state(request, !isNameSpam, "name", "item.inventor.form.error.spam");
-	        }
-	      if(!errors.hasErrors("technology")) {
-	            final SystemConfiguration sc = this.repository.findSystemConfiguration();
-	            //final SpamDetector sd = new SpamDetector(sc.getStrongSpamTerms(), sc.getWeakSpamTerms(), sc.getStrongThreshold(), sc.getWeakThreshold());
-	            //final boolean isTechnologySpam = sd.isSpam(entity.getTechnology());
-	            //errors.state(request, !isTechnologySpam, "technology", "item.inventor.form.error.spam");
-	        }
-	      if(!errors.hasErrors("description")) {
-	            final SystemConfiguration sc = this.repository.findSystemConfiguration();
-	            //final SpamDetector sd = new SpamDetector(sc.getStrongSpamTerms(), sc.getWeakSpamTerms(), sc.getStrongThreshold(), sc.getWeakThreshold());
-	            //final boolean isDescriptionSpam = sd.isSpam(entity.getDescription());
-	            //errors.state(request, !isDescriptionSpam, "description", "item.inventor.form.error.spam");
-	        }
-	      
+		if(!errors.hasErrors("name")) {
+			final boolean isNameSpam = entity.nameHasSpam(this.repository.getSystemConfiguration());
+			errors.state(request, !isNameSpam, "name", "inventor.item.item.form.error.spam");
+		}
+		
+		if(!errors.hasErrors("technology")) {
+			final boolean isTechnologySpam = entity.technologyHasSpam(this.repository.getSystemConfiguration());
+			errors.state(request, !isTechnologySpam, "technology", "inventor.item.item.form.error.spam");
+		}
+		
+		if(!errors.hasErrors("description")) {
+			final boolean isDescriptionSpam = entity.descriptionHasSpam(this.repository.getSystemConfiguration());
+			errors.state(request, !isDescriptionSpam, "description", "inventor.item.item.form.error.spam");
+		}	      
 	  	
 	  	if(!errors.hasErrors("code")) {
 			final Item actual=this.repository.findComponentById(entity.getId());

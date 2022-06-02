@@ -46,4 +46,7 @@ public interface InventorItemRepository extends AbstractRepository{
 	@Query("select t from Toolkit t where t.id = :toolkitId")
 	Toolkit findToolkitById(@Param("toolkitId") int toolkitId);
 	
+	@Query("SELECT c FROM SystemConfiguration c")
+	SystemConfiguration getSystemConfiguration();
+	
 }

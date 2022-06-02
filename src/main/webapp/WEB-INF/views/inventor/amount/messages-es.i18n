@@ -1,23 +1,23 @@
 inventor.amount.list.label.item.name = Nombre
 inventor.amount.list.label.amount = Cantidad
-inventor.amount.list.button.create = AÒadir Objeto
+inventor.amount.list.button.create = A√±adir Objeto
 inventor.amount.list.label.total-price = Precio Total
 
-inventor.item.form.label.code = CÛdigo
+inventor.item.form.label.code = C√≥digo
 inventor.item.form.label.name = Nombre
-inventor.item.form.label.technology = TecnologÌa
-inventor.item.form.label.description = DescripciÛn
+inventor.item.form.label.technology = Tecnolog√≠a
+inventor.item.form.label.description = Descripci√≥n
 inventor.item.form.label.retailprice = Precio
 inventor.item.form.label.type = Tipo
 inventor.item.form.label.link = Enlace
 inventor.item.form.label.inventor = Inventor
 inventor.item.form.label.amount = Cantidad
 
-inventor.amount.form.button.create = AÒadir Objeto
+inventor.amount.form.button.create = A√±adir Objeto
 inventor.amount.form.button.delete = Eliminar del Toolkit
 inventor.amount.form.button.update = Actualizar
 inventor.amount.form.label.select.item = Objeto
 inventor.amount.form.label.amount = Cantidad
-inventor.amount.form.error.only-1-type-of-tool-allowed = No se puede aÒadir m·s de una herramienta de cada
+inventor.amount.form.error.only-1-type-of-tool-allowed = No se puede a√±adir m√°s de una herramienta de cada
 inventor.amount.form.error.repeated-item = Este objeto ya est· en el toolkit
 inventor.amount.form.error.amount-must-be-positive = La cantidad debe ser mayor que cero

@@ -17,3 +17,6 @@ inventor.item.form.button.create.tool = Crear Herramienta
 inventor.item.tool.form.button.update = Actualizar Herramienta
 inventor.item.tool.form.button.delete = Borrar Herramienta
 inventor.item.tool.form.button.publish = Publicar Herramienta
+inventor.item.component.form.error.spam = El componente contiene spam
+inventor.item.tool.form.error.spam = La herramienta contiene spam
+inventor.item.item.form.error.spam = El componente/herramienta contiene spam

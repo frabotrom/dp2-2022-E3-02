@@ -43,7 +43,7 @@ public class InventorToolkitListService implements AbstractListService<Inventor,
 		assert request != null;
 		assert model != null;
 		
-		request.unbind(toolkit,model,"code","title","info","draftMode");
+		request.unbind(toolkit,model,"code","title","info","draftMode","draftMode");
 	}
 	
 }
