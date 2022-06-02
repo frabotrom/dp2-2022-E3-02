@@ -21,19 +21,19 @@ public class InventorAmountController extends AbstractController<Inventor, Amoun
 	@Autowired
 	protected InventorAmountCreateService createService;
 	
-//	@Autowired
-//	protected InventorAmountDeleteService deleteService;
-//	
-//	@Autowired
-//	protected InventorAmountUpdateService updateService;
+	@Autowired
+	protected InventorAmountUpdateService updateService;
+	
+	@Autowired
+	protected InventorAmountDeleteService deleteService;
 	
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
 		super.addCommand("create", this.createService);
-//		super.addCommand("delete", this.deleteService);
-//		super.addCommand("update", this.updateService);
+		super.addCommand("delete", this.deleteService);
+		super.addCommand("update", this.updateService);
 	}
 	
 }

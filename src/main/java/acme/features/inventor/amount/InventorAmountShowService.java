@@ -60,6 +60,6 @@ public class InventorAmountShowService implements AbstractShowService<Inventor, 
 		model.setAttribute("item.description", item.getDescription());
 		model.setAttribute("item.type", item.getType());
 		model.setAttribute("item.link", item.getLink());
-		model.setAttribute("isDraftMode", entity.getToolkit().isDraftMode());
+		model.setAttribute("draftMode", entity.getToolkit().isDraftMode());
 	}
 }

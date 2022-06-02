@@ -56,7 +56,7 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		model.setAttribute("price", currentPrice);
 		
 		
-		request.unbind(entity, model, "title", "code", "description", "asemblyNotes", "info", "draftMode");
+		request.unbind(entity, model, "title", "code", "description", "asemblyNotes", "info", "draftMode", "price");
 		
 	}
 

@@ -32,8 +32,6 @@ public class InventorAmountCreateService  implements AbstractCreateService<Inven
 	public boolean authorise(final Request<Amount> request) {
 		assert request != null;
 		
-		System.out.println(request.getModel());
-		
 		final Integer toolkitId = request.getModel().getInteger("id");
 		final Toolkit toolkit = this.repository.findToolkitById(toolkitId);
 		final Integer activeId = request.getPrincipal().getActiveRoleId();
@@ -107,13 +105,17 @@ public class InventorAmountCreateService  implements AbstractCreateService<Inven
 		if(entity.getItem().getType() == ItemType.TOOL) {
 			errors.state(request, entity.getTotal()<=1, "*", "inventor.amount.form.error.only-1-type-of-tool-allowed");
 		}
+		
+		if(entity.getTotal()<=0) {
+			errors.state(request, entity.getTotal()>0, "*", "inventor.amount.form.error.amount-must-be-positive");
+		}
+		
 		if(!errors.hasErrors("item.name")) {
 			final Collection<Amount> amounts = this.repository.findAmountsByToolkitId(entity.getToolkit().getId());
 			final String itemName = entity.getItem().getName();
 			final boolean repeatedItem = amounts.stream()
 										.anyMatch(x -> Objects.equal(x.getItem().getName(), itemName));
 			errors.state(request, !repeatedItem, "*", "inventor.amount.form.error.repeated-item");
-			
 		}
 		
 	}

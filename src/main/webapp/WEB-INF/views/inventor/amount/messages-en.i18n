@@ -20,3 +20,4 @@ inventor.amount.form.label.select.item = Item
 inventor.amount.form.label.amount = Amount
 inventor.amount.form.error.only-1-type-of-tool-allowed = You can't add more than one of each tool
 inventor.amount.form.error.repeated-item = This item is already in the toolkit
+inventor.amount.form.error.amount-must-be-positive = Amount must be above zero
