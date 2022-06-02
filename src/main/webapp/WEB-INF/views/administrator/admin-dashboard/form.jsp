@@ -62,5 +62,15 @@
 	<acme:input-textarea code="admin.dashboard.form.label.averageBudgetDenied" path="averageBudgetDenied"/>
 	<acme:input-textarea code="admin.dashboard.form.label.deviationBudgetDenied" path="deviationBudgetDenied"/>
 	<acme:input-textarea code="admin.dashboard.form.label.minimunBudgetDenied" path="minimunBudgetDenied"/>
-	<acme:input-textarea code="admin.dashboard.form.label.maximunBudgetDenied" path="maximunBudgetDenied"/>				
+	<acme:input-textarea code="admin.dashboard.form.label.maximunBudgetDenied" path="maximunBudgetDenied"/>	
+	
+	<%-- Chimpum--%>
+	<hr>
+    <br>
+    <h3><acme:message code="admin.patronage.form.label.titleChimpum"/></h3>
+    <acme:input-double code="admin.dashboard.form.label.ratioArtefactsWithChimpum" path="ratioArtefactsWithChimpum"/>
+	<acme:input-textarea code="admin.dashboard.form.label.averageChimpumBudget" path="averageChimpumBudget"/>
+	<acme:input-textarea code="admin.dashboard.form.label.deviationChimpumBudget" path="deviationChimpumBudget"/>
+	<acme:input-textarea code="admin.dashboard.form.label.minimunChimpumBudget" path="minimunChimpumBudget"/>
+	<acme:input-textarea code="admin.dashboard.form.label.maximunChimpumBudget" path="maximunChimpumBudget"/>				
 </acme:form>

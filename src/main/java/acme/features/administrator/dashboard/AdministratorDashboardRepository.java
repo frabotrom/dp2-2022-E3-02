@@ -101,5 +101,29 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 			
 	@Query("select p.budget.currency, max(p.budget.amount) from Patronage p where p.status = 2 group by p.budget.currency")
 	List<List<String>> maximunBudgetDenied();
+	
+	// Chimpum -----------------------------------------------------------------------------------------------------
+	
+	// i.type = 0 para que sea tool y i.visible = 1 para que solo pilles los visibles
+	
+	@Query("select count(i) from Item i where i.type = 0 and i.visible = 1 and i.chimpum != null")
+	Integer totalArtefactsWithChimpums();
+	
+	@Query("select count(i) from Item i where i.type = 0 and i.visible = 1")
+	Integer totalVisibleTools();
+	
+	@Query("select i.chimpum.budget.currency, avg(i.chimpum.budget.amount) from Item i where i.type = 0 and i.visible = 1 group by i.chimpum.budget.currency")
+	List<List<String>> averageChimpumBudget();
+			
+	@Query("select i.chimpum.budget.currency, stddev(i.chimpum.budget.amount) from Item i where i.type = 0 and i.visible = 1 group by i.chimpum.budget.currency")
+	List<List<String>> deviationChimpumBudget();
+			
+	@Query("select i.chimpum.budget.currency, min(i.chimpum.budget.amount) from Item i where i.type = 0 and i.visible = 1 group by i.chimpum.budget.currency")
+	List<List<String>> minimunChimpumBudget();
+			
+	@Query("select i.chimpum.budget.currency, max(i.chimpum.budget.amount) from Item i where i.type = 0 and i.visible = 1 group by i.chimpum.budget.currency")
+	List<List<String>> maximunChimpumBudget();
+	
+	
 
 }

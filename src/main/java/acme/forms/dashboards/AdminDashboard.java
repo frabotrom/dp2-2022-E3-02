@@ -87,4 +87,22 @@ public class AdminDashboard {
 	protected Map<String, Double>		minimunBudgetDenied;
 
 	protected Map<String, Double>		maximunBudgetDenied;
+	
+	
+	
+	// ===============================================================================================================================
+	
+	//Chimpum -------------------------------------------------------------
+	
+	protected Double ratioArtefactsWithChimpum;
+	
+	// Agrupar por currency
+	
+	protected Map<String, Double>		averageChimpumBudget;
+	
+	protected Map<String, Double>		deviationChimpumBudget;
+			
+	protected Map<String, Double>		minimunChimpumBudget;
+				
+	protected Map<String, Double>		maximunChimpumBudget;
 }

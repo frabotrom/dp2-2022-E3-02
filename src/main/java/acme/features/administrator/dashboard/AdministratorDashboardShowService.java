@@ -22,7 +22,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			@Autowired
 			protected AdministratorDashboardRepository repository;
 
-		// AbstractShowService<Patron, AdminDashboard> interface ----------------
+	// AbstractShowService<Patron, AdminDashboard> interface ----------------
 
 
 		@Override
@@ -182,6 +182,33 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			result.setDeviationBudgetDenied(deviationBudgetDenied);
 			result.setMinimunBudgetDenied(minimunBudgetDenied);
 			result.setMaximunBudgetDenied(maximunBudgetDenied);
+			
+			// Chimpum -----------------------------------------------------------------------------------------------------
+			final Integer totalArtefactsWithChimpums = this.repository.totalArtefactsWithChimpums();
+			final Integer totalVisibleTools = this.repository.totalVisibleTools();
+			final Double ratioArtefactsWithChimpum = (double) totalArtefactsWithChimpums/totalVisibleTools;
+			
+			List<List<String>> averageChimpumBudgetList;
+			averageChimpumBudgetList = this.repository.averageChimpumBudget();
+			final Map<String, Double> averageChimpumBudget = this.listTransform(averageChimpumBudgetList);
+			
+			List<List<String>> deviationChimpumBudgetList;
+			deviationChimpumBudgetList = this.repository.deviationChimpumBudget();
+			final Map<String, Double> deviationChimpumBudget = this.listTransform(deviationChimpumBudgetList);
+			
+			List<List<String>> minimunChimpumBudgetList;
+			minimunChimpumBudgetList = this.repository.minimunChimpumBudget();
+			final Map<String, Double> minimunChimpumBudget = this.listTransform(minimunChimpumBudgetList);
+			
+			List<List<String>> maximunChimpumBudgetList;
+			maximunChimpumBudgetList = this.repository.maximunChimpumBudget();
+			final Map<String, Double> maximunChimpumBudget = this.listTransform(maximunChimpumBudgetList);
+			
+			result.setRatioArtefactsWithChimpum(ratioArtefactsWithChimpum);
+			result.setAverageChimpumBudget(averageChimpumBudget);
+			result.setDeviationChimpumBudget(deviationChimpumBudget);
+			result.setMinimunChimpumBudget(minimunChimpumBudget);
+			result.setMaximunChimpumBudget(maximunChimpumBudget);
 
 			return result;
 		}
@@ -192,7 +219,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			assert entity != null;
 			assert model != null;
 
-			request.unbind(entity, model, "totalComponents", "totalTools", "totalProposedPatronages", "totalAcceptedPatronages", "totalDeniedPatronages");
+			request.unbind(entity, model, "totalComponents", "totalTools", "totalProposedPatronages", "totalAcceptedPatronages", "totalDeniedPatronages", "ratioArtefactsWithChimpum");
 			
 			model.setAttribute("totalPatronages", entity.getTotalPatronages().toString());
 			
@@ -220,6 +247,11 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			model.setAttribute("deviationBudgetDenied", entity.getDeviationBudgetDenied().toString());
 			model.setAttribute("minimunBudgetDenied", entity.getMinimunBudgetDenied().toString());
 			model.setAttribute("maximunBudgetDenied", entity.getMaximunBudgetDenied().toString());
+			
+			model.setAttribute("averageChimpumBudget", entity.getAverageChimpumBudget().toString());
+			model.setAttribute("deviationChimpumBudget", entity.getDeviationChimpumBudget().toString());
+			model.setAttribute("minimunChimpumBudget", entity.getMinimunChimpumBudget().toString());
+			model.setAttribute("maximunChimpumBudget", entity.getMaximunChimpumBudget().toString());
 			
 		}
 		

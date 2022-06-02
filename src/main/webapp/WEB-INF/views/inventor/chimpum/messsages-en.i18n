@@ -1,0 +1,48 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+inventor.chimpum.form.label.code = Code
+inventor.chimpum.form.label.budget = Budget
+inventor.chimpum.form.label.title = Title
+inventor.chimpum.form.label.description = Description
+inventor.chimpum.form.label.creationMoment = Creation Moment
+inventor.chimpum.form.label.initialDate = Initial Date
+inventor.chimpum.form.label.finalDate = Final Date
+inventor.chimpum.form.label.optionalLink = Optional Link
+inventor.chimpum.form.label.period = Period of Time (Days)
+
+inventor.chimpum.list.label.code = Code
+inventor.chimpum.list.label.title = Title
+inventor.chimpum.list.label.budget = Budget
+inventor.chimpum.list.label.creationMoment = Creation Moment
+inventor.chimpum.list.label.initialDate = Initial Date
+inventor.chimpum.list.label.finalDate = Final Date
+inventor.chimpum.list.label.artefactName = Associated Tool
+
+inventor.chimpum.form.label.artefact.title = Tool Information
+inventor.chimpum.form.label.artefactName = Name
+inventor.chimpum.form.label.artefactCode = Code
+inventor.chimpum.form.label.artefactTechnology = Technology
+inventor.chimpum.form.label.artefactDescription = Description
+inventor.chimpum.form.label.artefactRetailPrice = Retail Price
+inventor.chimpum.form.label.artefactLink = Link
+inventor.chimpum.form.label.artefactType = Type
+inventor.chimpum.form.label.artefactVisible = Visible
+
+inventor.chimpum.form.button.create.warning =  Only valid for Tools
+inventor.chimpum.form.button.create = Create Chimpum
+inventor.chimpum.form.button.update = Update Chimpum
+inventor.chimpum.form.button.delete = Delete Chimpum
+
+inventor.chimpum.form.error.budget = Budget must be positive
+inventor.chimpum.form.error.period = Period (differnce between Initial Date and Final Date) must be at least one week
+inventor.chimpum.form.error.finalDate = Final Date must be later than Initial Date
+inventor.chimpum.form.error.creationMoment = The beginning of Chimpum must be started at least one month after (the difference between creation moment and initial date)

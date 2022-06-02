@@ -32,9 +32,15 @@ admin.dashboard.form.label.deviationBudgetAccepted = Desviación (Por Divisa)
 admin.dashboard.form.label.minimunBudgetAccepted = Mínimo (Por Divisa)
 admin.dashboard.form.label.maximunBudgetAccepted = Máximo (Por Divisa)
 
-admin.patronage.form.label.titleDenied = Estadísticas de Patrocinios Rechazados
+admin.patronage.form.label.titleDenied = Estadísticas de Chimpums
 admin.dashboard.form.label.averageBudgetDenied = Media (Por Divisa)
 admin.dashboard.form.label.deviationBudgetDenied = Desviación (Por Divisa)
 admin.dashboard.form.label.minimunBudgetDenied = Mínimo (Por Divisa)
 admin.dashboard.form.label.maximunBudgetDenied = Máximo (Por Divisa)
 
+admin.patronage.form.label.titleChimpum = Estadísticas de Chimpums (en Herramientas Visibles)
+admin.dashboard.form.label.ratioArtefactsWithChimpum= Ratio (Herramientas con Chimpums)
+admin.dashboard.form.label.averageChimpumBudget= Media (Por Divisa)
+admin.dashboard.form.label.deviationChimpumBudget = Desviación (Por Divisa)
+admin.dashboard.form.label.minimunChimpumBudget = Mínimo (Por Divisa)
+admin.dashboard.form.label.maximunChimpumBudget = Máximo (Por Divisa)

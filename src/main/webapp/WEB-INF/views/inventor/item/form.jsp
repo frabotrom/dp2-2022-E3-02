@@ -49,5 +49,11 @@
         	<acme:submit code="inventor.item.tool.form.button.publish" action="/inventor/item/publish"/>
         </jstl:when>         
     </jstl:choose>
+    
+    
+    <jstl:if test="${acme:anyOf(command, 'show')}">
+    	<acme:button code="inventor.chimpum.form.button.create" action="/inventor/chimpum/create?itemId=${id}"/>
+    	<strong><acme:message code="inventor.chimpum.form.button.create.warning"/></strong>
+	</jstl:if>
 	
 </acme:form>

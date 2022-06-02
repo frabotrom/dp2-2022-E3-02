@@ -4,6 +4,7 @@ package acme.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -23,11 +24,11 @@ import lombok.Setter;
 @Setter
 public class Item extends AbstractEntity {
 
-	// Serialisation identifier -----------------------------------------------
+	// Serialisation identifier --------------------------
 
 	protected static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
+	// Attributes ----------------------------------------
 
 	@NotBlank
 	protected String			name;
@@ -55,12 +56,17 @@ public class Item extends AbstractEntity {
 	
 	protected boolean			visible;
 
-	// Derived attributes -----------------------------------------------------
+	// Derived attributes --------------------------------
 
-	// Relationships ----------------------------------------------------------
+	// Relationships -------------------------------------
 	
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	protected  Inventor 		inventor;
+	
+	// NEW Control Check
+	
+	@OneToOne(optional = true)
+	protected  Chimpum 			chimpum;
 }
