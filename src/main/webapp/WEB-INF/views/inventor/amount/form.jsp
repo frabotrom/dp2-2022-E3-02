@@ -25,11 +25,7 @@
 	
 		<jstl:when test="${command == 'create'}">	
 			
-			<acme:input-select code="inventor.amount.form.label.select.item" path="item.name">
-				<jstl:forEach items="${items}" var="opItem">
-					<acme:input-option code="${opItem.name}" value="${opItem.name}"/>
-				</jstl:forEach>
-			</acme:input-select>
+			<acme:input-textbox code="inventor.amount.form.label.select.item" path="item.name"/>
 			
 			<acme:submit code="inventor.amount.form.button.create" action="/inventor/amount/create?id=${id}"/>
 						

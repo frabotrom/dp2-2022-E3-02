@@ -16,8 +16,10 @@ inventor.item.form.label.amount = Cantidad
 inventor.amount.form.button.create = Añadir Objeto
 inventor.amount.form.button.delete = Eliminar del Toolkit
 inventor.amount.form.button.update = Actualizar
+
 inventor.amount.form.label.select.item = Objeto
 inventor.amount.form.label.amount = Cantidad
+
 inventor.amount.form.error.only-1-type-of-tool-allowed = No se puede añadir más de una herramienta de cada
 inventor.amount.form.error.repeated-item = Este objeto ya est� en el toolkit
 inventor.amount.form.error.amount-must-be-positive = La cantidad debe ser mayor que cero

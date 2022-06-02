@@ -1,13 +1,16 @@
 package acme.features.inventor.toolkit;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Amount;
+import acme.entities.SystemConfiguration;
 import acme.entities.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
-import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractUpdateService;
 import acme.roles.Inventor;
 
@@ -46,14 +49,14 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		
 		Integer id;
 		id = request.getModel().getInteger("id");
-		final Double price = this.repository.findToolkitPrice(id).orElse(0.0);
-		final Money currentPrice = new Money();
-		currentPrice.setCurrency("EUR");
-		currentPrice.setAmount(price);
-		model.setAttribute("price", currentPrice);
 		
+		final Collection<Amount> amounts = this.repository.findAmountsByToolkitId(id);
+		final SystemConfiguration sysConfig = this.repository.getSystemConfiguration();
+		final Double price = entity.totalPrice(amounts, sysConfig).getAmount();
 		
-		request.unbind(entity, model, "title", "code", "description", "asemblyNotes", "info", "draftMode", "price");
+		model.setAttribute("totalPrice", price);
+		
+		request.unbind(entity, model, "title", "code", "description", "asemblyNotes", "info", "draftMode");
 		
 	}
 

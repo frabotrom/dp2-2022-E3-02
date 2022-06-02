@@ -1,9 +1,13 @@
 package acme.features.inventor.toolkit;
 
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Amount;
+import acme.entities.SystemConfiguration;
 import acme.entities.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -50,6 +54,16 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		assert toolkit != null;
 		assert request != null;
 		assert model != null;
+		
+		Integer id;
+		id = request.getModel().getInteger("id");
+		
+		final Collection<Amount> amounts = this.repository.findAmountsByToolkitId(id);
+		final SystemConfiguration sysConfig = this.repository.getSystemConfiguration();
+		final Double price = toolkit.totalPrice(amounts, sysConfig).getAmount();
+		
+		model.setAttribute("totalPrice", price);
+		
 		request.unbind(toolkit, model, "code","title","description","asemblyNotes","info","draftMode");
 	}
 	
