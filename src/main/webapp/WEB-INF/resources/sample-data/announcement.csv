@@ -1,8 +1,8 @@
 key,creationDate,title,body,critical,moreInfo
-announcement-001,"2022/05/01 12:00","Title1","Body1","true","https://ev.us.es/"
-announcement-002,"2022/05/01 12:01","Title2","Body2","false",null
-announcement-003,"2022/05/01 18:00","Title3","Body3","false","https://ev.us.es/"
-announcement-004,"2022/05/01 12:00","Title4","Body4","true","https://ev.us.es/"
-announcement-005,"2022/05/01 17:00","Title5","Body5","true",null
-announcement-006,"2022/05/01 12:00","Title6","Body6","false",null
-announcement-007,"2022/02/21 12:00","Title7","Body7","false","https://ev.us.es/"
+announcement-001,"2022/06/02 12:00","Title1","Body1","true","https://ev.us.es/"
+announcement-002,"2022/06/02 12:00","Title2","Body2","false",null
+announcement-003,"2022/06/02 18:00","Title3","Body3","false","https://ev.us.es/"
+announcement-004,"2022/06/02 12:00","Title4","Body4","true","https://ev.us.es/"
+announcement-005,"2022/06/02 17:00","Title5","Body5","true",null
+announcement-006,"2022/06/02 12:00","Title6","Body6","false",null
+announcement-007,"2022/06/02 12:00","Title7","Body7","false","https://ev.us.es/"
